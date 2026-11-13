@@ -1,0 +1,263 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>BudgetPix</title>
+  <meta name="description" content="BudgetPix: Compute-Adaptive Tokenization for Pixel-Space Image Diffusion. One checkpoint, any token budget.">
+  <meta property="og:title" content="BudgetPix: Compute-Adaptive Tokenization for Pixel-Space Image Diffusion">
+  <meta property="og:description" content="A token budget you set at inference time, on any pixel-space diffusion model.">
+  <meta property="og:image" content="https://budgetany.github.io/budgetpix/assets/teaser_poster.jpg">
+  <link rel="icon" href="../assets/brand/budgetpix_mark.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../assets/site.css">
+</head>
+<body>
+<main>
+  <div class="crumb"><a href="/">BudgetAny</a> / BudgetPix</div>
+
+  <h1>BudgetPix: Compute-Adaptive Tokenization for Pixel-Space Image Diffusion</h1>
+  <p class="authors">
+    <a href="https://karaozgur.com/">Ozgur Kara</a><sup>1,&dagger;</sup>,
+    <a href="https://scholar.google.com/citations?user=Dv5gB7cAAAAJ&amp;hl=en">Yujia Chen</a><sup>2</sup>,
+    <a href="https://scholar.google.com/citations?user=ve9A9rMAAAAJ&amp;hl=en">Daniel Watson</a><sup>2</sup>,
+    <a href="https://scholar.google.com/citations?user=5H0arvkAAAAJ&amp;hl=en">David Forsyth</a><sup>1</sup>,
+    <a href="https://scholar.google.com/citations?user=8kA3eDwAAAAJ&amp;hl=en">James Matthew Rehg</a><sup>1</sup>,
+    <a href="https://scholar.google.com/citations?user=R-OrlSgAAAAJ&amp;hl=en">Wen-Sheng Chu</a><sup>2,&Dagger;</sup>,
+    <a href="https://scholar.google.com/citations?user=3TVbh8QAAAAJ&amp;hl=en">Du Tran</a><sup>2,&Dagger;</sup>
+  </p>
+  <p class="affil"><sup>1</sup>University of Illinois Urbana-Champaign &nbsp;&nbsp; <sup>2</sup>Google</p>
+  <div class="affil-logos">
+    <img src="assets/uiuc.png" alt="University of Illinois Urbana-Champaign">
+    <img src="assets/google.png" alt="Google">
+  </div>
+  <p class="affil"><b>arXiv preprint, 2026</b></p>
+  <p class="affil"><small><sup>&dagger;</sup>Work done during an internship at Google. &nbsp; <sup>&Dagger;</sup>Joint last authors.</small></p>
+
+  <div class="buttons">
+    <a href="https://arxiv.org/abs/2610.12307">arXiv</a>
+    <a href="https://github.com/BudgetAny/BudgetPix">Code</a>
+    <a href="https://huggingface.co/BudgetAny">Models</a>
+    <a href="#bibtex">BibTeX</a>
+  </div>
+  <p class="note">Unofficial, open-source implementation, taken from
+    <a href="https://github.com/budgetpix/BudgetPix-public">budgetpix/BudgetPix-public</a>: a public reimplementation
+    of BudgetPix: compute-adaptive tokenization for pixel-space image diffusion (JiT, MiniT2I, PixelDiT, pMF).</p>
+
+  <figure>
+    <video src="assets/teaser_720p.mp4" poster="assets/teaser_poster.jpg" autoplay muted loop playsinline controls></video>
+    <figcaption><b>Test-time compute adjustment.</b> BudgetPix dynamically scales inference costs, achieving a strong
+      quality-efficiency tradeoff across JiT, MiniT2I, PixelDiT, 3 popular architectures for pixel-space image
+      diffusion. Percentages show the fraction of tokens used.</figcaption>
+  </figure>
+
+  <h2>BudgetPix Across Budgets</h2>
+  <p><b>BudgetPix: one model, any compute budget.</b> Our pixel-space image generator adapts computation to image
+    content at inference time. Same prompt, same noise, from 100% down to just 10% of the tokens.</p>
+  <div class="demo demo-wide" data-models="iris_extreme iris minit2i pixeldit jit pmf"></div>
+
+  <h2>Abstract</h2>
+  <p>
+    Most image generation models rely on uniform tokenization, allocating the exact same computational budget to
+    equally-sized image patches. This static paradigm cannot adapt to different resource constraints at inference
+    time, and yields suboptimal quality-cost tradeoff by devoting the same effort to both plain backgrounds and
+    intricate details. We propose BudgetPix, an adaptive tokenization framework that dynamically allocates compute
+    based on visual complexity and spatial layout, enabling flexible computational budgeting at inference time.
+    BudgetPix comprises three key components: (1) an adaptive encoder that maps a fixed-size image to a
+    variable-length token sequence using an entropy-guided quadtree alongside a multi-scale patch embedder; (2) a
+    scale-aware decoder reconstructs fixed-resolution images from multi-scale token sets; and (3) a flexible training
+    and sampling schedule that enables pixel-space denoisers to operate across variable token counts. BudgetPix
+    seamlessly integrates with existing pixel-space diffusion architectures, enabling a single checkpoint to be
+    operated at a wide range of compute budgets. Evaluated on text-to-image generation, BudgetPix matches the
+    fidelity of MiniT2I-L at 512&sup2; (GenEval: 0.874 vs. 0.882) and PixelDiT at 1024&sup2; (0.725 vs. 0.721) using
+    just 25% of the original compute budget. In class-conditional generation using a MeanFlow backbone, BudgetPix
+    requires merely 60% of the full compute budget to produce images with near-zero quality degradation, observing a
+    marginal 0.8-point increase in FID (3.46 vs. 2.65). Comprehensive assessments by human and VLM judges confirm
+    that BudgetPix establishes a significantly improved quality-efficiency tradeoff over prior budget-adaptive
+    baselines.
+  </p>
+
+  <h2>Method Comparison</h2>
+  <p>At low token budgets, BudgetPix stays more faithful to the full-budget image, at higher quality, than the other
+    baselines.</p>
+  <div class="demo demo-wide" data-compare="minit2i jit"></div>
+
+  <h2>Method</h2>
+  <figure>
+    <img src="assets/fig_overview.webp" alt="Overview of BudgetPix" loading="lazy">
+    <figcaption><b>Overview.</b> BudgetPix enables compute-adaptive pixel-space diffusion with three components: an
+      encoder, a decoder, and flexible training and inference across token counts. The Encoder and Decoder (purple)
+      are trained from scratch; the Transformer (blue) is initialized from existing baselines.</figcaption>
+  </figure>
+  <figure>
+    <img src="assets/fig_layout.webp" alt="Non-uniform layout construction" loading="lazy">
+    <figcaption><b>Non-uniform layout construction.</b> Given an image (the original image <i>x</i> during training,
+      or the denoising image <i>x&#770;</i> during inference), the objective is to partition it into cells across
+      multiple scales: <i>p &times; p</i>, <i>2p &times; 2p</i>, &hellip;, <i>np &times; np</i>, where
+      <i>n=2<sup>j</sup></i> for <i>j &ge; 1</i>. The process begins by dividing the image into <i>np &times; np</i>
+      cells, which is the coarsest scale. For each cell, we construct a pixel intensity histogram and compute its
+      entropy <i>H</i>. If <i>H &lt; &tau;<sub>np</sub> + &delta;</i> (where <i>&tau;<sub>np</sub></i> is the
+      scale-specific threshold and <i>&delta;</i> is a global offset), the cell remains a single token. Otherwise, it
+      is subdivided into four cells of the next finer scale (<i>n &larr; n/2</i>). This recursive subdivision
+      terminates at <i>n = 1</i>, corresponding to the minimum cell size of <i>p &times; p</i>.</figcaption>
+  </figure>
+  <figure>
+    <img src="assets/fig_architecture.webp" alt="Architecture of the encoder and decoder" loading="lazy">
+    <figcaption><b>BudgetPix Architecture.</b> The encoder receives the noisy input <i>z<sub>t</sub></i> and its
+      corresponding spatial layout <i>L</i>, converts the image into a sequence of multi-scale patches. The finest
+      <i>p &times; p</i> tokens route directly through the fine path, while coarser patches navigate a dedicated
+      coarse path in both the encoder and decoder. In the encoder, each coarse patch undergoes simultaneous downscaling
+      (to <i>p &times; p</i>) and splitting via a Patch Aggregator (into <i>n<sup>2</sup></i> sub-patches). These
+      streams are processed through MLP layers and a scale mixer before being fused into a single coarse token. In the
+      decoder, each denoised coarse patch is upscaled back to its target resolution (<i>np &times; np</i>).
+      Concurrently, a Patch Refiner splits the patch into <i>4 &times; 4</i> sub-patches, processes them through an
+      MLP and a lightweight transformer, and fuses them with the upscaled patch to restore local texture. The central
+      diffusion transformer is directly initialized from existing pixel-space models, modified only to operate across
+      variable, dynamically determined token counts rather than a fixed count.</figcaption>
+  </figure>
+
+  <h2 id="bibtex">BibTeX</h2>
+  <pre>@article{kara2026budgetpix,
+  title={BudgetPix: Compute-Adaptive Tokenization for Pixel-Space Image Diffusion},
+  author={Ozgur Kara and Yujia Chen and Daniel Watson and David Forsyth and James Matthew Rehg and Wen-Sheng Chu and Du Tran},
+  journal={arXiv preprint arXiv:2610.12307},
+  year={2026}
+}</pre>
+
+  <h2>Acknowledgements</h2>
+  <p>Thanks to the authors of <a href="https://github.com/LTH14/JiT">JiT</a>,
+    <a href="https://github.com/Lyy-iiis/pMF">pixel MeanFlow</a>, <a href="https://huggingface.co/MiniT2I/MiniT2I">MiniT2I</a>,
+    <a href="https://github.com/NVlabs/PixelDiT">PixelDiT</a> and IRIS-3B for releasing their models, which BudgetPix
+    builds on.</p>
+</main>
+<footer>
+  <a href="/">BudgetAny</a> &middot;
+  <a href="/budgetpix/">BudgetPix</a> &middot;
+  <a href="/budget3d/">Budget3D</a> &middot;
+  <a href="/budgetlatent/">BudgetLatent</a> &middot;
+  <a href="https://github.com/BudgetAny">GitHub</a> &middot;
+  <a href="https://huggingface.co/BudgetAny">Hugging Face</a>
+</footer>
+
+<script>
+(function () {
+  "use strict";
+  var SWATCH = ["#e25c34", "#7b5cd6", "#22a05c", "#3c78c8"];              // p, 2p, 4p, 8p
+  var BASE = {minit2i: 16, jit: 32, pixeldit: 16, pmf: 16, iris: 16, iris_extreme: 16};
+  var SIZES = {iris_extreme: 4};
+  var LABEL = {iris_extreme: "IRIS-3B (extreme budgets)"};
+  var NOTE = {iris_extreme: "A rectangular token takes the colour of its shorter side. The smallest layout is 64 tokens, all 128 px, so the 1% step runs at 64 tokens (1.6%)."};
+  var MKEY = {"Base model": "released", "ToMe": "tome", "FeatSim": "featsim", "RTI": "rti", "BudgetPix (ours)": "ours"};
+  var warmed = {};
+  function warm(u) { if (!warmed[u]) { warmed[u] = 1; var i = new Image(); i.src = u; } }
+  function el(tag, cls, text) { var e = document.createElement(tag); if (cls) e.className = cls; if (text != null) e.textContent = text; return e; }
+
+  // compare: one prompt, every method. Otherwise two prompts side by side, each as (sample, token layout),
+  // with one budget slider; the arrows move by two prompts. The budget changes only by hand or with Sweep.
+  function widget(root, models, data, compare) {
+    var per = compare ? 1 : 2;
+    var st = {model: models[0], subject: 0, b: 0, timer: null};
+    function label(m) { return LABEL[m] || data[m].label; }
+    var tabs = el("div", "demo-row demo-tabs");
+    if (models.length > 1) {
+      models.forEach(function (m) {
+        var t = el("button", "", label(m)); t.type = "button";
+        t.onclick = function () { st.model = m; st.subject = 0; st.b = 0; draw(); };
+        t.dataset.model = m; tabs.appendChild(t);
+      });
+      root.appendChild(tabs);
+    }
+    var view = el("div", compare ? "mgrid" : "pairs");
+    root.appendChild(view);
+    var row = el("div", "demo-row");
+    var prev = el("button", "", "←"), next = el("button", "", "→");
+    prev.type = next.type = "button";
+    prev.title = per > 1 ? "previous two" : "previous"; next.title = per > 1 ? "next two" : "next";
+    var slider = el("input"); slider.type = "range"; slider.min = 0; slider.step = 1;
+    slider.setAttribute("aria-label", "token budget");
+    var read = el("span", "demo-read");
+    var play = el("button", "", "Sweep"); play.type = "button";
+    [prev, next, slider, read, play].forEach(function (x) { row.appendChild(x); });
+    root.appendChild(row);
+    var cap = el("p", "demo-caption");
+    root.appendChild(cap);
+
+    function budgets() {
+      var d = data[st.model];
+      return compare ? d.budgets : d.subjects[st.subject].budgets;
+    }
+    function draw() {
+      var d = data[st.model], n = d.subjects.length, bs = budgets();
+      st.b = Math.max(0, Math.min(st.b, bs.length - 1));
+      var b = bs[st.b];
+      slider.max = bs.length - 1;
+      slider.value = st.b;
+      Array.prototype.forEach.call(tabs.children, function (t) { t.setAttribute("aria-pressed", t.dataset.model === st.model ? "true" : "false"); });
+      view.innerHTML = "";
+      if (compare) {
+        var s = d.subjects[st.subject], folder = "demo/methods/" + st.model + "/" + s.id + "/";
+        read.textContent = b.pct + "% · " + b.tokens + " tokens";
+        d.methods.forEach(function (name) {
+          var f = el("figure"), img = el("img");
+          img.src = folder + b.pct + "_" + MKEY[name] + ".webp"; img.alt = name;
+          f.appendChild(img); f.appendChild(el("figcaption", "", name)); view.appendChild(f);
+        });
+        var f = el("figure", "ref"), img = el("img");
+        img.src = folder + "100_released.webp"; img.alt = "Base model, 100%";
+        f.appendChild(img); f.appendChild(el("figcaption", "", "Base model, 100%")); view.appendChild(f);
+        bs.forEach(function (x) { d.methods.forEach(function (name) { warm(folder + x.pct + "_" + MKEY[name] + ".webp"); }); });
+        cap.textContent = label(st.model) + ", " + d.dataset + ": " + s.caption + "  (" + (st.subject + 1) + " / " + n + ")";
+        return;
+      }
+      var shown = Math.min(per, n), toks = [];
+      for (var k = 0; k < shown; k++) {
+        var s = d.subjects[(st.subject + k) % n], sb = s.budgets[st.b], folder = "demo/" + st.model + "/" + s.id + "/";
+        var f = el("figure", "ex"), pair = el("div", "pair"), text = s.caption.replace(/[“”]/g, "");
+        var img = el("img"); img.src = folder + sb.pct + "_s.webp"; img.alt = "sample: " + text; pair.appendChild(img);
+        img = el("img"); img.src = folder + sb.pct + "_l.webp"; img.alt = "token layout: " + text; pair.appendChild(img);
+        var fc = el("figcaption", "", s.caption); fc.title = s.caption;
+        f.appendChild(pair); f.appendChild(fc); view.appendChild(f);
+        toks.push(sb.tokens);
+        s.budgets.forEach(function (x) { warm(folder + x.pct + "_s.webp"); warm(folder + x.pct + "_l.webp"); });
+      }
+      var same = toks.every(function (t) { return t === toks[0]; });
+      read.textContent = b.pct + "% · " + (same ? toks[0] : toks.join(" / ")) + " tokens";
+      var p = BASE[st.model], m = SIZES[st.model] || 3, legend = [];
+      for (var i = 0; i < m; i++) legend.push('<span class="swatch" style="background:' + SWATCH[i] + '"></span>' + (p << i) + " px");
+      var first = st.subject + 1, last = (st.subject + shown - 1) % n + 1;
+      cap.innerHTML = "";
+      cap.appendChild(document.createTextNode(label(st.model) + ", " + d.dataset + ": examples " + first +
+        (shown > 1 ? " and " + last : "") + " of " + n + ". Each pair: the sample, then its token layout."));
+      var lg = el("span", "legend"); lg.innerHTML = legend.join(" ");
+      cap.appendChild(document.createElement("br")); cap.appendChild(lg);
+      if (NOTE[st.model]) { cap.appendChild(document.createElement("br")); cap.appendChild(document.createTextNode(NOTE[st.model])); }
+    }
+    function step(k) { var n = data[st.model].subjects.length; st.subject = ((st.subject + k * per) % n + n) % n; draw(); }
+    prev.onclick = function () { step(-1); };
+    next.onclick = function () { step(1); };
+    slider.oninput = function () { st.b = +slider.value; draw(); };
+    var dir = 1;
+    function tick() {
+      var n = budgets().length;
+      if (st.b + dir >= n || st.b + dir < 0) dir = -dir;
+      st.b += dir; draw();
+    }
+    play.onclick = function () {
+      if (st.timer) { clearInterval(st.timer); st.timer = null; play.textContent = "Sweep"; return; }
+      play.textContent = "Stop"; st.timer = setInterval(tick, 700);
+    };
+    draw();
+  }
+
+  Promise.all([fetch("demo/manifest.json").then(function (r) { return r.json(); }),
+               fetch("demo/methods.json").then(function (r) { return r.json(); })]).then(function (res) {
+    document.querySelectorAll(".demo").forEach(function (root) {
+      if (root.dataset.compare) widget(root, root.dataset.compare.split(" ").filter(function (m) { return res[1][m]; }), res[1], true);
+      else widget(root, root.dataset.models.split(" ").filter(function (m) { return res[0][m]; }), res[0], false);
+    });
+  }).catch(function () {
+    document.querySelectorAll(".demo").forEach(function (root) { root.style.display = "none"; });
+  });
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,519 @@
+{
+ "minit2i": {
+  "label": "MiniT2I-L/16",
+  "dataset": "Text-to-image 512\u00b2",
+  "methods": [
+   "Base model",
+   "ToMe",
+   "FeatSim",
+   "RTI",
+   "BudgetPix (ours)"
+  ],
+  "budgets": [
+   {
+    "pct": 100,
+    "tokens": 1024
+   },
+   {
+    "pct": 90,
+    "tokens": 911
+   },
+   {
+    "pct": 80,
+    "tokens": 819
+   },
+   {
+    "pct": 70,
+    "tokens": 717
+   },
+   {
+    "pct": 60,
+    "tokens": 614
+   },
+   {
+    "pct": 50,
+    "tokens": 512
+   },
+   {
+    "pct": 40,
+    "tokens": 410
+   },
+   {
+    "pct": 30,
+    "tokens": 307
+   },
+   {
+    "pct": 20,
+    "tokens": 205
+   },
+   {
+    "pct": 10,
+    "tokens": 102
+   }
+  ],
+  "subjects": [
+   {
+    "id": "000057",
+    "caption": "\u201cA photo of a black teddy bear\u201d"
+   },
+   {
+    "id": "000043",
+    "caption": "\u201cA photo of a sheep\u201d"
+   },
+   {
+    "id": "000055",
+    "caption": "\u201cA photo of an orange cow\u201d"
+   },
+   {
+    "id": "000071",
+    "caption": "\u201cA flag with three distinct vertical stripes prominently\u2026\u201d"
+   },
+   {
+    "id": "000078",
+    "caption": "\u201cIn the detailed Renaissance paintings, the Virgin Mary is\u2026\u201d"
+   },
+   {
+    "id": "000031",
+    "caption": "\u201cA seamless pattern featuring a black and white vector\u2026\u201d"
+   },
+   {
+    "id": "000044",
+    "caption": "\u201cA photo of an umbrella\u201d"
+   },
+   {
+    "id": "000053",
+    "caption": "\u201cA photo of three birds\u201d"
+   },
+   {
+    "id": "000076",
+    "caption": "\u201cA detailed painting depicts an ancient\u201d"
+   },
+   {
+    "id": "000086",
+    "caption": "\u201cAn open pencil case with a variety of colored pencils\u2026\u201d"
+   },
+   {
+    "id": "000099",
+    "caption": "\u201cA pastoral scene unfolds with a herd of cows scattered\u2026\u201d"
+   },
+   {
+    "id": "000019",
+    "caption": "\u201cA vintage photograph featuring two individuals standing\u2026\u201d"
+   },
+   {
+    "id": "000023",
+    "caption": "\u201cA bouquet of peonies in full bloom\u201d"
+   },
+   {
+    "id": "000015",
+    "caption": "\u201cIn the vast expanse of the savannah plain, a solitary\u2026\u201d"
+   },
+   {
+    "id": "000079",
+    "caption": "\u201cA delectable chocolate cake\u201d"
+   },
+   {
+    "id": "000049",
+    "caption": "\u201cA photo of a baseball glove and a carrot\u201d"
+   },
+   {
+    "id": "000097",
+    "caption": "\u201cA group of tourists is seated atop a large elephant\u201d"
+   },
+   {
+    "id": "000064",
+    "caption": "\u201cA photo of a pink oven and a green motorcycle\u201d"
+   },
+   {
+    "id": "000069",
+    "caption": "\u201cA photo of a blue pizza and a yellow baseball glove\u201d"
+   },
+   {
+    "id": "000074",
+    "caption": "\u201cA large Saint Bernard dog with a reddish-brown and white\u2026\u201d"
+   },
+   {
+    "id": "000010",
+    "caption": "\u201cThere are two characters walking side by side on a sandy\u201d"
+   },
+   {
+    "id": "000024",
+    "caption": "\u201cA modern living room with a minimalist aesthetic\u201d"
+   },
+   {
+    "id": "000041",
+    "caption": "\u201cA photo of a traffic light\u201d"
+   },
+   {
+    "id": "000045",
+    "caption": "\u201cA photo of a book and a laptop\u201d"
+   },
+   {
+    "id": "000003",
+    "caption": "\u201cA close-up of a pile of red raspberries with one purple\u2026\u201d"
+   },
+   {
+    "id": "000005",
+    "caption": "\u201cA bronze statue of a young girl sitting on the floor\u201d"
+   },
+   {
+    "id": "000040",
+    "caption": "\u201cA photo of a bench\u201d"
+   },
+   {
+    "id": "000094",
+    "caption": "\u201cAn expansive palace constructed from iridescent materials\u2026\u201d"
+   },
+   {
+    "id": "000048",
+    "caption": "\u201cA photo of a knife and a stop sign\u201d"
+   },
+   {
+    "id": "000021",
+    "caption": "\u201cA center pivot irrigation system in action\u201d"
+   },
+   {
+    "id": "000033",
+    "caption": "\u201cA modern living room setting with a focus on a large\u201d"
+   },
+   {
+    "id": "000083",
+    "caption": "\u201cUnder the warm glow of an overhead light, a shiny chrome\u2026\u201d"
+   },
+   {
+    "id": "000037",
+    "caption": "\u201cA multi-story building with a traditional architectural\u2026\u201d"
+   },
+   {
+    "id": "000026",
+    "caption": "\u201cThere is an older gentleman with white hair\u201d"
+   },
+   {
+    "id": "000014",
+    "caption": "\u201cA formation of four Sukhoi Su-25 Grach military aircraft\u2026\u201d"
+   },
+   {
+    "id": "000020",
+    "caption": "\u201cA pair of earrings against a white background\u201d"
+   },
+   {
+    "id": "000046",
+    "caption": "\u201cA photo of a scissors and a bowl\u201d"
+   },
+   {
+    "id": "000025",
+    "caption": "\u201cA two-story building with a distinctive modern\u2026\u201d"
+   },
+   {
+    "id": "000080",
+    "caption": "\u201cA bright neon pink hurdle stands out against the backdrop\u2026\u201d"
+   },
+   {
+    "id": "000084",
+    "caption": "\u201cTwo sleek blue showerheads\u201d"
+   },
+   {
+    "id": "000042",
+    "caption": "\u201cA photo of a bed\u201d"
+   },
+   {
+    "id": "000063",
+    "caption": "\u201cA photo of a horse right of a broccoli\u201d"
+   },
+   {
+    "id": "000073",
+    "caption": "\u201cA tall, leafy tree casting its reflection on the glass\u2026\u201d"
+   },
+   {
+    "id": "000036",
+    "caption": "\u201cA classical painting featuring a divine scene with a\u2026\u201d"
+   },
+   {
+    "id": "000098",
+    "caption": "\u201cRows of fresh produce line the interior of a bustling\u2026\u201d"
+   },
+   {
+    "id": "000011",
+    "caption": "\u201cA close-up of a plate with several pieces of barbecued ribs\u201d"
+   },
+   {
+    "id": "000077",
+    "caption": "\u201cA detailed pen-and-ink drawing that features a meticulously\u2026\u201d"
+   },
+   {
+    "id": "000072",
+    "caption": "\u201cA busy intersection where a red sedan and a large white\u2026\u201d"
+   },
+   {
+    "id": "000060",
+    "caption": "\u201cA photo of a tennis racket right of a spoon\u201d"
+   },
+   {
+    "id": "000054",
+    "caption": "\u201cA photo of a yellow elephant\u201d"
+   },
+   {
+    "id": "000061",
+    "caption": "\u201cA photo of a bird left of a couch\u201d"
+   },
+   {
+    "id": "000067",
+    "caption": "\u201cA photo of a green cup and a yellow bowl\u201d"
+   },
+   {
+    "id": "000082",
+    "caption": "\u201cOn a rustic wooden table, a vibrant purple paintbrush\u2026\u201d"
+   },
+   {
+    "id": "000056",
+    "caption": "\u201cA photo of a brown bear\u201d"
+   },
+   {
+    "id": "000058",
+    "caption": "\u201cA photo of a green computer mouse\u201d"
+   }
+  ]
+ },
+ "jit": {
+  "label": "JiT-L/32",
+  "dataset": "ImageNet 512\u00b2",
+  "methods": [
+   "Base model",
+   "ToMe",
+   "FeatSim",
+   "BudgetPix (ours)"
+  ],
+  "budgets": [
+   {
+    "pct": 100,
+    "tokens": 256
+   },
+   {
+    "pct": 90,
+    "tokens": 230
+   },
+   {
+    "pct": 80,
+    "tokens": 205
+   },
+   {
+    "pct": 70,
+    "tokens": 179
+   },
+   {
+    "pct": 60,
+    "tokens": 154
+   },
+   {
+    "pct": 50,
+    "tokens": 128
+   },
+   {
+    "pct": 40,
+    "tokens": 102
+   },
+   {
+    "pct": 30,
+    "tokens": 77
+   },
+   {
+    "pct": 25,
+    "tokens": 64
+   },
+   {
+    "pct": 20,
+    "tokens": 51
+   },
+   {
+    "pct": 10,
+    "tokens": 26
+   }
+  ],
+  "subjects": [
+   {
+    "id": "0985",
+    "caption": "ImageNet: daisy"
+   },
+   {
+    "id": "0145",
+    "caption": "ImageNet: king penguin"
+   },
+   {
+    "id": "0725",
+    "caption": "ImageNet: pitcher"
+   },
+   {
+    "id": "0215",
+    "caption": "ImageNet: Brittany spaniel"
+   },
+   {
+    "id": "0095",
+    "caption": "ImageNet: jacamar"
+   },
+   {
+    "id": "0385",
+    "caption": "ImageNet: Indian elephant"
+   },
+   {
+    "id": "0055",
+    "caption": "ImageNet: green snake"
+   },
+   {
+    "id": "0595",
+    "caption": "ImageNet: harvester"
+   },
+   {
+    "id": "0945",
+    "caption": "ImageNet: bell pepper"
+   },
+   {
+    "id": "0235",
+    "caption": "ImageNet: German shepherd"
+   },
+   {
+    "id": "0285",
+    "caption": "ImageNet: Egyptian cat"
+   },
+   {
+    "id": "0555",
+    "caption": "ImageNet: fire engine"
+   },
+   {
+    "id": "0355",
+    "caption": "ImageNet: llama"
+   },
+   {
+    "id": "0765",
+    "caption": "ImageNet: rocking chair"
+   },
+   {
+    "id": "0035",
+    "caption": "ImageNet: mud turtle"
+   },
+   {
+    "id": "0295",
+    "caption": "ImageNet: American black bear"
+   },
+   {
+    "id": "0195",
+    "caption": "ImageNet: Boston bull"
+   },
+   {
+    "id": "0795",
+    "caption": "ImageNet: ski"
+   },
+   {
+    "id": "0455",
+    "caption": "ImageNet: bottlecap"
+   },
+   {
+    "id": "0505",
+    "caption": "ImageNet: coffeepot"
+   },
+   {
+    "id": "0735",
+    "caption": "ImageNet: poncho"
+   },
+   {
+    "id": "0825",
+    "caption": "ImageNet: stone wall"
+   },
+   {
+    "id": "0965",
+    "caption": "ImageNet: burrito"
+   },
+   {
+    "id": "0025",
+    "caption": "ImageNet: European fire salamander"
+   },
+   {
+    "id": "0135",
+    "caption": "ImageNet: limpkin"
+   },
+   {
+    "id": "0125",
+    "caption": "ImageNet: hermit crab"
+   },
+   {
+    "id": "0645",
+    "caption": "ImageNet: maypole"
+   },
+   {
+    "id": "0895",
+    "caption": "ImageNet: warplane"
+   },
+   {
+    "id": "0075",
+    "caption": "ImageNet: black widow"
+   },
+   {
+    "id": "0015",
+    "caption": "ImageNet: robin"
+   },
+   {
+    "id": "0405",
+    "caption": "ImageNet: airship"
+   },
+   {
+    "id": "0425",
+    "caption": "ImageNet: barn"
+   },
+   {
+    "id": "0855",
+    "caption": "ImageNet: thimble"
+   },
+   {
+    "id": "0915",
+    "caption": "ImageNet: yurt"
+   },
+   {
+    "id": "0545",
+    "caption": "ImageNet: electric fan"
+   },
+   {
+    "id": "0325",
+    "caption": "ImageNet: sulphur butterfly"
+   },
+   {
+    "id": "0335",
+    "caption": "ImageNet: fox squirrel"
+   },
+   {
+    "id": "0315",
+    "caption": "ImageNet: mantis"
+   },
+   {
+    "id": "0605",
+    "caption": "ImageNet: iPod"
+   },
+   {
+    "id": "0755",
+    "caption": "ImageNet: radio telescope"
+   },
+   {
+    "id": "0535",
+    "caption": "ImageNet: disk brake"
+   },
+   {
+    "id": "0365",
+    "caption": "ImageNet: orangutan"
+   },
+   {
+    "id": "0935",
+    "caption": "ImageNet: mashed potato"
+   },
+   {
+    "id": "0995",
+    "caption": "ImageNet: earthstar"
+   },
+   {
+    "id": "0395",
+    "caption": "ImageNet: gar"
+   },
+   {
+    "id": "0625",
+    "caption": "ImageNet: lifeboat"
+   }
+  ]
+ }
+}

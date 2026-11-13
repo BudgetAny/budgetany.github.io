@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Budget3D</title>
+  <meta name="description" content="Budget3D: image-to-3D generation at any token budget, on Idol and Idol-Turbo.">
+  <meta property="og:title" content="Budget3D: Image-to-3D Generation at Any Token Budget">
+  <meta property="og:description" content="One Idol or Idol-Turbo checkpoint, from 100% down to 40% of its tokens.">
+  <meta property="og:image" content="https://budgetany.github.io/budget3d/assets/teaser_poster.jpg">
+  <link rel="icon" href="../assets/brand/budget3d_mark.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../assets/site.css">
+</head>
+<body>
+<main>
+  <div class="crumb"><a href="/">BudgetAny</a> / Budget3D</div>
+
+  <h1>Budget3D: Image-to-3D Generation at Any Token Budget</h1>
+
+  <div class="buttons">
+    <a href="https://github.com/BudgetAny/Budget3D">Code</a>
+    <a href="https://huggingface.co/BudgetAny">Models</a>
+    <span>Tech report: coming soon</span>
+    <a href="https://arxiv.org/abs/2610.12307">BudgetPix paper</a>
+    <a href="#bibtex">BibTeX</a>
+  </div>
+  <p class="note">Unofficial, open-source implementation: BudgetPix's compute-adaptive tokenization, adapted to
+    image-to-3D generation (Idol, Idol-Turbo); not part of the BudgetPix paper.</p>
+
+  <figure>
+    <video src="assets/teaser_720p.mp4" poster="assets/teaser_poster.jpg" autoplay muted loop playsinline controls></video>
+    <figcaption><b>Test-time compute adjustment.</b> Budget3D sets the token budget of Idol and Idol-Turbo at
+      inference time, from 100% down to 40% of the 8,192 latent tokens, with the sampling time and peak memory at
+      each budget.</figcaption>
+  </figure>
+
+  <h2>Overview</h2>
+  <p>
+    Budget3D fine-tunes <a href="https://huggingface.co/speridlabs/idol">Idol</a> and
+    <a href="https://huggingface.co/speridlabs/idol-turbo">Idol-Turbo</a>, which turn one image into 3D Gaussian
+    splats, so that the number of tokens is a setting you choose at inference. The regions where the latent varies
+    least, empty space first, are merged into coarser tokens, and the full-resolution tokens go where it varies most.
+  </p>
+
+  <h2>Budget3D Across Budgets</h2>
+  <figure>
+    <img src="assets/teaser_budgets.jpg" alt="Four objects, each generated at 100, 70, 50 and 40 percent of the tokens" loading="lazy">
+    <figcaption><b>Budget3D-Idol.</b> The same input image, noise and camera at 100, 70, 50 and 40% of the
+      tokens.</figcaption>
+  </figure>
+  <figure>
+    <video src="assets/overview_720p.mp4" poster="assets/overview_poster.jpg" controls muted playsinline preload="metadata"></video>
+    <figcaption><b>More examples.</b> Twelve Idol and twelve Idol-Turbo objects as the budget goes from 100% to
+      40%.</figcaption>
+  </figure>
+
+  <h2>Idol and Idol-Turbo</h2>
+  <div class="pair">
+    <figure>
+      <video src="assets/closeup_idol_720p.mp4" poster="assets/closeup_idol_poster.jpg" controls muted playsinline preload="metadata"></video>
+      <figcaption>Budget3D-Idol (50 steps)</figcaption>
+    </figure>
+    <figure>
+      <video src="assets/closeup_turbo_720p.mp4" poster="assets/closeup_turbo_poster.jpg" controls muted playsinline preload="metadata"></video>
+      <figcaption>Budget3D-Idol-Turbo (5 steps)</figcaption>
+    </figure>
+  </div>
+
+  <h2>Speed and Memory</h2>
+  <p>Sampling time per object and peak memory, with the optimised inference of the code (bf16 blocks, fused
+    attention, <code>torch.compile</code>) at every budget, 100% included; decoding to Gaussians and rendering add
+    about 3 s per object at every budget.</p>
+  <h3><a href="https://huggingface.co/BudgetAny/Budget3D-Idol">Budget3D-Idol</a>, one H100, batches of 8</h3>
+  <div class="table">
+    <table>
+      <tr><th class="num">Budget</th><th class="num">Tokens</th><th class="num">Sampling / object</th><th class="num">Speed-up</th><th class="num">Peak memory</th></tr>
+      <tr><td class="num">100%</td><td class="num">8,192</td><td class="num">5.67 s</td><td class="num">1.00&times;</td><td class="num">9.9 GB</td></tr>
+      <tr><td class="num">90%</td><td class="num">7,373</td><td class="num">5.15 s</td><td class="num">1.10&times;</td><td class="num">9.6 GB</td></tr>
+      <tr><td class="num">80%</td><td class="num">6,554</td><td class="num">4.59 s</td><td class="num">1.24&times;</td><td class="num">9.2 GB</td></tr>
+      <tr><td class="num">70%</td><td class="num">5,734</td><td class="num">4.10 s</td><td class="num">1.39&times;</td><td class="num">8.9 GB</td></tr>
+      <tr><td class="num">60%</td><td class="num">4,915</td><td class="num">3.60 s</td><td class="num">1.58&times;</td><td class="num">8.5 GB</td></tr>
+      <tr><td class="num">50%</td><td class="num">4,096</td><td class="num">3.18 s</td><td class="num">1.79&times;</td><td class="num">8.2 GB</td></tr>
+      <tr><td class="num">40%</td><td class="num">3,277</td><td class="num">2.66 s</td><td class="num">2.14&times;</td><td class="num">7.8 GB</td></tr>
+    </table>
+  </div>
+  <h3><a href="https://huggingface.co/BudgetAny/Budget3D-Idol-Turbo">Budget3D-Idol-Turbo</a>, one RTX PRO 6000, batches of 8</h3>
+  <div class="table">
+    <table>
+      <tr><th class="num">Budget</th><th class="num">Tokens</th><th class="num">Sampling / object</th><th class="num">Speed-up</th><th class="num">Peak memory</th></tr>
+      <tr><td class="num">100%</td><td class="num">8,192</td><td class="num">0.48 s</td><td class="num">1.00&times;</td><td class="num">8.0 GB</td></tr>
+      <tr><td class="num">90%</td><td class="num">7,373</td><td class="num">0.44 s</td><td class="num">1.09&times;</td><td class="num">7.8 GB</td></tr>
+      <tr><td class="num">80%</td><td class="num">6,554</td><td class="num">0.39 s</td><td class="num">1.22&times;</td><td class="num">7.5 GB</td></tr>
+      <tr><td class="num">70%</td><td class="num">5,734</td><td class="num">0.35 s</td><td class="num">1.36&times;</td><td class="num">7.3 GB</td></tr>
+      <tr><td class="num">60%</td><td class="num">4,915</td><td class="num">0.31 s</td><td class="num">1.52&times;</td><td class="num">7.1 GB</td></tr>
+      <tr><td class="num">50%</td><td class="num">4,096</td><td class="num">0.27 s</td><td class="num">1.74&times;</td><td class="num">6.9 GB</td></tr>
+      <tr><td class="num">40%</td><td class="num">3,277</td><td class="num">0.25 s</td><td class="num">1.95&times;</td><td class="num">6.6 GB</td></tr>
+    </table>
+  </div>
+
+  <h2 id="bibtex">BibTeX</h2>
+  <p class="paper"><a href="https://arxiv.org/abs/2610.12307">BudgetPix: Compute-Adaptive Tokenization for Pixel-Space Image Diffusion</a></p>
+  <p class="authors">
+    <a href="https://karaozgur.com/">Ozgur Kara</a><sup>1,&dagger;</sup>,
+    <a href="https://scholar.google.com/citations?user=Dv5gB7cAAAAJ&amp;hl=en">Yujia Chen</a><sup>2</sup>,
+    <a href="https://scholar.google.com/citations?user=ve9A9rMAAAAJ&amp;hl=en">Daniel Watson</a><sup>2</sup>,
+    <a href="https://scholar.google.com/citations?user=5H0arvkAAAAJ&amp;hl=en">David Forsyth</a><sup>1</sup>,
+    <a href="https://scholar.google.com/citations?user=8kA3eDwAAAAJ&amp;hl=en">James Matthew Rehg</a><sup>1</sup>,
+    <a href="https://scholar.google.com/citations?user=R-OrlSgAAAAJ&amp;hl=en">Wen-Sheng Chu</a><sup>2,&Dagger;</sup>,
+    <a href="https://scholar.google.com/citations?user=3TVbh8QAAAAJ&amp;hl=en">Du Tran</a><sup>2,&Dagger;</sup>
+  </p>
+  <p class="affil"><sup>1</sup>University of Illinois Urbana-Champaign &nbsp;&nbsp; <sup>2</sup>Google</p>
+  <p class="affil"><small><sup>&dagger;</sup>Work done during an internship at Google. &nbsp; <sup>&Dagger;</sup>Joint last authors.</small></p>
+  <pre>@article{kara2026budgetpix,
+  title={BudgetPix: Compute-Adaptive Tokenization for Pixel-Space Image Diffusion},
+  author={Ozgur Kara and Yujia Chen and Daniel Watson and David Forsyth and James Matthew Rehg and Wen-Sheng Chu and Du Tran},
+  journal={arXiv preprint arXiv:2610.12307},
+  year={2026}
+}
+
+@misc{budgetany2026,
+  title={BudgetAny: Generative Models at Any Compute Budget},
+  author={Ozgur Kara},
+  year={2026},
+  howpublished={\url{https://budgetany.github.io}}
+}</pre>
+
+  <h2>Acknowledgements</h2>
+  <p>Thanks to Sperid Labs for releasing <a href="https://huggingface.co/speridlabs/idol">Idol</a> and
+    <a href="https://huggingface.co/speridlabs/idol-turbo">Idol-Turbo</a>, which Budget3D builds on.</p>
+</main>
+<footer>
+  <a href="/">BudgetAny</a> &middot;
+  <a href="/budgetpix/">BudgetPix</a> &middot;
+  <a href="/budget3d/">Budget3D</a> &middot;
+  <a href="/budgetlatent/">BudgetLatent</a> &middot;
+  <a href="https://github.com/BudgetAny">GitHub</a> &middot;
+  <a href="https://huggingface.co/BudgetAny">Hugging Face</a>
+</footer>
+</body>
+</html>

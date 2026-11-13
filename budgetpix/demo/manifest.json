@@ -1,0 +1,9788 @@
+{
+ "minit2i": {
+  "label": "MiniT2I-L/16",
+  "dataset": "Text-to-image 512\u00b2",
+  "subjects": [
+   {
+    "id": "000057",
+    "caption": "\u201cA photo of a black teddy bear\u201d",
+    "budgets": [
+     {
+      "pct": 100,
+      "tokens": 1024
+     },
+     {
+      "pct": 90,
+      "tokens": 911
+     },
+     {
+      "pct": 80,
+      "tokens": 819
+     },
+     {
+      "pct": 70,
+      "tokens": 717
+     },
+     {
+      "pct": 60,
+      "tokens": 614
+     },
+     {
+      "pct": 50,
+      "tokens": 512
+     },
+     {
+      "pct": 40,
+      "tokens": 410
+     },
+     {
+      "pct": 30,
+      "tokens": 307
+     },
+     {
+      "pct": 25,
+      "tokens": 256
+     },
+     {
+      "pct": 20,
+      "tokens": 205
+     },
+     {
+      "pct": 10,
+      "tokens": 102
+     }
+    ]
+   },
+   {
+    "id": "000043",
+    "caption": "\u201cA photo of a sheep\u201d",
+    "budgets": [
+     {
+      "pct": 100,
+      "tokens": 1024
+     },
+     {
+      "pct": 90,
+      "tokens": 911
+     },
+     {
+      "pct": 80,
+      "tokens": 819
+     },
+     {
+      "pct": 70,
+      "tokens": 717
+     },
+     {
+      "pct": 60,
+      "tokens": 614
+     },
+     {
+      "pct": 50,
+      "tokens": 512
+     },
+     {
+      "pct": 40,
+      "tokens": 410
+     },
+     {
+      "pct": 30,
+      "tokens": 307
+     },
+     {
+      "pct": 25,
+      "tokens": 256
+     },
+     {
+      "pct": 20,
+      "tokens": 205
+     },
+     {
+      "pct": 10,
+      "tokens": 102
+     }
+    ]
+   },
+   {
+    "id": "000055",
+    "caption": "\u201cA photo of an orange cow\u201d",
+    "budgets": [
+     {
+      "pct": 100,
+      "tokens": 1024
+     },
+     {
+      "pct": 90,
+      "tokens": 911
+     },
+     {
+      "pct": 80,
+      "tokens": 819
+     },
+     {
+      "pct": 70,
+      "tokens": 717
+     },
+     {
+      "pct": 60,
+      "tokens": 614
+     },
+     {
+      "pct": 50,
+      "tokens": 512
+     },
+     {
+      "pct": 40,
+      "tokens": 410
+     },
+     {
+      "pct": 30,
+      "tokens": 307
+     },
+     {
+      "pct": 25,
+      "tokens": 256
+     },
+     {
+      "pct": 20,
+      "tokens": 205
+     },
+     {
+      "pct": 10,
+      "tokens": 102
+     }
+    ]
+   },
+   {
+    "id": "000078",
+    "caption": "\u201cIn the detailed Renaissance paintings, the Virgin Mary is\u2026\u201d",
+    "budgets": [
+     {
+      "pct": 100,
+      "tokens": 1024
+     },
+     {
+      "pct": 90,
+      "tokens": 911
+     },
+     {
+      "pct": 80,
+      "tokens": 819
+     },
+     {
+      "pct": 70,
+      "tokens": 717
+     },
+     {
+      "pct": 60,
+      "tokens": 614
+     },
+     {
+      "pct": 50,
+      "tokens": 512
+     },
+     {
+      "pct": 40,
+      "tokens": 410
+     },
+     {
+      "pct": 30,
+      "tokens": 307
+     },
+     {
+      "pct": 25,
+      "tokens": 256
+     },
+     {
+      "pct": 20,
+      "tokens": 205
+     },
+     {
+      "pct": 10,
+      "tokens": 102
+     }
+    ]
+   },
+   {
+    "id": "000071",
+    "caption": "\u201cA flag with three distinct vertical stripes prominently\u2026\u201d",
+    "budgets": [
+     {
+      "pct": 100,
+      "tokens": 1024
+     },
+     {
+      "pct": 90,
+      "tokens": 911
+     },
+     {
+      "pct": 80,
+      "tokens": 819
+     },
+     {
+      "pct": 70,
+      "tokens": 717
+     },
+     {
+      "pct": 60,
+      "tokens": 614
+     },
+     {
+      "pct": 50,
+      "tokens": 512
+     },
+     {
+      "pct": 40,
+      "tokens": 410
+     },
+     {
+      "pct": 30,
+      "tokens": 307
+     },
+     {
+      "pct": 25,
+      "tokens": 256
+     },
+     {
+      "pct": 20,
+      "tokens": 205
+     },
+     {
+      "pct": 10,
+      "tokens": 102
+     }
+    ]
+   },
+   {
+    "id": "000054",
+    "caption": "\u201cA photo of a yellow elephant\u201d",
+    "budgets": [
+     {
+      "pct": 100,
+      "tokens": 1024
+     },
+     {
+      "pct": 90,
+      "tokens": 911
+     },
+     {
+      "pct": 80,
+      "tokens": 819
+     },
+     {
+      "pct": 70,
+      "tokens": 717
+     },
+     {
+      "pct": 60,
+      "tokens": 614
+     },
+     {
+      "pct": 50,
+      "tokens": 512
+     },
+     {
+      "pct": 40,
+      "tokens": 410
+     },
+     {
+      "pct": 30,
+      "tokens": 307
+     },
+     {
+      "pct": 25,
+      "tokens": 256
+     },
+     {
+      "pct": 20,
+      "tokens": 205
+     },
+     {
+      "pct": 10,
+      "tokens": 102
+     }
+    ]
+   },
+   {
+    "id": "000061",
+    "caption": "\u201cA photo of a bird left of a couch\u201d",
+    "budgets": [
+     {
+      "pct": 100,
+      "tokens": 1024
+     },
+     {
+      "pct": 90,
+      "tokens": 911
+     },
+     {
+      "pct": 80,
+      "tokens": 819
+     },
+     {
+      "pct": 70,
+      "tokens": 717
+     },
+     {
+      "pct": 60,
+      "tokens": 614
+     },
+     {
+      "pct": 50,
+      "tokens": 512
+     },
+     {
+      "pct": 40,
+      "tokens": 410
+     },
+     {
+      "pct": 30,
+      "tokens": 307
+     },
+     {
+      "pct": 25,
+      "tokens": 256
+     },
+     {
+      "pct": 20,
+      "tokens": 205
+     },
+     {
+      "pct": 10,
+      "tokens": 102
+     }
+    ]
+   },
+   {
+    "id": "000067",
+    "caption": "\u201cA photo of a green cup and a yellow bowl\u201d",
+    "budgets": [
+     {
+      "pct": 100,
+      "tokens": 1024
+     },
+     {
+      "pct": 90,
+      "tokens": 911
+     },
+     {
+      "pct": 80,
+      "tokens": 819
+     },
+     {
+      "pct": 70,
+      "tokens": 717
+     },
+     {
+      "pct": 60,
+      "tokens": 614
+     },
+     {
+      "pct": 50,
+      "tokens": 512
+     },
+     {
+      "pct": 40,
+      "tokens": 410
+     },
+     {
+      "pct": 30,
+      "tokens": 307
+     },
+     {
+      "pct": 25,
+      "tokens": 256
+     },
+     {
+      "pct": 20,
+      "tokens": 205
+     },
+     {
+      "pct": 10,
+      "tokens": 102
+     }
+    ]
+   },
+   {
+    "id": "000082",
+    "caption": "\u201cOn a rustic wooden table, a vibrant purple paintbrush\u2026\u201d",
+    "budgets": [
+     {
+      "pct": 100,
+      "tokens": 1024
+     },
+     {
+      "pct": 90,
+      "tokens": 911
+     },
+     {
+      "pct": 80,
+      "tokens": 819
+     },
+     {
+      "pct": 70,
+      "tokens": 717
+     },
+     {
+      "pct": 60,
+      "tokens": 614
+     },
+     {
+      "pct": 50,
+      "tokens": 512
+     },
+     {
+      "pct": 40,
+      "tokens": 410
+     },
+     {
+      "pct": 30,
+      "tokens": 307
+     },
+     {
+      "pct": 25,
+      "tokens": 256
+     },
+     {
+      "pct": 20,
+      "tokens": 205
+     },
+     {
+      "pct": 10,
+      "tokens": 102
+     }
+    ]
+   },
+   {
+    "id": "000056",
+    "caption": "\u201cA photo of a brown bear\u201d",
+    "budgets": [
+     {
+      "pct": 100,
+      "tokens": 1024
+     },
+     {
+      "pct": 90,
+      "tokens": 911
+     },
+     {
+      "pct": 80,
+      "tokens": 819
+     },
+     {
+      "pct": 70,
+      "tokens": 717
+     },
+     {
+      "pct": 60,
+      "tokens": 614
+     },
+     {
+      "pct": 50,
+      "tokens": 512
+     },
+     {
+      "pct": 40,
+      "tokens": 410
+     },
+     {
+      "pct": 30,
+      "tokens": 307
+     },
+     {
+      "pct": 25,
+      "tokens": 256
+     },
+     {
+      "pct": 20,
+      "tokens": 205
+     },
+     {
+      "pct": 10,
+      "tokens": 102
+     }
+    ]
+   },
+   {
+    "id": "000058",
+    "caption": "\u201cA photo of a green computer mouse\u201d",
+    "budgets": [
+     {
+      "pct": 100,
+      "tokens": 1024
+     },
+     {
+      "pct": 90,
+      "tokens": 911
+     },
+     {
+      "pct": 80,
+      "tokens": 819
+     },
+     {
+      "pct": 70,
+      "tokens": 717
+     },
+     {
+      "pct": 60,
+      "tokens": 614
+     },
+     {
+      "pct": 50,
+      "tokens": 512
+     },
+     {
+      "pct": 40,
+      "tokens": 410
+     },
+     {
+      "pct": 30,
+      "tokens": 307
+     },
+     {
+      "pct": 25,
+      "tokens": 256
+     },
+     {
+      "pct": 20,
+      "tokens": 205
+     },
+     {
+      "pct": 10,
+      "tokens": 102
+     }
+    ]
+   },
+   {
+    "id": "000019",
+    "caption": "\u201cA vintage photograph featuring two individuals standing\u2026\u201d",
+    "budgets": [
+     {
+      "pct": 100,
+      "tokens": 1024
+     },
+     {
+      "pct": 90,
+      "tokens": 911
+     },
+     {
+      "pct": 80,
+      "tokens": 819
+     },
+     {
+      "pct": 70,
+      "tokens": 717
+     },
+     {
+      "pct": 60,
+      "tokens": 614
+     },
+     {
+      "pct": 50,
+      "tokens": 512
+     },
+     {
+      "pct": 40,
+      "tokens": 410
+     },
+     {
+      "pct": 30,
+      "tokens": 307
+     },
+     {
+      "pct": 25,
+      "tokens": 256
+     },
+     {
+      "pct": 20,
+      "tokens": 205
+     },
+     {
+      "pct": 10,
+      "tokens": 102
+     }
+    ]
+   },
+   {
+    "id": "000023",
+    "caption": "\u201cA bouquet of peonies in full bloom\u201d",
+    "budgets": [
+     {
+      "pct": 100,
+      "tokens": 1024
+     },
+     {
+      "pct": 90,
+      "tokens": 911
+     },
+     {
+      "pct": 80,
+      "tokens": 819
+     },
+     {
+      "pct": 70,
+      "tokens": 717
+     },
+     {
+      "pct": 60,
+      "tokens": 614
+     },
+     {
+      "pct": 50,
+      "tokens": 512
+     },
+     {
+      "pct": 40,
+      "tokens": 410
+     },
+     {
+      "pct": 30,
+      "tokens": 307
+     },
+     {
+      "pct": 25,
+      "tokens": 256
+     },
+     {
+      "pct": 20,
+      "tokens": 205
+     },
+     {
+      "pct": 10,
+      "tokens": 102
+     }
+    ]
+   },
+   {
+    "id": "000015",
+    "caption": "\u201cIn the vast expanse of the savannah plain, a solitary\u2026\u201d",
+    "budgets": [
+     {
+      "pct": 100,
+      "tokens": 1024
+     },
+     {
+      "pct": 90,
+      "tokens": 911
+     },
+     {
+      "pct": 80,
+      "tokens": 819
+     },
+     {
+      "pct": 70,
+      "tokens": 717
+     },
+     {
+      "pct": 60,
+      "tokens": 614
+     },
+     {
+      "pct": 50,
+      "tokens": 512
+     },
+     {
+      "pct": 40,
+      "tokens": 410
+     },
+     {
+      "pct": 30,
+      "tokens": 307
+     },
+     {
+      "pct": 25,
+      "tokens": 256
+     },
+     {
+      "pct": 20,
+      "tokens": 205
+     },
+     {
+      "pct": 10,
+      "tokens": 102
+     }
+    ]
+   },
+   {
+    "id": "000079",
+    "caption": "\u201cA delectable chocolate cake\u201d",
+    "budgets": [
+     {
+      "pct": 100,
+      "tokens": 1024
+     },
+     {
+      "pct": 90,
+      "tokens": 911
+     },
+     {
+      "pct": 80,
+      "tokens": 819
+     },
+     {
+      "pct": 70,
+      "tokens": 717
+     },
+     {
+      "pct": 60,
+      "tokens": 614
+     },
+     {
+      "pct": 50,
+      "tokens": 512
+     },
+     {
+      "pct": 40,
+      "tokens": 410
+     },
+     {
+      "pct": 30,
+      "tokens": 307
+     },
+     {
+      "pct": 25,
+      "tokens": 256
+     },
+     {
+      "pct": 20,
+      "tokens": 205
+     },
+     {
+      "pct": 10,
+      "tokens": 102
+     }
+    ]
+   },
+   {
+    "id": "000049",
+    "caption": "\u201cA photo of a baseball glove and a carrot\u201d",
+    "budgets": [
+     {
+      "pct": 100,
+      "tokens": 1024
+     },
+     {
+      "pct": 90,
+      "tokens": 911
+     },
+     {
+      "pct": 80,
+      "tokens": 819
+     },
+     {
+      "pct": 70,
+      "tokens": 717
+     },
+     {
+      "pct": 60,
+      "tokens": 614
+     },
+     {
+      "pct": 50,
+      "tokens": 512
+     },
+     {
+      "pct": 40,
+      "tokens": 410
+     },
+     {
+      "pct": 30,
+      "tokens": 307
+     },
+     {
+      "pct": 25,
+      "tokens": 256
+     },
+     {
+      "pct": 20,
+      "tokens": 205
+     },
+     {
+      "pct": 10,
+      "tokens": 102
+     }
+    ]
+   },
+   {
+    "id": "000097",
+    "caption": "\u201cA group of tourists is seated atop a large elephant\u201d",
+    "budgets": [
+     {
+      "pct": 100,
+      "tokens": 1024
+     },
+     {
+      "pct": 90,
+      "tokens": 911
+     },
+     {
+      "pct": 80,
+      "tokens": 819
+     },
+     {
+      "pct": 70,
+      "tokens": 717
+     },
+     {
+      "pct": 60,
+      "tokens": 614
+     },
+     {
+      "pct": 50,
+      "tokens": 512
+     },
+     {
+      "pct": 40,
+      "tokens": 410
+     },
+     {
+      "pct": 30,
+      "tokens": 307
+     },
+     {
+      "pct": 25,
+      "tokens": 256
+     },
+     {
+      "pct": 20,
+      "tokens": 205
+     },
+     {
+      "pct": 10,
+      "tokens": 102
+     }
+    ]
+   },
+   {
+    "id": "000064",
+    "caption": "\u201cA photo of a pink oven and a green motorcycle\u201d",
+    "budgets": [
+     {
+      "pct": 100,
+      "tokens": 1024
+     },
+     {
+      "pct": 90,
+      "tokens": 911
+     },
+     {
+      "pct": 80,
+      "tokens": 819
+     },
+     {
+      "pct": 70,
+      "tokens": 717
+     },
+     {
+      "pct": 60,
+      "tokens": 614
+     },
+     {
+      "pct": 50,
+      "tokens": 512
+     },
+     {
+      "pct": 40,
+      "tokens": 410
+     },
+     {
+      "pct": 30,
+      "tokens": 307
+     },
+     {
+      "pct": 25,
+      "tokens": 256
+     },
+     {
+      "pct": 20,
+      "tokens": 205
+     },
+     {
+      "pct": 10,
+      "tokens": 102
+     }
+    ]
+   },
+   {
+    "id": "000069",
+    "caption": "\u201cA photo of a blue pizza and a yellow baseball glove\u201d",
+    "budgets": [
+     {
+      "pct": 100,
+      "tokens": 1024
+     },
+     {
+      "pct": 90,
+      "tokens": 911
+     },
+     {
+      "pct": 80,
+      "tokens": 819
+     },
+     {
+      "pct": 70,
+      "tokens": 717
+     },
+     {
+      "pct": 60,
+      "tokens": 614
+     },
+     {
+      "pct": 50,
+      "tokens": 512
+     },
+     {
+      "pct": 40,
+      "tokens": 410
+     },
+     {
+      "pct": 30,
+      "tokens": 307
+     },
+     {
+      "pct": 25,
+      "tokens": 256
+     },
+     {
+      "pct": 20,
+      "tokens": 205
+     },
+     {
+      "pct": 10,
+      "tokens": 102
+     }
+    ]
+   },
+   {
+    "id": "000074",
+    "caption": "\u201cA large Saint Bernard dog with a reddish-brown and white\u2026\u201d",
+    "budgets": [
+     {
+      "pct": 100,
+      "tokens": 1024
+     },
+     {
+      "pct": 90,
+      "tokens": 911
+     },
+     {
+      "pct": 80,
+      "tokens": 819
+     },
+     {
+      "pct": 70,
+      "tokens": 717
+     },
+     {
+      "pct": 60,
+      "tokens": 614
+     },
+     {
+      "pct": 50,
+      "tokens": 512
+     },
+     {
+      "pct": 40,
+      "tokens": 410
+     },
+     {
+      "pct": 30,
+      "tokens": 307
+     },
+     {
+      "pct": 25,
+      "tokens": 256
+     },
+     {
+      "pct": 20,
+      "tokens": 205
+     },
+     {
+      "pct": 10,
+      "tokens": 102
+     }
+    ]
+   },
+   {
+    "id": "000010",
+    "caption": "\u201cThere are two characters walking side by side on a sandy\u201d",
+    "budgets": [
+     {
+      "pct": 100,
+      "tokens": 1024
+     },
+     {
+      "pct": 90,
+      "tokens": 911
+     },
+     {
+      "pct": 80,
+      "tokens": 819
+     },
+     {
+      "pct": 70,
+      "tokens": 717
+     },
+     {
+      "pct": 60,
+      "tokens": 614
+     },
+     {
+      "pct": 50,
+      "tokens": 512
+     },
+     {
+      "pct": 40,
+      "tokens": 410
+     },
+     {
+      "pct": 30,
+      "tokens": 307
+     },
+     {
+      "pct": 25,
+      "tokens": 256
+     },
+     {
+      "pct": 20,
+      "tokens": 205
+     },
+     {
+      "pct": 10,
+      "tokens": 102
+     }
+    ]
+   },
+   {
+    "id": "000024",
+    "caption": "\u201cA modern living room with a minimalist aesthetic\u201d",
+    "budgets": [
+     {
+      "pct": 100,
+      "tokens": 1024
+     },
+     {
+      "pct": 90,
+      "tokens": 911
+     },
+     {
+      "pct": 80,
+      "tokens": 819
+     },
+     {
+      "pct": 70,
+      "tokens": 717
+     },
+     {
+      "pct": 60,
+      "tokens": 614
+     },
+     {
+      "pct": 50,
+      "tokens": 512
+     },
+     {
+      "pct": 40,
+      "tokens": 410
+     },
+     {
+      "pct": 30,
+      "tokens": 307
+     },
+     {
+      "pct": 25,
+      "tokens": 256
+     },
+     {
+      "pct": 20,
+      "tokens": 205
+     },
+     {
+      "pct": 10,
+      "tokens": 102
+     }
+    ]
+   },
+   {
+    "id": "000041",
+    "caption": "\u201cA photo of a traffic light\u201d",
+    "budgets": [
+     {
+      "pct": 100,
+      "tokens": 1024
+     },
+     {
+      "pct": 90,
+      "tokens": 911
+     },
+     {
+      "pct": 80,
+      "tokens": 819
+     },
+     {
+      "pct": 70,
+      "tokens": 717
+     },
+     {
+      "pct": 60,
+      "tokens": 614
+     },
+     {
+      "pct": 50,
+      "tokens": 512
+     },
+     {
+      "pct": 40,
+      "tokens": 410
+     },
+     {
+      "pct": 30,
+      "tokens": 307
+     },
+     {
+      "pct": 25,
+      "tokens": 256
+     },
+     {
+      "pct": 20,
+      "tokens": 205
+     },
+     {
+      "pct": 10,
+      "tokens": 102
+     }
+    ]
+   },
+   {
+    "id": "000045",
+    "caption": "\u201cA photo of a book and a laptop\u201d",
+    "budgets": [
+     {
+      "pct": 100,
+      "tokens": 1024
+     },
+     {
+      "pct": 90,
+      "tokens": 911
+     },
+     {
+      "pct": 80,
+      "tokens": 819
+     },
+     {
+      "pct": 70,
+      "tokens": 717
+     },
+     {
+      "pct": 60,
+      "tokens": 614
+     },
+     {
+      "pct": 50,
+      "tokens": 512
+     },
+     {
+      "pct": 40,
+      "tokens": 410
+     },
+     {
+      "pct": 30,
+      "tokens": 307
+     },
+     {
+      "pct": 25,
+      "tokens": 256
+     },
+     {
+      "pct": 20,
+      "tokens": 205
+     },
+     {
+      "pct": 10,
+      "tokens": 102
+     }
+    ]
+   },
+   {
+    "id": "000003",
+    "caption": "\u201cA close-up of a pile of red raspberries with one purple\u2026\u201d",
+    "budgets": [
+     {
+      "pct": 100,
+      "tokens": 1024
+     },
+     {
+      "pct": 90,
+      "tokens": 911
+     },
+     {
+      "pct": 80,
+      "tokens": 819
+     },
+     {
+      "pct": 70,
+      "tokens": 717
+     },
+     {
+      "pct": 60,
+      "tokens": 614
+     },
+     {
+      "pct": 50,
+      "tokens": 512
+     },
+     {
+      "pct": 40,
+      "tokens": 410
+     },
+     {
+      "pct": 30,
+      "tokens": 307
+     },
+     {
+      "pct": 25,
+      "tokens": 256
+     },
+     {
+      "pct": 20,
+      "tokens": 205
+     },
+     {
+      "pct": 10,
+      "tokens": 102
+     }
+    ]
+   },
+   {
+    "id": "000005",
+    "caption": "\u201cA bronze statue of a young girl sitting on the floor\u201d",
+    "budgets": [
+     {
+      "pct": 100,
+      "tokens": 1024
+     },
+     {
+      "pct": 90,
+      "tokens": 911
+     },
+     {
+      "pct": 80,
+      "tokens": 819
+     },
+     {
+      "pct": 70,
+      "tokens": 717
+     },
+     {
+      "pct": 60,
+      "tokens": 614
+     },
+     {
+      "pct": 50,
+      "tokens": 512
+     },
+     {
+      "pct": 40,
+      "tokens": 410
+     },
+     {
+      "pct": 30,
+      "tokens": 307
+     },
+     {
+      "pct": 25,
+      "tokens": 256
+     },
+     {
+      "pct": 20,
+      "tokens": 205
+     },
+     {
+      "pct": 10,
+      "tokens": 102
+     }
+    ]
+   },
+   {
+    "id": "000040",
+    "caption": "\u201cA photo of a bench\u201d",
+    "budgets": [
+     {
+      "pct": 100,
+      "tokens": 1024
+     },
+     {
+      "pct": 90,
+      "tokens": 911
+     },
+     {
+      "pct": 80,
+      "tokens": 819
+     },
+     {
+      "pct": 70,
+      "tokens": 717
+     },
+     {
+      "pct": 60,
+      "tokens": 614
+     },
+     {
+      "pct": 50,
+      "tokens": 512
+     },
+     {
+      "pct": 40,
+      "tokens": 410
+     },
+     {
+      "pct": 30,
+      "tokens": 307
+     },
+     {
+      "pct": 25,
+      "tokens": 256
+     },
+     {
+      "pct": 20,
+      "tokens": 205
+     },
+     {
+      "pct": 10,
+      "tokens": 102
+     }
+    ]
+   },
+   {
+    "id": "000094",
+    "caption": "\u201cAn expansive palace constructed from iridescent materials\u2026\u201d",
+    "budgets": [
+     {
+      "pct": 100,
+      "tokens": 1024
+     },
+     {
+      "pct": 90,
+      "tokens": 911
+     },
+     {
+      "pct": 80,
+      "tokens": 819
+     },
+     {
+      "pct": 70,
+      "tokens": 717
+     },
+     {
+      "pct": 60,
+      "tokens": 614
+     },
+     {
+      "pct": 50,
+      "tokens": 512
+     },
+     {
+      "pct": 40,
+      "tokens": 410
+     },
+     {
+      "pct": 30,
+      "tokens": 307
+     },
+     {
+      "pct": 25,
+      "tokens": 256
+     },
+     {
+      "pct": 20,
+      "tokens": 205
+     },
+     {
+      "pct": 10,
+      "tokens": 102
+     }
+    ]
+   },
+   {
+    "id": "000048",
+    "caption": "\u201cA photo of a knife and a stop sign\u201d",
+    "budgets": [
+     {
+      "pct": 100,
+      "tokens": 1024
+     },
+     {
+      "pct": 90,
+      "tokens": 911
+     },
+     {
+      "pct": 80,
+      "tokens": 819
+     },
+     {
+      "pct": 70,
+      "tokens": 717
+     },
+     {
+      "pct": 60,
+      "tokens": 614
+     },
+     {
+      "pct": 50,
+      "tokens": 512
+     },
+     {
+      "pct": 40,
+      "tokens": 410
+     },
+     {
+      "pct": 30,
+      "tokens": 307
+     },
+     {
+      "pct": 25,
+      "tokens": 256
+     },
+     {
+      "pct": 20,
+      "tokens": 205
+     },
+     {
+      "pct": 10,
+      "tokens": 102
+     }
+    ]
+   },
+   {
+    "id": "000021",
+    "caption": "\u201cA center pivot irrigation system in action\u201d",
+    "budgets": [
+     {
+      "pct": 100,
+      "tokens": 1024
+     },
+     {
+      "pct": 90,
+      "tokens": 911
+     },
+     {
+      "pct": 80,
+      "tokens": 819
+     },
+     {
+      "pct": 70,
+      "tokens": 717
+     },
+     {
+      "pct": 60,
+      "tokens": 614
+     },
+     {
+      "pct": 50,
+      "tokens": 512
+     },
+     {
+      "pct": 40,
+      "tokens": 410
+     },
+     {
+      "pct": 30,
+      "tokens": 307
+     },
+     {
+      "pct": 25,
+      "tokens": 256
+     },
+     {
+      "pct": 20,
+      "tokens": 205
+     },
+     {
+      "pct": 10,
+      "tokens": 102
+     }
+    ]
+   },
+   {
+    "id": "000033",
+    "caption": "\u201cA modern living room setting with a focus on a large\u201d",
+    "budgets": [
+     {
+      "pct": 100,
+      "tokens": 1024
+     },
+     {
+      "pct": 90,
+      "tokens": 911
+     },
+     {
+      "pct": 80,
+      "tokens": 819
+     },
+     {
+      "pct": 70,
+      "tokens": 717
+     },
+     {
+      "pct": 60,
+      "tokens": 614
+     },
+     {
+      "pct": 50,
+      "tokens": 512
+     },
+     {
+      "pct": 40,
+      "tokens": 410
+     },
+     {
+      "pct": 30,
+      "tokens": 307
+     },
+     {
+      "pct": 25,
+      "tokens": 256
+     },
+     {
+      "pct": 20,
+      "tokens": 205
+     },
+     {
+      "pct": 10,
+      "tokens": 102
+     }
+    ]
+   },
+   {
+    "id": "000083",
+    "caption": "\u201cUnder the warm glow of an overhead light, a shiny chrome\u2026\u201d",
+    "budgets": [
+     {
+      "pct": 100,
+      "tokens": 1024
+     },
+     {
+      "pct": 90,
+      "tokens": 911
+     },
+     {
+      "pct": 80,
+      "tokens": 819
+     },
+     {
+      "pct": 70,
+      "tokens": 717
+     },
+     {
+      "pct": 60,
+      "tokens": 614
+     },
+     {
+      "pct": 50,
+      "tokens": 512
+     },
+     {
+      "pct": 40,
+      "tokens": 410
+     },
+     {
+      "pct": 30,
+      "tokens": 307
+     },
+     {
+      "pct": 25,
+      "tokens": 256
+     },
+     {
+      "pct": 20,
+      "tokens": 205
+     },
+     {
+      "pct": 10,
+      "tokens": 102
+     }
+    ]
+   },
+   {
+    "id": "000037",
+    "caption": "\u201cA multi-story building with a traditional architectural\u2026\u201d",
+    "budgets": [
+     {
+      "pct": 100,
+      "tokens": 1024
+     },
+     {
+      "pct": 90,
+      "tokens": 911
+     },
+     {
+      "pct": 80,
+      "tokens": 819
+     },
+     {
+      "pct": 70,
+      "tokens": 717
+     },
+     {
+      "pct": 60,
+      "tokens": 614
+     },
+     {
+      "pct": 50,
+      "tokens": 512
+     },
+     {
+      "pct": 40,
+      "tokens": 410
+     },
+     {
+      "pct": 30,
+      "tokens": 307
+     },
+     {
+      "pct": 25,
+      "tokens": 256
+     },
+     {
+      "pct": 20,
+      "tokens": 205
+     },
+     {
+      "pct": 10,
+      "tokens": 102
+     }
+    ]
+   },
+   {
+    "id": "000026",
+    "caption": "\u201cThere is an older gentleman with white hair\u201d",
+    "budgets": [
+     {
+      "pct": 100,
+      "tokens": 1024
+     },
+     {
+      "pct": 90,
+      "tokens": 911
+     },
+     {
+      "pct": 80,
+      "tokens": 819
+     },
+     {
+      "pct": 70,
+      "tokens": 717
+     },
+     {
+      "pct": 60,
+      "tokens": 614
+     },
+     {
+      "pct": 50,
+      "tokens": 512
+     },
+     {
+      "pct": 40,
+      "tokens": 410
+     },
+     {
+      "pct": 30,
+      "tokens": 307
+     },
+     {
+      "pct": 25,
+      "tokens": 256
+     },
+     {
+      "pct": 20,
+      "tokens": 205
+     },
+     {
+      "pct": 10,
+      "tokens": 102
+     }
+    ]
+   },
+   {
+    "id": "000014",
+    "caption": "\u201cA formation of four Sukhoi Su-25 Grach military aircraft\u2026\u201d",
+    "budgets": [
+     {
+      "pct": 100,
+      "tokens": 1024
+     },
+     {
+      "pct": 90,
+      "tokens": 911
+     },
+     {
+      "pct": 80,
+      "tokens": 819
+     },
+     {
+      "pct": 70,
+      "tokens": 717
+     },
+     {
+      "pct": 60,
+      "tokens": 614
+     },
+     {
+      "pct": 50,
+      "tokens": 512
+     },
+     {
+      "pct": 40,
+      "tokens": 410
+     },
+     {
+      "pct": 30,
+      "tokens": 307
+     },
+     {
+      "pct": 25,
+      "tokens": 256
+     },
+     {
+      "pct": 20,
+      "tokens": 205
+     },
+     {
+      "pct": 10,
+      "tokens": 102
+     }
+    ]
+   },
+   {
+    "id": "000020",
+    "caption": "\u201cA pair of earrings against a white background\u201d",
+    "budgets": [
+     {
+      "pct": 100,
+      "tokens": 1024
+     },
+     {
+      "pct": 90,
+      "tokens": 911
+     },
+     {
+      "pct": 80,
+      "tokens": 819
+     },
+     {
+      "pct": 70,
+      "tokens": 717
+     },
+     {
+      "pct": 60,
+      "tokens": 614
+     },
+     {
+      "pct": 50,
+      "tokens": 512
+     },
+     {
+      "pct": 40,
+      "tokens": 410
+     },
+     {
+      "pct": 30,
+      "tokens": 307
+     },
+     {
+      "pct": 25,
+      "tokens": 256
+     },
+     {
+      "pct": 20,
+      "tokens": 205
+     },
+     {
+      "pct": 10,
+      "tokens": 102
+     }
+    ]
+   },
+   {
+    "id": "000046",
+    "caption": "\u201cA photo of a scissors and a bowl\u201d",
+    "budgets": [
+     {
+      "pct": 100,
+      "tokens": 1024
+     },
+     {
+      "pct": 90,
+      "tokens": 911
+     },
+     {
+      "pct": 80,
+      "tokens": 819
+     },
+     {
+      "pct": 70,
+      "tokens": 717
+     },
+     {
+      "pct": 60,
+      "tokens": 614
+     },
+     {
+      "pct": 50,
+      "tokens": 512
+     },
+     {
+      "pct": 40,
+      "tokens": 410
+     },
+     {
+      "pct": 30,
+      "tokens": 307
+     },
+     {
+      "pct": 25,
+      "tokens": 256
+     },
+     {
+      "pct": 20,
+      "tokens": 205
+     },
+     {
+      "pct": 10,
+      "tokens": 102
+     }
+    ]
+   },
+   {
+    "id": "000025",
+    "caption": "\u201cA two-story building with a distinctive modern\u2026\u201d",
+    "budgets": [
+     {
+      "pct": 100,
+      "tokens": 1024
+     },
+     {
+      "pct": 90,
+      "tokens": 911
+     },
+     {
+      "pct": 80,
+      "tokens": 819
+     },
+     {
+      "pct": 70,
+      "tokens": 717
+     },
+     {
+      "pct": 60,
+      "tokens": 614
+     },
+     {
+      "pct": 50,
+      "tokens": 512
+     },
+     {
+      "pct": 40,
+      "tokens": 410
+     },
+     {
+      "pct": 30,
+      "tokens": 307
+     },
+     {
+      "pct": 25,
+      "tokens": 256
+     },
+     {
+      "pct": 20,
+      "tokens": 205
+     },
+     {
+      "pct": 10,
+      "tokens": 102
+     }
+    ]
+   },
+   {
+    "id": "000080",
+    "caption": "\u201cA bright neon pink hurdle stands out against the backdrop\u2026\u201d",
+    "budgets": [
+     {
+      "pct": 100,
+      "tokens": 1024
+     },
+     {
+      "pct": 90,
+      "tokens": 911
+     },
+     {
+      "pct": 80,
+      "tokens": 819
+     },
+     {
+      "pct": 70,
+      "tokens": 717
+     },
+     {
+      "pct": 60,
+      "tokens": 614
+     },
+     {
+      "pct": 50,
+      "tokens": 512
+     },
+     {
+      "pct": 40,
+      "tokens": 410
+     },
+     {
+      "pct": 30,
+      "tokens": 307
+     },
+     {
+      "pct": 25,
+      "tokens": 256
+     },
+     {
+      "pct": 20,
+      "tokens": 205
+     },
+     {
+      "pct": 10,
+      "tokens": 102
+     }
+    ]
+   },
+   {
+    "id": "000084",
+    "caption": "\u201cTwo sleek blue showerheads\u201d",
+    "budgets": [
+     {
+      "pct": 100,
+      "tokens": 1024
+     },
+     {
+      "pct": 90,
+      "tokens": 911
+     },
+     {
+      "pct": 80,
+      "tokens": 819
+     },
+     {
+      "pct": 70,
+      "tokens": 717
+     },
+     {
+      "pct": 60,
+      "tokens": 614
+     },
+     {
+      "pct": 50,
+      "tokens": 512
+     },
+     {
+      "pct": 40,
+      "tokens": 410
+     },
+     {
+      "pct": 30,
+      "tokens": 307
+     },
+     {
+      "pct": 25,
+      "tokens": 256
+     },
+     {
+      "pct": 20,
+      "tokens": 205
+     },
+     {
+      "pct": 10,
+      "tokens": 102
+     }
+    ]
+   },
+   {
+    "id": "000042",
+    "caption": "\u201cA photo of a bed\u201d",
+    "budgets": [
+     {
+      "pct": 100,
+      "tokens": 1024
+     },
+     {
+      "pct": 90,
+      "tokens": 911
+     },
+     {
+      "pct": 80,
+      "tokens": 819
+     },
+     {
+      "pct": 70,
+      "tokens": 717
+     },
+     {
+      "pct": 60,
+      "tokens": 614
+     },
+     {
+      "pct": 50,
+      "tokens": 512
+     },
+     {
+      "pct": 40,
+      "tokens": 410
+     },
+     {
+      "pct": 30,
+      "tokens": 307
+     },
+     {
+      "pct": 25,
+      "tokens": 256
+     },
+     {
+      "pct": 20,
+      "tokens": 205
+     },
+     {
+      "pct": 10,
+      "tokens": 102
+     }
+    ]
+   },
+   {
+    "id": "000063",
+    "caption": "\u201cA photo of a horse right of a broccoli\u201d",
+    "budgets": [
+     {
+      "pct": 100,
+      "tokens": 1024
+     },
+     {
+      "pct": 90,
+      "tokens": 911
+     },
+     {
+      "pct": 80,
+      "tokens": 819
+     },
+     {
+      "pct": 70,
+      "tokens": 717
+     },
+     {
+      "pct": 60,
+      "tokens": 614
+     },
+     {
+      "pct": 50,
+      "tokens": 512
+     },
+     {
+      "pct": 40,
+      "tokens": 410
+     },
+     {
+      "pct": 30,
+      "tokens": 307
+     },
+     {
+      "pct": 25,
+      "tokens": 256
+     },
+     {
+      "pct": 20,
+      "tokens": 205
+     },
+     {
+      "pct": 10,
+      "tokens": 102
+     }
+    ]
+   },
+   {
+    "id": "000073",
+    "caption": "\u201cA tall, leafy tree casting its reflection on the glass\u2026\u201d",
+    "budgets": [
+     {
+      "pct": 100,
+      "tokens": 1024
+     },
+     {
+      "pct": 90,
+      "tokens": 911
+     },
+     {
+      "pct": 80,
+      "tokens": 819
+     },
+     {
+      "pct": 70,
+      "tokens": 717
+     },
+     {
+      "pct": 60,
+      "tokens": 614
+     },
+     {
+      "pct": 50,
+      "tokens": 512
+     },
+     {
+      "pct": 40,
+      "tokens": 410
+     },
+     {
+      "pct": 30,
+      "tokens": 307
+     },
+     {
+      "pct": 25,
+      "tokens": 256
+     },
+     {
+      "pct": 20,
+      "tokens": 205
+     },
+     {
+      "pct": 10,
+      "tokens": 102
+     }
+    ]
+   },
+   {
+    "id": "000036",
+    "caption": "\u201cA classical painting featuring a divine scene with a\u2026\u201d",
+    "budgets": [
+     {
+      "pct": 100,
+      "tokens": 1024
+     },
+     {
+      "pct": 90,
+      "tokens": 911
+     },
+     {
+      "pct": 80,
+      "tokens": 819
+     },
+     {
+      "pct": 70,
+      "tokens": 717
+     },
+     {
+      "pct": 60,
+      "tokens": 614
+     },
+     {
+      "pct": 50,
+      "tokens": 512
+     },
+     {
+      "pct": 40,
+      "tokens": 410
+     },
+     {
+      "pct": 30,
+      "tokens": 307
+     },
+     {
+      "pct": 25,
+      "tokens": 256
+     },
+     {
+      "pct": 20,
+      "tokens": 205
+     },
+     {
+      "pct": 10,
+      "tokens": 102
+     }
+    ]
+   },
+   {
+    "id": "000098",
+    "caption": "\u201cRows of fresh produce line the interior of a bustling\u2026\u201d",
+    "budgets": [
+     {
+      "pct": 100,
+      "tokens": 1024
+     },
+     {
+      "pct": 90,
+      "tokens": 911
+     },
+     {
+      "pct": 80,
+      "tokens": 819
+     },
+     {
+      "pct": 70,
+      "tokens": 717
+     },
+     {
+      "pct": 60,
+      "tokens": 614
+     },
+     {
+      "pct": 50,
+      "tokens": 512
+     },
+     {
+      "pct": 40,
+      "tokens": 410
+     },
+     {
+      "pct": 30,
+      "tokens": 307
+     },
+     {
+      "pct": 25,
+      "tokens": 256
+     },
+     {
+      "pct": 20,
+      "tokens": 205
+     },
+     {
+      "pct": 10,
+      "tokens": 102
+     }
+    ]
+   },
+   {
+    "id": "000011",
+    "caption": "\u201cA close-up of a plate with several pieces of barbecued ribs\u201d",
+    "budgets": [
+     {
+      "pct": 100,
+      "tokens": 1024
+     },
+     {
+      "pct": 90,
+      "tokens": 911
+     },
+     {
+      "pct": 80,
+      "tokens": 819
+     },
+     {
+      "pct": 70,
+      "tokens": 717
+     },
+     {
+      "pct": 60,
+      "tokens": 614
+     },
+     {
+      "pct": 50,
+      "tokens": 512
+     },
+     {
+      "pct": 40,
+      "tokens": 410
+     },
+     {
+      "pct": 30,
+      "tokens": 307
+     },
+     {
+      "pct": 25,
+      "tokens": 256
+     },
+     {
+      "pct": 20,
+      "tokens": 205
+     },
+     {
+      "pct": 10,
+      "tokens": 102
+     }
+    ]
+   },
+   {
+    "id": "000077",
+    "caption": "\u201cA detailed pen-and-ink drawing that features a meticulously\u2026\u201d",
+    "budgets": [
+     {
+      "pct": 100,
+      "tokens": 1024
+     },
+     {
+      "pct": 90,
+      "tokens": 911
+     },
+     {
+      "pct": 80,
+      "tokens": 819
+     },
+     {
+      "pct": 70,
+      "tokens": 717
+     },
+     {
+      "pct": 60,
+      "tokens": 614
+     },
+     {
+      "pct": 50,
+      "tokens": 512
+     },
+     {
+      "pct": 40,
+      "tokens": 410
+     },
+     {
+      "pct": 30,
+      "tokens": 307
+     },
+     {
+      "pct": 25,
+      "tokens": 256
+     },
+     {
+      "pct": 20,
+      "tokens": 205
+     },
+     {
+      "pct": 10,
+      "tokens": 102
+     }
+    ]
+   },
+   {
+    "id": "000072",
+    "caption": "\u201cA busy intersection where a red sedan and a large white\u2026\u201d",
+    "budgets": [
+     {
+      "pct": 100,
+      "tokens": 1024
+     },
+     {
+      "pct": 90,
+      "tokens": 911
+     },
+     {
+      "pct": 80,
+      "tokens": 819
+     },
+     {
+      "pct": 70,
+      "tokens": 717
+     },
+     {
+      "pct": 60,
+      "tokens": 614
+     },
+     {
+      "pct": 50,
+      "tokens": 512
+     },
+     {
+      "pct": 40,
+      "tokens": 410
+     },
+     {
+      "pct": 30,
+      "tokens": 307
+     },
+     {
+      "pct": 25,
+      "tokens": 256
+     },
+     {
+      "pct": 20,
+      "tokens": 205
+     },
+     {
+      "pct": 10,
+      "tokens": 102
+     }
+    ]
+   },
+   {
+    "id": "000060",
+    "caption": "\u201cA photo of a tennis racket right of a spoon\u201d",
+    "budgets": [
+     {
+      "pct": 100,
+      "tokens": 1024
+     },
+     {
+      "pct": 90,
+      "tokens": 911
+     },
+     {
+      "pct": 80,
+      "tokens": 819
+     },
+     {
+      "pct": 70,
+      "tokens": 717
+     },
+     {
+      "pct": 60,
+      "tokens": 614
+     },
+     {
+      "pct": 50,
+      "tokens": 512
+     },
+     {
+      "pct": 40,
+      "tokens": 410
+     },
+     {
+      "pct": 30,
+      "tokens": 307
+     },
+     {
+      "pct": 25,
+      "tokens": 256
+     },
+     {
+      "pct": 20,
+      "tokens": 205
+     },
+     {
+      "pct": 10,
+      "tokens": 102
+     }
+    ]
+   }
+  ]
+ },
+ "jit": {
+  "label": "JiT-L/32",
+  "dataset": "ImageNet 512\u00b2",
+  "subjects": [
+   {
+    "id": "0985",
+    "caption": "ImageNet: daisy",
+    "budgets": [
+     {
+      "pct": 100,
+      "tokens": 256
+     },
+     {
+      "pct": 90,
+      "tokens": 230
+     },
+     {
+      "pct": 80,
+      "tokens": 205
+     },
+     {
+      "pct": 70,
+      "tokens": 179
+     },
+     {
+      "pct": 60,
+      "tokens": 154
+     },
+     {
+      "pct": 50,
+      "tokens": 128
+     },
+     {
+      "pct": 40,
+      "tokens": 102
+     },
+     {
+      "pct": 30,
+      "tokens": 77
+     },
+     {
+      "pct": 25,
+      "tokens": 64
+     },
+     {
+      "pct": 20,
+      "tokens": 51
+     },
+     {
+      "pct": 10,
+      "tokens": 26
+     }
+    ]
+   },
+   {
+    "id": "0145",
+    "caption": "ImageNet: king penguin",
+    "budgets": [
+     {
+      "pct": 100,
+      "tokens": 256
+     },
+     {
+      "pct": 90,
+      "tokens": 230
+     },
+     {
+      "pct": 80,
+      "tokens": 205
+     },
+     {
+      "pct": 70,
+      "tokens": 179
+     },
+     {
+      "pct": 60,
+      "tokens": 154
+     },
+     {
+      "pct": 50,
+      "tokens": 128
+     },
+     {
+      "pct": 40,
+      "tokens": 102
+     },
+     {
+      "pct": 30,
+      "tokens": 77
+     },
+     {
+      "pct": 25,
+      "tokens": 64
+     },
+     {
+      "pct": 20,
+      "tokens": 51
+     },
+     {
+      "pct": 10,
+      "tokens": 26
+     }
+    ]
+   },
+   {
+    "id": "0725",
+    "caption": "ImageNet: pitcher",
+    "budgets": [
+     {
+      "pct": 100,
+      "tokens": 256
+     },
+     {
+      "pct": 90,
+      "tokens": 230
+     },
+     {
+      "pct": 80,
+      "tokens": 205
+     },
+     {
+      "pct": 70,
+      "tokens": 179
+     },
+     {
+      "pct": 60,
+      "tokens": 154
+     },
+     {
+      "pct": 50,
+      "tokens": 128
+     },
+     {
+      "pct": 40,
+      "tokens": 102
+     },
+     {
+      "pct": 30,
+      "tokens": 77
+     },
+     {
+      "pct": 25,
+      "tokens": 64
+     },
+     {
+      "pct": 20,
+      "tokens": 51
+     },
+     {
+      "pct": 10,
+      "tokens": 26
+     }
+    ]
+   },
+   {
+    "id": "0395",
+    "caption": "ImageNet: gar",
+    "budgets": [
+     {
+      "pct": 100,
+      "tokens": 256
+     },
+     {
+      "pct": 90,
+      "tokens": 230
+     },
+     {
+      "pct": 80,
+      "tokens": 205
+     },
+     {
+      "pct": 70,
+      "tokens": 179
+     },
+     {
+      "pct": 60,
+      "tokens": 154
+     },
+     {
+      "pct": 50,
+      "tokens": 128
+     },
+     {
+      "pct": 40,
+      "tokens": 102
+     },
+     {
+      "pct": 30,
+      "tokens": 77
+     },
+     {
+      "pct": 25,
+      "tokens": 64
+     },
+     {
+      "pct": 20,
+      "tokens": 51
+     },
+     {
+      "pct": 10,
+      "tokens": 26
+     }
+    ]
+   },
+   {
+    "id": "0215",
+    "caption": "ImageNet: Brittany spaniel",
+    "budgets": [
+     {
+      "pct": 100,
+      "tokens": 256
+     },
+     {
+      "pct": 90,
+      "tokens": 230
+     },
+     {
+      "pct": 80,
+      "tokens": 205
+     },
+     {
+      "pct": 70,
+      "tokens": 179
+     },
+     {
+      "pct": 60,
+      "tokens": 154
+     },
+     {
+      "pct": 50,
+      "tokens": 128
+     },
+     {
+      "pct": 40,
+      "tokens": 102
+     },
+     {
+      "pct": 30,
+      "tokens": 77
+     },
+     {
+      "pct": 25,
+      "tokens": 64
+     },
+     {
+      "pct": 20,
+      "tokens": 51
+     },
+     {
+      "pct": 10,
+      "tokens": 26
+     }
+    ]
+   },
+   {
+    "id": "0095",
+    "caption": "ImageNet: jacamar",
+    "budgets": [
+     {
+      "pct": 100,
+      "tokens": 256
+     },
+     {
+      "pct": 90,
+      "tokens": 230
+     },
+     {
+      "pct": 80,
+      "tokens": 205
+     },
+     {
+      "pct": 70,
+      "tokens": 179
+     },
+     {
+      "pct": 60,
+      "tokens": 154
+     },
+     {
+      "pct": 50,
+      "tokens": 128
+     },
+     {
+      "pct": 40,
+      "tokens": 102
+     },
+     {
+      "pct": 30,
+      "tokens": 77
+     },
+     {
+      "pct": 25,
+      "tokens": 64
+     },
+     {
+      "pct": 20,
+      "tokens": 51
+     },
+     {
+      "pct": 10,
+      "tokens": 26
+     }
+    ]
+   },
+   {
+    "id": "0625",
+    "caption": "ImageNet: lifeboat",
+    "budgets": [
+     {
+      "pct": 100,
+      "tokens": 256
+     },
+     {
+      "pct": 90,
+      "tokens": 230
+     },
+     {
+      "pct": 80,
+      "tokens": 205
+     },
+     {
+      "pct": 70,
+      "tokens": 179
+     },
+     {
+      "pct": 60,
+      "tokens": 154
+     },
+     {
+      "pct": 50,
+      "tokens": 128
+     },
+     {
+      "pct": 40,
+      "tokens": 102
+     },
+     {
+      "pct": 30,
+      "tokens": 77
+     },
+     {
+      "pct": 25,
+      "tokens": 64
+     },
+     {
+      "pct": 20,
+      "tokens": 51
+     },
+     {
+      "pct": 10,
+      "tokens": 26
+     }
+    ]
+   },
+   {
+    "id": "0385",
+    "caption": "ImageNet: Indian elephant",
+    "budgets": [
+     {
+      "pct": 100,
+      "tokens": 256
+     },
+     {
+      "pct": 90,
+      "tokens": 230
+     },
+     {
+      "pct": 80,
+      "tokens": 205
+     },
+     {
+      "pct": 70,
+      "tokens": 179
+     },
+     {
+      "pct": 60,
+      "tokens": 154
+     },
+     {
+      "pct": 50,
+      "tokens": 128
+     },
+     {
+      "pct": 40,
+      "tokens": 102
+     },
+     {
+      "pct": 30,
+      "tokens": 77
+     },
+     {
+      "pct": 25,
+      "tokens": 64
+     },
+     {
+      "pct": 20,
+      "tokens": 51
+     },
+     {
+      "pct": 10,
+      "tokens": 26
+     }
+    ]
+   },
+   {
+    "id": "0055",
+    "caption": "ImageNet: green snake",
+    "budgets": [
+     {
+      "pct": 100,
+      "tokens": 256
+     },
+     {
+      "pct": 90,
+      "tokens": 230
+     },
+     {
+      "pct": 80,
+      "tokens": 205
+     },
+     {
+      "pct": 70,
+      "tokens": 179
+     },
+     {
+      "pct": 60,
+      "tokens": 154
+     },
+     {
+      "pct": 50,
+      "tokens": 128
+     },
+     {
+      "pct": 40,
+      "tokens": 102
+     },
+     {
+      "pct": 30,
+      "tokens": 77
+     },
+     {
+      "pct": 25,
+      "tokens": 64
+     },
+     {
+      "pct": 20,
+      "tokens": 51
+     },
+     {
+      "pct": 10,
+      "tokens": 26
+     }
+    ]
+   },
+   {
+    "id": "0595",
+    "caption": "ImageNet: harvester",
+    "budgets": [
+     {
+      "pct": 100,
+      "tokens": 256
+     },
+     {
+      "pct": 90,
+      "tokens": 230
+     },
+     {
+      "pct": 80,
+      "tokens": 205
+     },
+     {
+      "pct": 70,
+      "tokens": 179
+     },
+     {
+      "pct": 60,
+      "tokens": 154
+     },
+     {
+      "pct": 50,
+      "tokens": 128
+     },
+     {
+      "pct": 40,
+      "tokens": 102
+     },
+     {
+      "pct": 30,
+      "tokens": 77
+     },
+     {
+      "pct": 25,
+      "tokens": 64
+     },
+     {
+      "pct": 20,
+      "tokens": 51
+     },
+     {
+      "pct": 10,
+      "tokens": 26
+     }
+    ]
+   },
+   {
+    "id": "0945",
+    "caption": "ImageNet: bell pepper",
+    "budgets": [
+     {
+      "pct": 100,
+      "tokens": 256
+     },
+     {
+      "pct": 90,
+      "tokens": 230
+     },
+     {
+      "pct": 80,
+      "tokens": 205
+     },
+     {
+      "pct": 70,
+      "tokens": 179
+     },
+     {
+      "pct": 60,
+      "tokens": 154
+     },
+     {
+      "pct": 50,
+      "tokens": 128
+     },
+     {
+      "pct": 40,
+      "tokens": 102
+     },
+     {
+      "pct": 30,
+      "tokens": 77
+     },
+     {
+      "pct": 25,
+      "tokens": 64
+     },
+     {
+      "pct": 20,
+      "tokens": 51
+     },
+     {
+      "pct": 10,
+      "tokens": 26
+     }
+    ]
+   },
+   {
+    "id": "0235",
+    "caption": "ImageNet: German shepherd",
+    "budgets": [
+     {
+      "pct": 100,
+      "tokens": 256
+     },
+     {
+      "pct": 90,
+      "tokens": 230
+     },
+     {
+      "pct": 80,
+      "tokens": 205
+     },
+     {
+      "pct": 70,
+      "tokens": 179
+     },
+     {
+      "pct": 60,
+      "tokens": 154
+     },
+     {
+      "pct": 50,
+      "tokens": 128
+     },
+     {
+      "pct": 40,
+      "tokens": 102
+     },
+     {
+      "pct": 30,
+      "tokens": 77
+     },
+     {
+      "pct": 25,
+      "tokens": 64
+     },
+     {
+      "pct": 20,
+      "tokens": 51
+     },
+     {
+      "pct": 10,
+      "tokens": 26
+     }
+    ]
+   },
+   {
+    "id": "0285",
+    "caption": "ImageNet: Egyptian cat",
+    "budgets": [
+     {
+      "pct": 100,
+      "tokens": 256
+     },
+     {
+      "pct": 90,
+      "tokens": 230
+     },
+     {
+      "pct": 80,
+      "tokens": 205
+     },
+     {
+      "pct": 70,
+      "tokens": 179
+     },
+     {
+      "pct": 60,
+      "tokens": 154
+     },
+     {
+      "pct": 50,
+      "tokens": 128
+     },
+     {
+      "pct": 40,
+      "tokens": 102
+     },
+     {
+      "pct": 30,
+      "tokens": 77
+     },
+     {
+      "pct": 25,
+      "tokens": 64
+     },
+     {
+      "pct": 20,
+      "tokens": 51
+     },
+     {
+      "pct": 10,
+      "tokens": 26
+     }
+    ]
+   },
+   {
+    "id": "0555",
+    "caption": "ImageNet: fire engine",
+    "budgets": [
+     {
+      "pct": 100,
+      "tokens": 256
+     },
+     {
+      "pct": 90,
+      "tokens": 230
+     },
+     {
+      "pct": 80,
+      "tokens": 205
+     },
+     {
+      "pct": 70,
+      "tokens": 179
+     },
+     {
+      "pct": 60,
+      "tokens": 154
+     },
+     {
+      "pct": 50,
+      "tokens": 128
+     },
+     {
+      "pct": 40,
+      "tokens": 102
+     },
+     {
+      "pct": 30,
+      "tokens": 77
+     },
+     {
+      "pct": 25,
+      "tokens": 64
+     },
+     {
+      "pct": 20,
+      "tokens": 51
+     },
+     {
+      "pct": 10,
+      "tokens": 26
+     }
+    ]
+   },
+   {
+    "id": "0355",
+    "caption": "ImageNet: llama",
+    "budgets": [
+     {
+      "pct": 100,
+      "tokens": 256
+     },
+     {
+      "pct": 90,
+      "tokens": 230
+     },
+     {
+      "pct": 80,
+      "tokens": 205
+     },
+     {
+      "pct": 70,
+      "tokens": 179
+     },
+     {
+      "pct": 60,
+      "tokens": 154
+     },
+     {
+      "pct": 50,
+      "tokens": 128
+     },
+     {
+      "pct": 40,
+      "tokens": 102
+     },
+     {
+      "pct": 30,
+      "tokens": 77
+     },
+     {
+      "pct": 25,
+      "tokens": 64
+     },
+     {
+      "pct": 20,
+      "tokens": 51
+     },
+     {
+      "pct": 10,
+      "tokens": 26
+     }
+    ]
+   },
+   {
+    "id": "0765",
+    "caption": "ImageNet: rocking chair",
+    "budgets": [
+     {
+      "pct": 100,
+      "tokens": 256
+     },
+     {
+      "pct": 90,
+      "tokens": 230
+     },
+     {
+      "pct": 80,
+      "tokens": 205
+     },
+     {
+      "pct": 70,
+      "tokens": 179
+     },
+     {
+      "pct": 60,
+      "tokens": 154
+     },
+     {
+      "pct": 50,
+      "tokens": 128
+     },
+     {
+      "pct": 40,
+      "tokens": 102
+     },
+     {
+      "pct": 30,
+      "tokens": 77
+     },
+     {
+      "pct": 25,
+      "tokens": 64
+     },
+     {
+      "pct": 20,
+      "tokens": 51
+     },
+     {
+      "pct": 10,
+      "tokens": 26
+     }
+    ]
+   },
+   {
+    "id": "0035",
+    "caption": "ImageNet: mud turtle",
+    "budgets": [
+     {
+      "pct": 100,
+      "tokens": 256
+     },
+     {
+      "pct": 90,
+      "tokens": 230
+     },
+     {
+      "pct": 80,
+      "tokens": 205
+     },
+     {
+      "pct": 70,
+      "tokens": 179
+     },
+     {
+      "pct": 60,
+      "tokens": 154
+     },
+     {
+      "pct": 50,
+      "tokens": 128
+     },
+     {
+      "pct": 40,
+      "tokens": 102
+     },
+     {
+      "pct": 30,
+      "tokens": 77
+     },
+     {
+      "pct": 25,
+      "tokens": 64
+     },
+     {
+      "pct": 20,
+      "tokens": 51
+     },
+     {
+      "pct": 10,
+      "tokens": 26
+     }
+    ]
+   },
+   {
+    "id": "0295",
+    "caption": "ImageNet: American black bear",
+    "budgets": [
+     {
+      "pct": 100,
+      "tokens": 256
+     },
+     {
+      "pct": 90,
+      "tokens": 230
+     },
+     {
+      "pct": 80,
+      "tokens": 205
+     },
+     {
+      "pct": 70,
+      "tokens": 179
+     },
+     {
+      "pct": 60,
+      "tokens": 154
+     },
+     {
+      "pct": 50,
+      "tokens": 128
+     },
+     {
+      "pct": 40,
+      "tokens": 102
+     },
+     {
+      "pct": 30,
+      "tokens": 77
+     },
+     {
+      "pct": 25,
+      "tokens": 64
+     },
+     {
+      "pct": 20,
+      "tokens": 51
+     },
+     {
+      "pct": 10,
+      "tokens": 26
+     }
+    ]
+   },
+   {
+    "id": "0195",
+    "caption": "ImageNet: Boston bull",
+    "budgets": [
+     {
+      "pct": 100,
+      "tokens": 256
+     },
+     {
+      "pct": 90,
+      "tokens": 230
+     },
+     {
+      "pct": 80,
+      "tokens": 205
+     },
+     {
+      "pct": 70,
+      "tokens": 179
+     },
+     {
+      "pct": 60,
+      "tokens": 154
+     },
+     {
+      "pct": 50,
+      "tokens": 128
+     },
+     {
+      "pct": 40,
+      "tokens": 102
+     },
+     {
+      "pct": 30,
+      "tokens": 77
+     },
+     {
+      "pct": 25,
+      "tokens": 64
+     },
+     {
+      "pct": 20,
+      "tokens": 51
+     },
+     {
+      "pct": 10,
+      "tokens": 26
+     }
+    ]
+   },
+   {
+    "id": "0795",
+    "caption": "ImageNet: ski",
+    "budgets": [
+     {
+      "pct": 100,
+      "tokens": 256
+     },
+     {
+      "pct": 90,
+      "tokens": 230
+     },
+     {
+      "pct": 80,
+      "tokens": 205
+     },
+     {
+      "pct": 70,
+      "tokens": 179
+     },
+     {
+      "pct": 60,
+      "tokens": 154
+     },
+     {
+      "pct": 50,
+      "tokens": 128
+     },
+     {
+      "pct": 40,
+      "tokens": 102
+     },
+     {
+      "pct": 30,
+      "tokens": 77
+     },
+     {
+      "pct": 25,
+      "tokens": 64
+     },
+     {
+      "pct": 20,
+      "tokens": 51
+     },
+     {
+      "pct": 10,
+      "tokens": 26
+     }
+    ]
+   },
+   {
+    "id": "0455",
+    "caption": "ImageNet: bottlecap",
+    "budgets": [
+     {
+      "pct": 100,
+      "tokens": 256
+     },
+     {
+      "pct": 90,
+      "tokens": 230
+     },
+     {
+      "pct": 80,
+      "tokens": 205
+     },
+     {
+      "pct": 70,
+      "tokens": 179
+     },
+     {
+      "pct": 60,
+      "tokens": 154
+     },
+     {
+      "pct": 50,
+      "tokens": 128
+     },
+     {
+      "pct": 40,
+      "tokens": 102
+     },
+     {
+      "pct": 30,
+      "tokens": 77
+     },
+     {
+      "pct": 25,
+      "tokens": 64
+     },
+     {
+      "pct": 20,
+      "tokens": 51
+     },
+     {
+      "pct": 10,
+      "tokens": 26
+     }
+    ]
+   },
+   {
+    "id": "0505",
+    "caption": "ImageNet: coffeepot",
+    "budgets": [
+     {
+      "pct": 100,
+      "tokens": 256
+     },
+     {
+      "pct": 90,
+      "tokens": 230
+     },
+     {
+      "pct": 80,
+      "tokens": 205
+     },
+     {
+      "pct": 70,
+      "tokens": 179
+     },
+     {
+      "pct": 60,
+      "tokens": 154
+     },
+     {
+      "pct": 50,
+      "tokens": 128
+     },
+     {
+      "pct": 40,
+      "tokens": 102
+     },
+     {
+      "pct": 30,
+      "tokens": 77
+     },
+     {
+      "pct": 25,
+      "tokens": 64
+     },
+     {
+      "pct": 20,
+      "tokens": 51
+     },
+     {
+      "pct": 10,
+      "tokens": 26
+     }
+    ]
+   },
+   {
+    "id": "0735",
+    "caption": "ImageNet: poncho",
+    "budgets": [
+     {
+      "pct": 100,
+      "tokens": 256
+     },
+     {
+      "pct": 90,
+      "tokens": 230
+     },
+     {
+      "pct": 80,
+      "tokens": 205
+     },
+     {
+      "pct": 70,
+      "tokens": 179
+     },
+     {
+      "pct": 60,
+      "tokens": 154
+     },
+     {
+      "pct": 50,
+      "tokens": 128
+     },
+     {
+      "pct": 40,
+      "tokens": 102
+     },
+     {
+      "pct": 30,
+      "tokens": 77
+     },
+     {
+      "pct": 25,
+      "tokens": 64
+     },
+     {
+      "pct": 20,
+      "tokens": 51
+     },
+     {
+      "pct": 10,
+      "tokens": 26
+     }
+    ]
+   },
+   {
+    "id": "0825",
+    "caption": "ImageNet: stone wall",
+    "budgets": [
+     {
+      "pct": 100,
+      "tokens": 256
+     },
+     {
+      "pct": 90,
+      "tokens": 230
+     },
+     {
+      "pct": 80,
+      "tokens": 205
+     },
+     {
+      "pct": 70,
+      "tokens": 179
+     },
+     {
+      "pct": 60,
+      "tokens": 154
+     },
+     {
+      "pct": 50,
+      "tokens": 128
+     },
+     {
+      "pct": 40,
+      "tokens": 102
+     },
+     {
+      "pct": 30,
+      "tokens": 77
+     },
+     {
+      "pct": 25,
+      "tokens": 64
+     },
+     {
+      "pct": 20,
+      "tokens": 51
+     },
+     {
+      "pct": 10,
+      "tokens": 26
+     }
+    ]
+   },
+   {
+    "id": "0965",
+    "caption": "ImageNet: burrito",
+    "budgets": [
+     {
+      "pct": 100,
+      "tokens": 256
+     },
+     {
+      "pct": 90,
+      "tokens": 230
+     },
+     {
+      "pct": 80,
+      "tokens": 205
+     },
+     {
+      "pct": 70,
+      "tokens": 179
+     },
+     {
+      "pct": 60,
+      "tokens": 154
+     },
+     {
+      "pct": 50,
+      "tokens": 128
+     },
+     {
+      "pct": 40,
+      "tokens": 102
+     },
+     {
+      "pct": 30,
+      "tokens": 77
+     },
+     {
+      "pct": 25,
+      "tokens": 64
+     },
+     {
+      "pct": 20,
+      "tokens": 51
+     },
+     {
+      "pct": 10,
+      "tokens": 26
+     }
+    ]
+   },
+   {
+    "id": "0025",
+    "caption": "ImageNet: European fire salamander",
+    "budgets": [
+     {
+      "pct": 100,
+      "tokens": 256
+     },
+     {
+      "pct": 90,
+      "tokens": 230
+     },
+     {
+      "pct": 80,
+      "tokens": 205
+     },
+     {
+      "pct": 70,
+      "tokens": 179
+     },
+     {
+      "pct": 60,
+      "tokens": 154
+     },
+     {
+      "pct": 50,
+      "tokens": 128
+     },
+     {
+      "pct": 40,
+      "tokens": 102
+     },
+     {
+      "pct": 30,
+      "tokens": 77
+     },
+     {
+      "pct": 25,
+      "tokens": 64
+     },
+     {
+      "pct": 20,
+      "tokens": 51
+     },
+     {
+      "pct": 10,
+      "tokens": 26
+     }
+    ]
+   },
+   {
+    "id": "0135",
+    "caption": "ImageNet: limpkin",
+    "budgets": [
+     {
+      "pct": 100,
+      "tokens": 256
+     },
+     {
+      "pct": 90,
+      "tokens": 230
+     },
+     {
+      "pct": 80,
+      "tokens": 205
+     },
+     {
+      "pct": 70,
+      "tokens": 179
+     },
+     {
+      "pct": 60,
+      "tokens": 154
+     },
+     {
+      "pct": 50,
+      "tokens": 128
+     },
+     {
+      "pct": 40,
+      "tokens": 102
+     },
+     {
+      "pct": 30,
+      "tokens": 77
+     },
+     {
+      "pct": 25,
+      "tokens": 64
+     },
+     {
+      "pct": 20,
+      "tokens": 51
+     },
+     {
+      "pct": 10,
+      "tokens": 26
+     }
+    ]
+   },
+   {
+    "id": "0125",
+    "caption": "ImageNet: hermit crab",
+    "budgets": [
+     {
+      "pct": 100,
+      "tokens": 256
+     },
+     {
+      "pct": 90,
+      "tokens": 230
+     },
+     {
+      "pct": 80,
+      "tokens": 205
+     },
+     {
+      "pct": 70,
+      "tokens": 179
+     },
+     {
+      "pct": 60,
+      "tokens": 154
+     },
+     {
+      "pct": 50,
+      "tokens": 128
+     },
+     {
+      "pct": 40,
+      "tokens": 102
+     },
+     {
+      "pct": 30,
+      "tokens": 77
+     },
+     {
+      "pct": 25,
+      "tokens": 64
+     },
+     {
+      "pct": 20,
+      "tokens": 51
+     },
+     {
+      "pct": 10,
+      "tokens": 26
+     }
+    ]
+   },
+   {
+    "id": "0645",
+    "caption": "ImageNet: maypole",
+    "budgets": [
+     {
+      "pct": 100,
+      "tokens": 256
+     },
+     {
+      "pct": 90,
+      "tokens": 230
+     },
+     {
+      "pct": 80,
+      "tokens": 205
+     },
+     {
+      "pct": 70,
+      "tokens": 179
+     },
+     {
+      "pct": 60,
+      "tokens": 154
+     },
+     {
+      "pct": 50,
+      "tokens": 128
+     },
+     {
+      "pct": 40,
+      "tokens": 102
+     },
+     {
+      "pct": 30,
+      "tokens": 77
+     },
+     {
+      "pct": 25,
+      "tokens": 64
+     },
+     {
+      "pct": 20,
+      "tokens": 51
+     },
+     {
+      "pct": 10,
+      "tokens": 26
+     }
+    ]
+   },
+   {
+    "id": "0895",
+    "caption": "ImageNet: warplane",
+    "budgets": [
+     {
+      "pct": 100,
+      "tokens": 256
+     },
+     {
+      "pct": 90,
+      "tokens": 230
+     },
+     {
+      "pct": 80,
+      "tokens": 205
+     },
+     {
+      "pct": 70,
+      "tokens": 179
+     },
+     {
+      "pct": 60,
+      "tokens": 154
+     },
+     {
+      "pct": 50,
+      "tokens": 128
+     },
+     {
+      "pct": 40,
+      "tokens": 102
+     },
+     {
+      "pct": 30,
+      "tokens": 77
+     },
+     {
+      "pct": 25,
+      "tokens": 64
+     },
+     {
+      "pct": 20,
+      "tokens": 51
+     },
+     {
+      "pct": 10,
+      "tokens": 26
+     }
+    ]
+   },
+   {
+    "id": "0075",
+    "caption": "ImageNet: black widow",
+    "budgets": [
+     {
+      "pct": 100,
+      "tokens": 256
+     },
+     {
+      "pct": 90,
+      "tokens": 230
+     },
+     {
+      "pct": 80,
+      "tokens": 205
+     },
+     {
+      "pct": 70,
+      "tokens": 179
+     },
+     {
+      "pct": 60,
+      "tokens": 154
+     },
+     {
+      "pct": 50,
+      "tokens": 128
+     },
+     {
+      "pct": 40,
+      "tokens": 102
+     },
+     {
+      "pct": 30,
+      "tokens": 77
+     },
+     {
+      "pct": 25,
+      "tokens": 64
+     },
+     {
+      "pct": 20,
+      "tokens": 51
+     },
+     {
+      "pct": 10,
+      "tokens": 26
+     }
+    ]
+   },
+   {
+    "id": "0015",
+    "caption": "ImageNet: robin",
+    "budgets": [
+     {
+      "pct": 100,
+      "tokens": 256
+     },
+     {
+      "pct": 90,
+      "tokens": 230
+     },
+     {
+      "pct": 80,
+      "tokens": 205
+     },
+     {
+      "pct": 70,
+      "tokens": 179
+     },
+     {
+      "pct": 60,
+      "tokens": 154
+     },
+     {
+      "pct": 50,
+      "tokens": 128
+     },
+     {
+      "pct": 40,
+      "tokens": 102
+     },
+     {
+      "pct": 30,
+      "tokens": 77
+     },
+     {
+      "pct": 25,
+      "tokens": 64
+     },
+     {
+      "pct": 20,
+      "tokens": 51
+     },
+     {
+      "pct": 10,
+      "tokens": 26
+     }
+    ]
+   },
+   {
+    "id": "0405",
+    "caption": "ImageNet: airship",
+    "budgets": [
+     {
+      "pct": 100,
+      "tokens": 256
+     },
+     {
+      "pct": 90,
+      "tokens": 230
+     },
+     {
+      "pct": 80,
+      "tokens": 205
+     },
+     {
+      "pct": 70,
+      "tokens": 179
+     },
+     {
+      "pct": 60,
+      "tokens": 154
+     },
+     {
+      "pct": 50,
+      "tokens": 128
+     },
+     {
+      "pct": 40,
+      "tokens": 102
+     },
+     {
+      "pct": 30,
+      "tokens": 77
+     },
+     {
+      "pct": 25,
+      "tokens": 64
+     },
+     {
+      "pct": 20,
+      "tokens": 51
+     },
+     {
+      "pct": 10,
+      "tokens": 26
+     }
+    ]
+   },
+   {
+    "id": "0425",
+    "caption": "ImageNet: barn",
+    "budgets": [
+     {
+      "pct": 100,
+      "tokens": 256
+     },
+     {
+      "pct": 90,
+      "tokens": 230
+     },
+     {
+      "pct": 80,
+      "tokens": 205
+     },
+     {
+      "pct": 70,
+      "tokens": 179
+     },
+     {
+      "pct": 60,
+      "tokens": 154
+     },
+     {
+      "pct": 50,
+      "tokens": 128
+     },
+     {
+      "pct": 40,
+      "tokens": 102
+     },
+     {
+      "pct": 30,
+      "tokens": 77
+     },
+     {
+      "pct": 25,
+      "tokens": 64
+     },
+     {
+      "pct": 20,
+      "tokens": 51
+     },
+     {
+      "pct": 10,
+      "tokens": 26
+     }
+    ]
+   },
+   {
+    "id": "0855",
+    "caption": "ImageNet: thimble",
+    "budgets": [
+     {
+      "pct": 100,
+      "tokens": 256
+     },
+     {
+      "pct": 90,
+      "tokens": 230
+     },
+     {
+      "pct": 80,
+      "tokens": 205
+     },
+     {
+      "pct": 70,
+      "tokens": 179
+     },
+     {
+      "pct": 60,
+      "tokens": 154
+     },
+     {
+      "pct": 50,
+      "tokens": 128
+     },
+     {
+      "pct": 40,
+      "tokens": 102
+     },
+     {
+      "pct": 30,
+      "tokens": 77
+     },
+     {
+      "pct": 25,
+      "tokens": 64
+     },
+     {
+      "pct": 20,
+      "tokens": 51
+     },
+     {
+      "pct": 10,
+      "tokens": 26
+     }
+    ]
+   },
+   {
+    "id": "0915",
+    "caption": "ImageNet: yurt",
+    "budgets": [
+     {
+      "pct": 100,
+      "tokens": 256
+     },
+     {
+      "pct": 90,
+      "tokens": 230
+     },
+     {
+      "pct": 80,
+      "tokens": 205
+     },
+     {
+      "pct": 70,
+      "tokens": 179
+     },
+     {
+      "pct": 60,
+      "tokens": 154
+     },
+     {
+      "pct": 50,
+      "tokens": 128
+     },
+     {
+      "pct": 40,
+      "tokens": 102
+     },
+     {
+      "pct": 30,
+      "tokens": 77
+     },
+     {
+      "pct": 25,
+      "tokens": 64
+     },
+     {
+      "pct": 20,
+      "tokens": 51
+     },
+     {
+      "pct": 10,
+      "tokens": 26
+     }
+    ]
+   },
+   {
+    "id": "0545",
+    "caption": "ImageNet: electric fan",
+    "budgets": [
+     {
+      "pct": 100,
+      "tokens": 256
+     },
+     {
+      "pct": 90,
+      "tokens": 230
+     },
+     {
+      "pct": 80,
+      "tokens": 205
+     },
+     {
+      "pct": 70,
+      "tokens": 179
+     },
+     {
+      "pct": 60,
+      "tokens": 154
+     },
+     {
+      "pct": 50,
+      "tokens": 128
+     },
+     {
+      "pct": 40,
+      "tokens": 102
+     },
+     {
+      "pct": 30,
+      "tokens": 77
+     },
+     {
+      "pct": 25,
+      "tokens": 64
+     },
+     {
+      "pct": 20,
+      "tokens": 51
+     },
+     {
+      "pct": 10,
+      "tokens": 26
+     }
+    ]
+   },
+   {
+    "id": "0325",
+    "caption": "ImageNet: sulphur butterfly",
+    "budgets": [
+     {
+      "pct": 100,
+      "tokens": 256
+     },
+     {
+      "pct": 90,
+      "tokens": 230
+     },
+     {
+      "pct": 80,
+      "tokens": 205
+     },
+     {
+      "pct": 70,
+      "tokens": 179
+     },
+     {
+      "pct": 60,
+      "tokens": 154
+     },
+     {
+      "pct": 50,
+      "tokens": 128
+     },
+     {
+      "pct": 40,
+      "tokens": 102
+     },
+     {
+      "pct": 30,
+      "tokens": 77
+     },
+     {
+      "pct": 25,
+      "tokens": 64
+     },
+     {
+      "pct": 20,
+      "tokens": 51
+     },
+     {
+      "pct": 10,
+      "tokens": 26
+     }
+    ]
+   },
+   {
+    "id": "0335",
+    "caption": "ImageNet: fox squirrel",
+    "budgets": [
+     {
+      "pct": 100,
+      "tokens": 256
+     },
+     {
+      "pct": 90,
+      "tokens": 230
+     },
+     {
+      "pct": 80,
+      "tokens": 205
+     },
+     {
+      "pct": 70,
+      "tokens": 179
+     },
+     {
+      "pct": 60,
+      "tokens": 154
+     },
+     {
+      "pct": 50,
+      "tokens": 128
+     },
+     {
+      "pct": 40,
+      "tokens": 102
+     },
+     {
+      "pct": 30,
+      "tokens": 77
+     },
+     {
+      "pct": 25,
+      "tokens": 64
+     },
+     {
+      "pct": 20,
+      "tokens": 51
+     },
+     {
+      "pct": 10,
+      "tokens": 26
+     }
+    ]
+   },
+   {
+    "id": "0315",
+    "caption": "ImageNet: mantis",
+    "budgets": [
+     {
+      "pct": 100,
+      "tokens": 256
+     },
+     {
+      "pct": 90,
+      "tokens": 230
+     },
+     {
+      "pct": 80,
+      "tokens": 205
+     },
+     {
+      "pct": 70,
+      "tokens": 179
+     },
+     {
+      "pct": 60,
+      "tokens": 154
+     },
+     {
+      "pct": 50,
+      "tokens": 128
+     },
+     {
+      "pct": 40,
+      "tokens": 102
+     },
+     {
+      "pct": 30,
+      "tokens": 77
+     },
+     {
+      "pct": 25,
+      "tokens": 64
+     },
+     {
+      "pct": 20,
+      "tokens": 51
+     },
+     {
+      "pct": 10,
+      "tokens": 26
+     }
+    ]
+   },
+   {
+    "id": "0605",
+    "caption": "ImageNet: iPod",
+    "budgets": [
+     {
+      "pct": 100,
+      "tokens": 256
+     },
+     {
+      "pct": 90,
+      "tokens": 230
+     },
+     {
+      "pct": 80,
+      "tokens": 205
+     },
+     {
+      "pct": 70,
+      "tokens": 179
+     },
+     {
+      "pct": 60,
+      "tokens": 154
+     },
+     {
+      "pct": 50,
+      "tokens": 128
+     },
+     {
+      "pct": 40,
+      "tokens": 102
+     },
+     {
+      "pct": 30,
+      "tokens": 77
+     },
+     {
+      "pct": 25,
+      "tokens": 64
+     },
+     {
+      "pct": 20,
+      "tokens": 51
+     },
+     {
+      "pct": 10,
+      "tokens": 26
+     }
+    ]
+   },
+   {
+    "id": "0755",
+    "caption": "ImageNet: radio telescope",
+    "budgets": [
+     {
+      "pct": 100,
+      "tokens": 256
+     },
+     {
+      "pct": 90,
+      "tokens": 230
+     },
+     {
+      "pct": 80,
+      "tokens": 205
+     },
+     {
+      "pct": 70,
+      "tokens": 179
+     },
+     {
+      "pct": 60,
+      "tokens": 154
+     },
+     {
+      "pct": 50,
+      "tokens": 128
+     },
+     {
+      "pct": 40,
+      "tokens": 102
+     },
+     {
+      "pct": 30,
+      "tokens": 77
+     },
+     {
+      "pct": 25,
+      "tokens": 64
+     },
+     {
+      "pct": 20,
+      "tokens": 51
+     },
+     {
+      "pct": 10,
+      "tokens": 26
+     }
+    ]
+   },
+   {
+    "id": "0535",
+    "caption": "ImageNet: disk brake",
+    "budgets": [
+     {
+      "pct": 100,
+      "tokens": 256
+     },
+     {
+      "pct": 90,
+      "tokens": 230
+     },
+     {
+      "pct": 80,
+      "tokens": 205
+     },
+     {
+      "pct": 70,
+      "tokens": 179
+     },
+     {
+      "pct": 60,
+      "tokens": 154
+     },
+     {
+      "pct": 50,
+      "tokens": 128
+     },
+     {
+      "pct": 40,
+      "tokens": 102
+     },
+     {
+      "pct": 30,
+      "tokens": 77
+     },
+     {
+      "pct": 25,
+      "tokens": 64
+     },
+     {
+      "pct": 20,
+      "tokens": 51
+     },
+     {
+      "pct": 10,
+      "tokens": 26
+     }
+    ]
+   },
+   {
+    "id": "0365",
+    "caption": "ImageNet: orangutan",
+    "budgets": [
+     {
+      "pct": 100,
+      "tokens": 256
+     },
+     {
+      "pct": 90,
+      "tokens": 230
+     },
+     {
+      "pct": 80,
+      "tokens": 205
+     },
+     {
+      "pct": 70,
+      "tokens": 179
+     },
+     {
+      "pct": 60,
+      "tokens": 154
+     },
+     {
+      "pct": 50,
+      "tokens": 128
+     },
+     {
+      "pct": 40,
+      "tokens": 102
+     },
+     {
+      "pct": 30,
+      "tokens": 77
+     },
+     {
+      "pct": 25,
+      "tokens": 64
+     },
+     {
+      "pct": 20,
+      "tokens": 51
+     },
+     {
+      "pct": 10,
+      "tokens": 26
+     }
+    ]
+   },
+   {
+    "id": "0935",
+    "caption": "ImageNet: mashed potato",
+    "budgets": [
+     {
+      "pct": 100,
+      "tokens": 256
+     },
+     {
+      "pct": 90,
+      "tokens": 230
+     },
+     {
+      "pct": 80,
+      "tokens": 205
+     },
+     {
+      "pct": 70,
+      "tokens": 179
+     },
+     {
+      "pct": 60,
+      "tokens": 154
+     },
+     {
+      "pct": 50,
+      "tokens": 128
+     },
+     {
+      "pct": 40,
+      "tokens": 102
+     },
+     {
+      "pct": 30,
+      "tokens": 77
+     },
+     {
+      "pct": 25,
+      "tokens": 64
+     },
+     {
+      "pct": 20,
+      "tokens": 51
+     },
+     {
+      "pct": 10,
+      "tokens": 26
+     }
+    ]
+   },
+   {
+    "id": "0995",
+    "caption": "ImageNet: earthstar",
+    "budgets": [
+     {
+      "pct": 100,
+      "tokens": 256
+     },
+     {
+      "pct": 90,
+      "tokens": 230
+     },
+     {
+      "pct": 80,
+      "tokens": 205
+     },
+     {
+      "pct": 70,
+      "tokens": 179
+     },
+     {
+      "pct": 60,
+      "tokens": 154
+     },
+     {
+      "pct": 50,
+      "tokens": 128
+     },
+     {
+      "pct": 40,
+      "tokens": 102
+     },
+     {
+      "pct": 30,
+      "tokens": 77
+     },
+     {
+      "pct": 25,
+      "tokens": 64
+     },
+     {
+      "pct": 20,
+      "tokens": 51
+     },
+     {
+      "pct": 10,
+      "tokens": 26
+     }
+    ]
+   }
+  ]
+ },
+ "pixeldit": {
+  "label": "PixelDiT-T2I",
+  "dataset": "Text-to-image 1024\u00b2",
+  "subjects": [
+   {
+    "id": "000062",
+    "caption": "\u201cA photo of a hot dog above a knife\u201d",
+    "budgets": [
+     {
+      "pct": 100,
+      "tokens": 4096
+     },
+     {
+      "pct": 90,
+      "tokens": 3686
+     },
+     {
+      "pct": 80,
+      "tokens": 3277
+     },
+     {
+      "pct": 70,
+      "tokens": 2867
+     },
+     {
+      "pct": 60,
+      "tokens": 2458
+     },
+     {
+      "pct": 50,
+      "tokens": 2048
+     },
+     {
+      "pct": 40,
+      "tokens": 1638
+     },
+     {
+      "pct": 30,
+      "tokens": 1229
+     },
+     {
+      "pct": 25,
+      "tokens": 1024
+     },
+     {
+      "pct": 20,
+      "tokens": 819
+     },
+     {
+      "pct": 10,
+      "tokens": 410
+     }
+    ]
+   },
+   {
+    "id": "000088",
+    "caption": "\u201cA digital illustration of a girl features her with vibrant\u2026\u201d",
+    "budgets": [
+     {
+      "pct": 100,
+      "tokens": 4096
+     },
+     {
+      "pct": 90,
+      "tokens": 3686
+     },
+     {
+      "pct": 80,
+      "tokens": 3277
+     },
+     {
+      "pct": 70,
+      "tokens": 2867
+     },
+     {
+      "pct": 60,
+      "tokens": 2458
+     },
+     {
+      "pct": 50,
+      "tokens": 2048
+     },
+     {
+      "pct": 40,
+      "tokens": 1638
+     },
+     {
+      "pct": 30,
+      "tokens": 1229
+     },
+     {
+      "pct": 25,
+      "tokens": 1024
+     },
+     {
+      "pct": 20,
+      "tokens": 819
+     },
+     {
+      "pct": 10,
+      "tokens": 410
+     }
+    ]
+   },
+   {
+    "id": "000067",
+    "caption": "\u201cA photo of a green cup and a yellow bowl\u201d",
+    "budgets": [
+     {
+      "pct": 100,
+      "tokens": 4096
+     },
+     {
+      "pct": 90,
+      "tokens": 3686
+     },
+     {
+      "pct": 80,
+      "tokens": 3277
+     },
+     {
+      "pct": 70,
+      "tokens": 2867
+     },
+     {
+      "pct": 60,
+      "tokens": 2458
+     },
+     {
+      "pct": 50,
+      "tokens": 2048
+     },
+     {
+      "pct": 40,
+      "tokens": 1638
+     },
+     {
+      "pct": 30,
+      "tokens": 1229
+     },
+     {
+      "pct": 25,
+      "tokens": 1024
+     },
+     {
+      "pct": 20,
+      "tokens": 819
+     },
+     {
+      "pct": 10,
+      "tokens": 410
+     }
+    ]
+   },
+   {
+    "id": "000077",
+    "caption": "\u201cA detailed pen-and-ink drawing that features a meticulously\u2026\u201d",
+    "budgets": [
+     {
+      "pct": 100,
+      "tokens": 4096
+     },
+     {
+      "pct": 90,
+      "tokens": 3686
+     },
+     {
+      "pct": 80,
+      "tokens": 3277
+     },
+     {
+      "pct": 70,
+      "tokens": 2867
+     },
+     {
+      "pct": 60,
+      "tokens": 2458
+     },
+     {
+      "pct": 50,
+      "tokens": 2048
+     },
+     {
+      "pct": 40,
+      "tokens": 1638
+     },
+     {
+      "pct": 30,
+      "tokens": 1229
+     },
+     {
+      "pct": 25,
+      "tokens": 1024
+     },
+     {
+      "pct": 20,
+      "tokens": 819
+     },
+     {
+      "pct": 10,
+      "tokens": 410
+     }
+    ]
+   },
+   {
+    "id": "000019",
+    "caption": "\u201cA stone plate with a dragon on it\u201d",
+    "budgets": [
+     {
+      "pct": 100,
+      "tokens": 4096
+     },
+     {
+      "pct": 90,
+      "tokens": 3686
+     },
+     {
+      "pct": 80,
+      "tokens": 3277
+     },
+     {
+      "pct": 70,
+      "tokens": 2867
+     },
+     {
+      "pct": 60,
+      "tokens": 2458
+     },
+     {
+      "pct": 50,
+      "tokens": 2048
+     },
+     {
+      "pct": 40,
+      "tokens": 1638
+     },
+     {
+      "pct": 30,
+      "tokens": 1229
+     },
+     {
+      "pct": 25,
+      "tokens": 1024
+     },
+     {
+      "pct": 20,
+      "tokens": 819
+     },
+     {
+      "pct": 10,
+      "tokens": 410
+     }
+    ]
+   },
+   {
+    "id": "000061",
+    "caption": "\u201cA photo of a bird left of a couch\u201d",
+    "budgets": [
+     {
+      "pct": 100,
+      "tokens": 4096
+     },
+     {
+      "pct": 90,
+      "tokens": 3686
+     },
+     {
+      "pct": 80,
+      "tokens": 3277
+     },
+     {
+      "pct": 70,
+      "tokens": 2867
+     },
+     {
+      "pct": 60,
+      "tokens": 2458
+     },
+     {
+      "pct": 50,
+      "tokens": 2048
+     },
+     {
+      "pct": 40,
+      "tokens": 1638
+     },
+     {
+      "pct": 30,
+      "tokens": 1229
+     },
+     {
+      "pct": 25,
+      "tokens": 1024
+     },
+     {
+      "pct": 20,
+      "tokens": 819
+     },
+     {
+      "pct": 10,
+      "tokens": 410
+     }
+    ]
+   },
+   {
+    "id": "000004",
+    "caption": "\u201cA close up of a white flower on a plant with a blurred\u2026\u201d",
+    "budgets": [
+     {
+      "pct": 100,
+      "tokens": 4096
+     },
+     {
+      "pct": 90,
+      "tokens": 3686
+     },
+     {
+      "pct": 80,
+      "tokens": 3277
+     },
+     {
+      "pct": 70,
+      "tokens": 2867
+     },
+     {
+      "pct": 60,
+      "tokens": 2458
+     },
+     {
+      "pct": 50,
+      "tokens": 2048
+     },
+     {
+      "pct": 40,
+      "tokens": 1638
+     },
+     {
+      "pct": 30,
+      "tokens": 1229
+     },
+     {
+      "pct": 25,
+      "tokens": 1024
+     },
+     {
+      "pct": 20,
+      "tokens": 819
+     },
+     {
+      "pct": 10,
+      "tokens": 410
+     }
+    ]
+   },
+   {
+    "id": "000009",
+    "caption": "\u201cA white plate with a green glaze on it\u201d",
+    "budgets": [
+     {
+      "pct": 100,
+      "tokens": 4096
+     },
+     {
+      "pct": 90,
+      "tokens": 3686
+     },
+     {
+      "pct": 80,
+      "tokens": 3277
+     },
+     {
+      "pct": 70,
+      "tokens": 2867
+     },
+     {
+      "pct": 60,
+      "tokens": 2458
+     },
+     {
+      "pct": 50,
+      "tokens": 2048
+     },
+     {
+      "pct": 40,
+      "tokens": 1638
+     },
+     {
+      "pct": 30,
+      "tokens": 1229
+     },
+     {
+      "pct": 25,
+      "tokens": 1024
+     },
+     {
+      "pct": 20,
+      "tokens": 819
+     },
+     {
+      "pct": 10,
+      "tokens": 410
+     }
+    ]
+   },
+   {
+    "id": "000054",
+    "caption": "\u201cA photo of a yellow elephant\u201d",
+    "budgets": [
+     {
+      "pct": 100,
+      "tokens": 4096
+     },
+     {
+      "pct": 90,
+      "tokens": 3686
+     },
+     {
+      "pct": 80,
+      "tokens": 3277
+     },
+     {
+      "pct": 70,
+      "tokens": 2867
+     },
+     {
+      "pct": 60,
+      "tokens": 2458
+     },
+     {
+      "pct": 50,
+      "tokens": 2048
+     },
+     {
+      "pct": 40,
+      "tokens": 1638
+     },
+     {
+      "pct": 30,
+      "tokens": 1229
+     },
+     {
+      "pct": 25,
+      "tokens": 1024
+     },
+     {
+      "pct": 20,
+      "tokens": 819
+     },
+     {
+      "pct": 10,
+      "tokens": 410
+     }
+    ]
+   },
+   {
+    "id": "000022",
+    "caption": "\u201cA road with a car driving down it\u201d",
+    "budgets": [
+     {
+      "pct": 100,
+      "tokens": 4096
+     },
+     {
+      "pct": 90,
+      "tokens": 3686
+     },
+     {
+      "pct": 80,
+      "tokens": 3277
+     },
+     {
+      "pct": 70,
+      "tokens": 2867
+     },
+     {
+      "pct": 60,
+      "tokens": 2458
+     },
+     {
+      "pct": 50,
+      "tokens": 2048
+     },
+     {
+      "pct": 40,
+      "tokens": 1638
+     },
+     {
+      "pct": 30,
+      "tokens": 1229
+     },
+     {
+      "pct": 25,
+      "tokens": 1024
+     },
+     {
+      "pct": 20,
+      "tokens": 819
+     },
+     {
+      "pct": 10,
+      "tokens": 410
+     }
+    ]
+   },
+   {
+    "id": "000011",
+    "caption": "\u201cA dirt road winding through a field of stones and plants\u201d",
+    "budgets": [
+     {
+      "pct": 100,
+      "tokens": 4096
+     },
+     {
+      "pct": 90,
+      "tokens": 3686
+     },
+     {
+      "pct": 80,
+      "tokens": 3277
+     },
+     {
+      "pct": 70,
+      "tokens": 2867
+     },
+     {
+      "pct": 60,
+      "tokens": 2458
+     },
+     {
+      "pct": 50,
+      "tokens": 2048
+     },
+     {
+      "pct": 40,
+      "tokens": 1638
+     },
+     {
+      "pct": 30,
+      "tokens": 1229
+     },
+     {
+      "pct": 25,
+      "tokens": 1024
+     },
+     {
+      "pct": 20,
+      "tokens": 819
+     },
+     {
+      "pct": 10,
+      "tokens": 410
+     }
+    ]
+   },
+   {
+    "id": "000016",
+    "caption": "\u201cA group of three conch shells on a black surface\u201d",
+    "budgets": [
+     {
+      "pct": 100,
+      "tokens": 4096
+     },
+     {
+      "pct": 90,
+      "tokens": 3686
+     },
+     {
+      "pct": 80,
+      "tokens": 3277
+     },
+     {
+      "pct": 70,
+      "tokens": 2867
+     },
+     {
+      "pct": 60,
+      "tokens": 2458
+     },
+     {
+      "pct": 50,
+      "tokens": 2048
+     },
+     {
+      "pct": 40,
+      "tokens": 1638
+     },
+     {
+      "pct": 30,
+      "tokens": 1229
+     },
+     {
+      "pct": 25,
+      "tokens": 1024
+     },
+     {
+      "pct": 20,
+      "tokens": 819
+     },
+     {
+      "pct": 10,
+      "tokens": 410
+     }
+    ]
+   },
+   {
+    "id": "000066",
+    "caption": "\u201cA photo of a yellow bowl and a white baseball glove\u201d",
+    "budgets": [
+     {
+      "pct": 100,
+      "tokens": 4096
+     },
+     {
+      "pct": 90,
+      "tokens": 3686
+     },
+     {
+      "pct": 80,
+      "tokens": 3277
+     },
+     {
+      "pct": 70,
+      "tokens": 2867
+     },
+     {
+      "pct": 60,
+      "tokens": 2458
+     },
+     {
+      "pct": 50,
+      "tokens": 2048
+     },
+     {
+      "pct": 40,
+      "tokens": 1638
+     },
+     {
+      "pct": 30,
+      "tokens": 1229
+     },
+     {
+      "pct": 25,
+      "tokens": 1024
+     },
+     {
+      "pct": 20,
+      "tokens": 819
+     },
+     {
+      "pct": 10,
+      "tokens": 410
+     }
+    ]
+   },
+   {
+    "id": "000068",
+    "caption": "\u201cA photo of an orange potted plant and a black spoon\u201d",
+    "budgets": [
+     {
+      "pct": 100,
+      "tokens": 4096
+     },
+     {
+      "pct": 90,
+      "tokens": 3686
+     },
+     {
+      "pct": 80,
+      "tokens": 3277
+     },
+     {
+      "pct": 70,
+      "tokens": 2867
+     },
+     {
+      "pct": 60,
+      "tokens": 2458
+     },
+     {
+      "pct": 50,
+      "tokens": 2048
+     },
+     {
+      "pct": 40,
+      "tokens": 1638
+     },
+     {
+      "pct": 30,
+      "tokens": 1229
+     },
+     {
+      "pct": 25,
+      "tokens": 1024
+     },
+     {
+      "pct": 20,
+      "tokens": 819
+     },
+     {
+      "pct": 10,
+      "tokens": 410
+     }
+    ]
+   },
+   {
+    "id": "000085",
+    "caption": "\u201cTwo multicolored butterflies with delicate\u201d",
+    "budgets": [
+     {
+      "pct": 100,
+      "tokens": 4096
+     },
+     {
+      "pct": 90,
+      "tokens": 3686
+     },
+     {
+      "pct": 80,
+      "tokens": 3277
+     },
+     {
+      "pct": 70,
+      "tokens": 2867
+     },
+     {
+      "pct": 60,
+      "tokens": 2458
+     },
+     {
+      "pct": 50,
+      "tokens": 2048
+     },
+     {
+      "pct": 40,
+      "tokens": 1638
+     },
+     {
+      "pct": 30,
+      "tokens": 1229
+     },
+     {
+      "pct": 25,
+      "tokens": 1024
+     },
+     {
+      "pct": 20,
+      "tokens": 819
+     },
+     {
+      "pct": 10,
+      "tokens": 410
+     }
+    ]
+   },
+   {
+    "id": "000089",
+    "caption": "\u201cA set of four green plastic food containers displayed\u2026\u201d",
+    "budgets": [
+     {
+      "pct": 100,
+      "tokens": 4096
+     },
+     {
+      "pct": 90,
+      "tokens": 3686
+     },
+     {
+      "pct": 80,
+      "tokens": 3277
+     },
+     {
+      "pct": 70,
+      "tokens": 2867
+     },
+     {
+      "pct": 60,
+      "tokens": 2458
+     },
+     {
+      "pct": 50,
+      "tokens": 2048
+     },
+     {
+      "pct": 40,
+      "tokens": 1638
+     },
+     {
+      "pct": 30,
+      "tokens": 1229
+     },
+     {
+      "pct": 25,
+      "tokens": 1024
+     },
+     {
+      "pct": 20,
+      "tokens": 819
+     },
+     {
+      "pct": 10,
+      "tokens": 410
+     }
+    ]
+   },
+   {
+    "id": "000018",
+    "caption": "\u201cA group of fire ants on a tree branch with a blurred\u2026\u201d",
+    "budgets": [
+     {
+      "pct": 100,
+      "tokens": 4096
+     },
+     {
+      "pct": 90,
+      "tokens": 3686
+     },
+     {
+      "pct": 80,
+      "tokens": 3277
+     },
+     {
+      "pct": 70,
+      "tokens": 2867
+     },
+     {
+      "pct": 60,
+      "tokens": 2458
+     },
+     {
+      "pct": 50,
+      "tokens": 2048
+     },
+     {
+      "pct": 40,
+      "tokens": 1638
+     },
+     {
+      "pct": 30,
+      "tokens": 1229
+     },
+     {
+      "pct": 25,
+      "tokens": 1024
+     },
+     {
+      "pct": 20,
+      "tokens": 819
+     },
+     {
+      "pct": 10,
+      "tokens": 410
+     }
+    ]
+   },
+   {
+    "id": "000047",
+    "caption": "\u201cA photo of a computer keyboard and a microwave\u201d",
+    "budgets": [
+     {
+      "pct": 100,
+      "tokens": 4096
+     },
+     {
+      "pct": 90,
+      "tokens": 3686
+     },
+     {
+      "pct": 80,
+      "tokens": 3277
+     },
+     {
+      "pct": 70,
+      "tokens": 2867
+     },
+     {
+      "pct": 60,
+      "tokens": 2458
+     },
+     {
+      "pct": 50,
+      "tokens": 2048
+     },
+     {
+      "pct": 40,
+      "tokens": 1638
+     },
+     {
+      "pct": 30,
+      "tokens": 1229
+     },
+     {
+      "pct": 25,
+      "tokens": 1024
+     },
+     {
+      "pct": 20,
+      "tokens": 819
+     },
+     {
+      "pct": 10,
+      "tokens": 410
+     }
+    ]
+   },
+   {
+    "id": "000050",
+    "caption": "\u201cA photo of four bowls\u201d",
+    "budgets": [
+     {
+      "pct": 100,
+      "tokens": 4096
+     },
+     {
+      "pct": 90,
+      "tokens": 3686
+     },
+     {
+      "pct": 80,
+      "tokens": 3277
+     },
+     {
+      "pct": 70,
+      "tokens": 2867
+     },
+     {
+      "pct": 60,
+      "tokens": 2458
+     },
+     {
+      "pct": 50,
+      "tokens": 2048
+     },
+     {
+      "pct": 40,
+      "tokens": 1638
+     },
+     {
+      "pct": 30,
+      "tokens": 1229
+     },
+     {
+      "pct": 25,
+      "tokens": 1024
+     },
+     {
+      "pct": 20,
+      "tokens": 819
+     },
+     {
+      "pct": 10,
+      "tokens": 410
+     }
+    ]
+   },
+   {
+    "id": "000027",
+    "caption": "\u201cA gold coin with the number one on it against a white\u2026\u201d",
+    "budgets": [
+     {
+      "pct": 100,
+      "tokens": 4096
+     },
+     {
+      "pct": 90,
+      "tokens": 3686
+     },
+     {
+      "pct": 80,
+      "tokens": 3277
+     },
+     {
+      "pct": 70,
+      "tokens": 2867
+     },
+     {
+      "pct": 60,
+      "tokens": 2458
+     },
+     {
+      "pct": 50,
+      "tokens": 2048
+     },
+     {
+      "pct": 40,
+      "tokens": 1638
+     },
+     {
+      "pct": 30,
+      "tokens": 1229
+     },
+     {
+      "pct": 25,
+      "tokens": 1024
+     },
+     {
+      "pct": 20,
+      "tokens": 819
+     },
+     {
+      "pct": 10,
+      "tokens": 410
+     }
+    ]
+   },
+   {
+    "id": "000065",
+    "caption": "\u201cA photo of a green couch and an orange umbrella\u201d",
+    "budgets": [
+     {
+      "pct": 100,
+      "tokens": 4096
+     },
+     {
+      "pct": 90,
+      "tokens": 3686
+     },
+     {
+      "pct": 80,
+      "tokens": 3277
+     },
+     {
+      "pct": 70,
+      "tokens": 2867
+     },
+     {
+      "pct": 60,
+      "tokens": 2458
+     },
+     {
+      "pct": 50,
+      "tokens": 2048
+     },
+     {
+      "pct": 40,
+      "tokens": 1638
+     },
+     {
+      "pct": 30,
+      "tokens": 1229
+     },
+     {
+      "pct": 25,
+      "tokens": 1024
+     },
+     {
+      "pct": 20,
+      "tokens": 819
+     },
+     {
+      "pct": 10,
+      "tokens": 410
+     }
+    ]
+   },
+   {
+    "id": "000030",
+    "caption": "\u201cA black and white drawing of a book with a feather on top\u2026\u201d",
+    "budgets": [
+     {
+      "pct": 100,
+      "tokens": 4096
+     },
+     {
+      "pct": 90,
+      "tokens": 3686
+     },
+     {
+      "pct": 80,
+      "tokens": 3277
+     },
+     {
+      "pct": 70,
+      "tokens": 2867
+     },
+     {
+      "pct": 60,
+      "tokens": 2458
+     },
+     {
+      "pct": 50,
+      "tokens": 2048
+     },
+     {
+      "pct": 40,
+      "tokens": 1638
+     },
+     {
+      "pct": 30,
+      "tokens": 1229
+     },
+     {
+      "pct": 25,
+      "tokens": 1024
+     },
+     {
+      "pct": 20,
+      "tokens": 819
+     },
+     {
+      "pct": 10,
+      "tokens": 410
+     }
+    ]
+   },
+   {
+    "id": "000037",
+    "caption": "\u201cAn old book with a map of France in the middle of it\u201d",
+    "budgets": [
+     {
+      "pct": 100,
+      "tokens": 4096
+     },
+     {
+      "pct": 90,
+      "tokens": 3686
+     },
+     {
+      "pct": 80,
+      "tokens": 3277
+     },
+     {
+      "pct": 70,
+      "tokens": 2867
+     },
+     {
+      "pct": 60,
+      "tokens": 2458
+     },
+     {
+      "pct": 50,
+      "tokens": 2048
+     },
+     {
+      "pct": 40,
+      "tokens": 1638
+     },
+     {
+      "pct": 30,
+      "tokens": 1229
+     },
+     {
+      "pct": 25,
+      "tokens": 1024
+     },
+     {
+      "pct": 20,
+      "tokens": 819
+     },
+     {
+      "pct": 10,
+      "tokens": 410
+     }
+    ]
+   },
+   {
+    "id": "000003",
+    "caption": "\u201cA red truck parked in front of a tall building with glass\u2026\u201d",
+    "budgets": [
+     {
+      "pct": 100,
+      "tokens": 4096
+     },
+     {
+      "pct": 90,
+      "tokens": 3686
+     },
+     {
+      "pct": 80,
+      "tokens": 3277
+     },
+     {
+      "pct": 70,
+      "tokens": 2867
+     },
+     {
+      "pct": 60,
+      "tokens": 2458
+     },
+     {
+      "pct": 50,
+      "tokens": 2048
+     },
+     {
+      "pct": 40,
+      "tokens": 1638
+     },
+     {
+      "pct": 30,
+      "tokens": 1229
+     },
+     {
+      "pct": 25,
+      "tokens": 1024
+     },
+     {
+      "pct": 20,
+      "tokens": 819
+     },
+     {
+      "pct": 10,
+      "tokens": 410
+     }
+    ]
+   },
+   {
+    "id": "000005",
+    "caption": "\u201cA blue and white teapot with a flower design on it\u201d",
+    "budgets": [
+     {
+      "pct": 100,
+      "tokens": 4096
+     },
+     {
+      "pct": 90,
+      "tokens": 3686
+     },
+     {
+      "pct": 80,
+      "tokens": 3277
+     },
+     {
+      "pct": 70,
+      "tokens": 2867
+     },
+     {
+      "pct": 60,
+      "tokens": 2458
+     },
+     {
+      "pct": 50,
+      "tokens": 2048
+     },
+     {
+      "pct": 40,
+      "tokens": 1638
+     },
+     {
+      "pct": 30,
+      "tokens": 1229
+     },
+     {
+      "pct": 25,
+      "tokens": 1024
+     },
+     {
+      "pct": 20,
+      "tokens": 819
+     },
+     {
+      "pct": 10,
+      "tokens": 410
+     }
+    ]
+   },
+   {
+    "id": "000014",
+    "caption": "\u201cA blue gate in front of a brick building with a sign on it\u201d",
+    "budgets": [
+     {
+      "pct": 100,
+      "tokens": 4096
+     },
+     {
+      "pct": 90,
+      "tokens": 3686
+     },
+     {
+      "pct": 80,
+      "tokens": 3277
+     },
+     {
+      "pct": 70,
+      "tokens": 2867
+     },
+     {
+      "pct": 60,
+      "tokens": 2458
+     },
+     {
+      "pct": 50,
+      "tokens": 2048
+     },
+     {
+      "pct": 40,
+      "tokens": 1638
+     },
+     {
+      "pct": 30,
+      "tokens": 1229
+     },
+     {
+      "pct": 25,
+      "tokens": 1024
+     },
+     {
+      "pct": 20,
+      "tokens": 819
+     },
+     {
+      "pct": 10,
+      "tokens": 410
+     }
+    ]
+   },
+   {
+    "id": "000000",
+    "caption": "\u201cAn old black and white photo of a forest with trees\u201d",
+    "budgets": [
+     {
+      "pct": 100,
+      "tokens": 4096
+     },
+     {
+      "pct": 90,
+      "tokens": 3686
+     },
+     {
+      "pct": 80,
+      "tokens": 3277
+     },
+     {
+      "pct": 70,
+      "tokens": 2867
+     },
+     {
+      "pct": 60,
+      "tokens": 2458
+     },
+     {
+      "pct": 50,
+      "tokens": 2048
+     },
+     {
+      "pct": 40,
+      "tokens": 1638
+     },
+     {
+      "pct": 30,
+      "tokens": 1229
+     },
+     {
+      "pct": 25,
+      "tokens": 1024
+     },
+     {
+      "pct": 20,
+      "tokens": 819
+     },
+     {
+      "pct": 10,
+      "tokens": 410
+     }
+    ]
+   },
+   {
+    "id": "000012",
+    "caption": "\u201cA drawing of a plant with leaves and flowers on a piece of\u2026\u201d",
+    "budgets": [
+     {
+      "pct": 100,
+      "tokens": 4096
+     },
+     {
+      "pct": 90,
+      "tokens": 3686
+     },
+     {
+      "pct": 80,
+      "tokens": 3277
+     },
+     {
+      "pct": 70,
+      "tokens": 2867
+     },
+     {
+      "pct": 60,
+      "tokens": 2458
+     },
+     {
+      "pct": 50,
+      "tokens": 2048
+     },
+     {
+      "pct": 40,
+      "tokens": 1638
+     },
+     {
+      "pct": 30,
+      "tokens": 1229
+     },
+     {
+      "pct": 25,
+      "tokens": 1024
+     },
+     {
+      "pct": 20,
+      "tokens": 819
+     },
+     {
+      "pct": 10,
+      "tokens": 410
+     }
+    ]
+   },
+   {
+    "id": "000052",
+    "caption": "\u201cA photo of four tvs\u201d",
+    "budgets": [
+     {
+      "pct": 100,
+      "tokens": 4096
+     },
+     {
+      "pct": 90,
+      "tokens": 3686
+     },
+     {
+      "pct": 80,
+      "tokens": 3277
+     },
+     {
+      "pct": 70,
+      "tokens": 2867
+     },
+     {
+      "pct": 60,
+      "tokens": 2458
+     },
+     {
+      "pct": 50,
+      "tokens": 2048
+     },
+     {
+      "pct": 40,
+      "tokens": 1638
+     },
+     {
+      "pct": 30,
+      "tokens": 1229
+     },
+     {
+      "pct": 25,
+      "tokens": 1024
+     },
+     {
+      "pct": 20,
+      "tokens": 819
+     },
+     {
+      "pct": 10,
+      "tokens": 410
+     }
+    ]
+   },
+   {
+    "id": "000020",
+    "caption": "\u201cA city street with cars driving down it\u201d",
+    "budgets": [
+     {
+      "pct": 100,
+      "tokens": 4096
+     },
+     {
+      "pct": 90,
+      "tokens": 3686
+     },
+     {
+      "pct": 80,
+      "tokens": 3277
+     },
+     {
+      "pct": 70,
+      "tokens": 2867
+     },
+     {
+      "pct": 60,
+      "tokens": 2458
+     },
+     {
+      "pct": 50,
+      "tokens": 2048
+     },
+     {
+      "pct": 40,
+      "tokens": 1638
+     },
+     {
+      "pct": 30,
+      "tokens": 1229
+     },
+     {
+      "pct": 25,
+      "tokens": 1024
+     },
+     {
+      "pct": 20,
+      "tokens": 819
+     },
+     {
+      "pct": 10,
+      "tokens": 410
+     }
+    ]
+   },
+   {
+    "id": "000021",
+    "caption": "\u201cA white moth perched on the bark of a tree\u201d",
+    "budgets": [
+     {
+      "pct": 100,
+      "tokens": 4096
+     },
+     {
+      "pct": 90,
+      "tokens": 3686
+     },
+     {
+      "pct": 80,
+      "tokens": 3277
+     },
+     {
+      "pct": 70,
+      "tokens": 2867
+     },
+     {
+      "pct": 60,
+      "tokens": 2458
+     },
+     {
+      "pct": 50,
+      "tokens": 2048
+     },
+     {
+      "pct": 40,
+      "tokens": 1638
+     },
+     {
+      "pct": 30,
+      "tokens": 1229
+     },
+     {
+      "pct": 25,
+      "tokens": 1024
+     },
+     {
+      "pct": 20,
+      "tokens": 819
+     },
+     {
+      "pct": 10,
+      "tokens": 410
+     }
+    ]
+   },
+   {
+    "id": "000023",
+    "caption": "\u201cA lush forest filled with lots of green ferns and other\u2026\u201d",
+    "budgets": [
+     {
+      "pct": 100,
+      "tokens": 4096
+     },
+     {
+      "pct": 90,
+      "tokens": 3686
+     },
+     {
+      "pct": 80,
+      "tokens": 3277
+     },
+     {
+      "pct": 70,
+      "tokens": 2867
+     },
+     {
+      "pct": 60,
+      "tokens": 2458
+     },
+     {
+      "pct": 50,
+      "tokens": 2048
+     },
+     {
+      "pct": 40,
+      "tokens": 1638
+     },
+     {
+      "pct": 30,
+      "tokens": 1229
+     },
+     {
+      "pct": 25,
+      "tokens": 1024
+     },
+     {
+      "pct": 20,
+      "tokens": 819
+     },
+     {
+      "pct": 10,
+      "tokens": 410
+     }
+    ]
+   },
+   {
+    "id": "000024",
+    "caption": "\u201cA close up of a green leaf in the grass\u201d",
+    "budgets": [
+     {
+      "pct": 100,
+      "tokens": 4096
+     },
+     {
+      "pct": 90,
+      "tokens": 3686
+     },
+     {
+      "pct": 80,
+      "tokens": 3277
+     },
+     {
+      "pct": 70,
+      "tokens": 2867
+     },
+     {
+      "pct": 60,
+      "tokens": 2458
+     },
+     {
+      "pct": 50,
+      "tokens": 2048
+     },
+     {
+      "pct": 40,
+      "tokens": 1638
+     },
+     {
+      "pct": 30,
+      "tokens": 1229
+     },
+     {
+      "pct": 25,
+      "tokens": 1024
+     },
+     {
+      "pct": 20,
+      "tokens": 819
+     },
+     {
+      "pct": 10,
+      "tokens": 410
+     }
+    ]
+   },
+   {
+    "id": "000025",
+    "caption": "\u201cA black and white drawing of a man and a woman with a dog\u201d",
+    "budgets": [
+     {
+      "pct": 100,
+      "tokens": 4096
+     },
+     {
+      "pct": 90,
+      "tokens": 3686
+     },
+     {
+      "pct": 80,
+      "tokens": 3277
+     },
+     {
+      "pct": 70,
+      "tokens": 2867
+     },
+     {
+      "pct": 60,
+      "tokens": 2458
+     },
+     {
+      "pct": 50,
+      "tokens": 2048
+     },
+     {
+      "pct": 40,
+      "tokens": 1638
+     },
+     {
+      "pct": 30,
+      "tokens": 1229
+     },
+     {
+      "pct": 25,
+      "tokens": 1024
+     },
+     {
+      "pct": 20,
+      "tokens": 819
+     },
+     {
+      "pct": 10,
+      "tokens": 410
+     }
+    ]
+   },
+   {
+    "id": "000087",
+    "caption": "\u201cA quaint collection of waterproof stickers\u201d",
+    "budgets": [
+     {
+      "pct": 100,
+      "tokens": 4096
+     },
+     {
+      "pct": 90,
+      "tokens": 3686
+     },
+     {
+      "pct": 80,
+      "tokens": 3277
+     },
+     {
+      "pct": 70,
+      "tokens": 2867
+     },
+     {
+      "pct": 60,
+      "tokens": 2458
+     },
+     {
+      "pct": 50,
+      "tokens": 2048
+     },
+     {
+      "pct": 40,
+      "tokens": 1638
+     },
+     {
+      "pct": 30,
+      "tokens": 1229
+     },
+     {
+      "pct": 25,
+      "tokens": 1024
+     },
+     {
+      "pct": 20,
+      "tokens": 819
+     },
+     {
+      "pct": 10,
+      "tokens": 410
+     }
+    ]
+   },
+   {
+    "id": "000029",
+    "caption": "\u201cThe interior of a church with frescoes on the walls and\u2026\u201d",
+    "budgets": [
+     {
+      "pct": 100,
+      "tokens": 4096
+     },
+     {
+      "pct": 90,
+      "tokens": 3686
+     },
+     {
+      "pct": 80,
+      "tokens": 3277
+     },
+     {
+      "pct": 70,
+      "tokens": 2867
+     },
+     {
+      "pct": 60,
+      "tokens": 2458
+     },
+     {
+      "pct": 50,
+      "tokens": 2048
+     },
+     {
+      "pct": 40,
+      "tokens": 1638
+     },
+     {
+      "pct": 30,
+      "tokens": 1229
+     },
+     {
+      "pct": 25,
+      "tokens": 1024
+     },
+     {
+      "pct": 20,
+      "tokens": 819
+     },
+     {
+      "pct": 10,
+      "tokens": 410
+     }
+    ]
+   },
+   {
+    "id": "000035",
+    "caption": "\u201cA drawing of a floor plan of a building with a lot of rooms\u201d",
+    "budgets": [
+     {
+      "pct": 100,
+      "tokens": 4096
+     },
+     {
+      "pct": 90,
+      "tokens": 3686
+     },
+     {
+      "pct": 80,
+      "tokens": 3277
+     },
+     {
+      "pct": 70,
+      "tokens": 2867
+     },
+     {
+      "pct": 60,
+      "tokens": 2458
+     },
+     {
+      "pct": 50,
+      "tokens": 2048
+     },
+     {
+      "pct": 40,
+      "tokens": 1638
+     },
+     {
+      "pct": 30,
+      "tokens": 1229
+     },
+     {
+      "pct": 25,
+      "tokens": 1024
+     },
+     {
+      "pct": 20,
+      "tokens": 819
+     },
+     {
+      "pct": 10,
+      "tokens": 410
+     }
+    ]
+   },
+   {
+    "id": "000039",
+    "caption": "\u201cA black and white drawing of a building with a window and a\u2026\u201d",
+    "budgets": [
+     {
+      "pct": 100,
+      "tokens": 4096
+     },
+     {
+      "pct": 90,
+      "tokens": 3686
+     },
+     {
+      "pct": 80,
+      "tokens": 3277
+     },
+     {
+      "pct": 70,
+      "tokens": 2867
+     },
+     {
+      "pct": 60,
+      "tokens": 2458
+     },
+     {
+      "pct": 50,
+      "tokens": 2048
+     },
+     {
+      "pct": 40,
+      "tokens": 1638
+     },
+     {
+      "pct": 30,
+      "tokens": 1229
+     },
+     {
+      "pct": 25,
+      "tokens": 1024
+     },
+     {
+      "pct": 20,
+      "tokens": 819
+     },
+     {
+      "pct": 10,
+      "tokens": 410
+     }
+    ]
+   },
+   {
+    "id": "000059",
+    "caption": "\u201cA photo of a train above a potted plant\u201d",
+    "budgets": [
+     {
+      "pct": 100,
+      "tokens": 4096
+     },
+     {
+      "pct": 90,
+      "tokens": 3686
+     },
+     {
+      "pct": 80,
+      "tokens": 3277
+     },
+     {
+      "pct": 70,
+      "tokens": 2867
+     },
+     {
+      "pct": 60,
+      "tokens": 2458
+     },
+     {
+      "pct": 50,
+      "tokens": 2048
+     },
+     {
+      "pct": 40,
+      "tokens": 1638
+     },
+     {
+      "pct": 30,
+      "tokens": 1229
+     },
+     {
+      "pct": 25,
+      "tokens": 1024
+     },
+     {
+      "pct": 20,
+      "tokens": 819
+     },
+     {
+      "pct": 10,
+      "tokens": 410
+     }
+    ]
+   },
+   {
+    "id": "000075",
+    "caption": "\u201cA glossy black dog with a shiny coat is comfortably seated\u2026\u201d",
+    "budgets": [
+     {
+      "pct": 100,
+      "tokens": 4096
+     },
+     {
+      "pct": 90,
+      "tokens": 3686
+     },
+     {
+      "pct": 80,
+      "tokens": 3277
+     },
+     {
+      "pct": 70,
+      "tokens": 2867
+     },
+     {
+      "pct": 60,
+      "tokens": 2458
+     },
+     {
+      "pct": 50,
+      "tokens": 2048
+     },
+     {
+      "pct": 40,
+      "tokens": 1638
+     },
+     {
+      "pct": 30,
+      "tokens": 1229
+     },
+     {
+      "pct": 25,
+      "tokens": 1024
+     },
+     {
+      "pct": 20,
+      "tokens": 819
+     },
+     {
+      "pct": 10,
+      "tokens": 410
+     }
+    ]
+   },
+   {
+    "id": "000082",
+    "caption": "\u201cOn a rustic wooden table, a vibrant purple paintbrush\u2026\u201d",
+    "budgets": [
+     {
+      "pct": 100,
+      "tokens": 4096
+     },
+     {
+      "pct": 90,
+      "tokens": 3686
+     },
+     {
+      "pct": 80,
+      "tokens": 3277
+     },
+     {
+      "pct": 70,
+      "tokens": 2867
+     },
+     {
+      "pct": 60,
+      "tokens": 2458
+     },
+     {
+      "pct": 50,
+      "tokens": 2048
+     },
+     {
+      "pct": 40,
+      "tokens": 1638
+     },
+     {
+      "pct": 30,
+      "tokens": 1229
+     },
+     {
+      "pct": 25,
+      "tokens": 1024
+     },
+     {
+      "pct": 20,
+      "tokens": 819
+     },
+     {
+      "pct": 10,
+      "tokens": 410
+     }
+    ]
+   },
+   {
+    "id": "000090",
+    "caption": "\u201cAn anthropomorphic wolf\u201d",
+    "budgets": [
+     {
+      "pct": 100,
+      "tokens": 4096
+     },
+     {
+      "pct": 90,
+      "tokens": 3686
+     },
+     {
+      "pct": 80,
+      "tokens": 3277
+     },
+     {
+      "pct": 70,
+      "tokens": 2867
+     },
+     {
+      "pct": 60,
+      "tokens": 2458
+     },
+     {
+      "pct": 50,
+      "tokens": 2048
+     },
+     {
+      "pct": 40,
+      "tokens": 1638
+     },
+     {
+      "pct": 30,
+      "tokens": 1229
+     },
+     {
+      "pct": 25,
+      "tokens": 1024
+     },
+     {
+      "pct": 20,
+      "tokens": 819
+     },
+     {
+      "pct": 10,
+      "tokens": 410
+     }
+    ]
+   }
+  ]
+ },
+ "pmf": {
+  "label": "Pixel-MeanFlow (1 step)",
+  "dataset": "ImageNet 256\u00b2",
+  "subjects": [
+   {
+    "id": "c0240",
+    "caption": "ImageNet: Appenzeller",
+    "budgets": [
+     {
+      "pct": 100,
+      "tokens": 256
+     },
+     {
+      "pct": 90,
+      "tokens": 230
+     },
+     {
+      "pct": 80,
+      "tokens": 205
+     },
+     {
+      "pct": 70,
+      "tokens": 179
+     },
+     {
+      "pct": 60,
+      "tokens": 154
+     },
+     {
+      "pct": 50,
+      "tokens": 128
+     },
+     {
+      "pct": 40,
+      "tokens": 102
+     },
+     {
+      "pct": 30,
+      "tokens": 77
+     },
+     {
+      "pct": 25,
+      "tokens": 64
+     }
+    ]
+   },
+   {
+    "id": "c0960",
+    "caption": "ImageNet: chocolate sauce",
+    "budgets": [
+     {
+      "pct": 100,
+      "tokens": 256
+     },
+     {
+      "pct": 90,
+      "tokens": 230
+     },
+     {
+      "pct": 80,
+      "tokens": 205
+     },
+     {
+      "pct": 70,
+      "tokens": 179
+     },
+     {
+      "pct": 60,
+      "tokens": 154
+     },
+     {
+      "pct": 50,
+      "tokens": 128
+     },
+     {
+      "pct": 40,
+      "tokens": 102
+     },
+     {
+      "pct": 30,
+      "tokens": 77
+     },
+     {
+      "pct": 25,
+      "tokens": 64
+     }
+    ]
+   },
+   {
+    "id": "c0640",
+    "caption": "ImageNet: manhole cover",
+    "budgets": [
+     {
+      "pct": 100,
+      "tokens": 256
+     },
+     {
+      "pct": 90,
+      "tokens": 230
+     },
+     {
+      "pct": 80,
+      "tokens": 205
+     },
+     {
+      "pct": 70,
+      "tokens": 179
+     },
+     {
+      "pct": 60,
+      "tokens": 154
+     },
+     {
+      "pct": 50,
+      "tokens": 128
+     },
+     {
+      "pct": 40,
+      "tokens": 102
+     },
+     {
+      "pct": 30,
+      "tokens": 77
+     },
+     {
+      "pct": 25,
+      "tokens": 64
+     }
+    ]
+   },
+   {
+    "id": "c0120",
+    "caption": "ImageNet: fiddler crab",
+    "budgets": [
+     {
+      "pct": 100,
+      "tokens": 256
+     },
+     {
+      "pct": 90,
+      "tokens": 230
+     },
+     {
+      "pct": 80,
+      "tokens": 205
+     },
+     {
+      "pct": 70,
+      "tokens": 179
+     },
+     {
+      "pct": 60,
+      "tokens": 154
+     },
+     {
+      "pct": 50,
+      "tokens": 128
+     },
+     {
+      "pct": 40,
+      "tokens": 102
+     },
+     {
+      "pct": 30,
+      "tokens": 77
+     },
+     {
+      "pct": 25,
+      "tokens": 64
+     }
+    ]
+   },
+   {
+    "id": "c0500",
+    "caption": "ImageNet: cliff dwelling",
+    "budgets": [
+     {
+      "pct": 100,
+      "tokens": 256
+     },
+     {
+      "pct": 90,
+      "tokens": 230
+     },
+     {
+      "pct": 80,
+      "tokens": 205
+     },
+     {
+      "pct": 70,
+      "tokens": 179
+     },
+     {
+      "pct": 60,
+      "tokens": 154
+     },
+     {
+      "pct": 50,
+      "tokens": 128
+     },
+     {
+      "pct": 40,
+      "tokens": 102
+     },
+     {
+      "pct": 30,
+      "tokens": 77
+     },
+     {
+      "pct": 25,
+      "tokens": 64
+     }
+    ]
+   },
+   {
+    "id": "c0040",
+    "caption": "ImageNet: American chameleon",
+    "budgets": [
+     {
+      "pct": 100,
+      "tokens": 256
+     },
+     {
+      "pct": 90,
+      "tokens": 230
+     },
+     {
+      "pct": 80,
+      "tokens": 205
+     },
+     {
+      "pct": 70,
+      "tokens": 179
+     },
+     {
+      "pct": 60,
+      "tokens": 154
+     },
+     {
+      "pct": 50,
+      "tokens": 128
+     },
+     {
+      "pct": 40,
+      "tokens": 102
+     },
+     {
+      "pct": 30,
+      "tokens": 77
+     },
+     {
+      "pct": 25,
+      "tokens": 64
+     }
+    ]
+   },
+   {
+    "id": "c0200",
+    "caption": "ImageNet: Tibetan terrier",
+    "budgets": [
+     {
+      "pct": 100,
+      "tokens": 256
+     },
+     {
+      "pct": 90,
+      "tokens": 230
+     },
+     {
+      "pct": 80,
+      "tokens": 205
+     },
+     {
+      "pct": 70,
+      "tokens": 179
+     },
+     {
+      "pct": 60,
+      "tokens": 154
+     },
+     {
+      "pct": 50,
+      "tokens": 128
+     },
+     {
+      "pct": 40,
+      "tokens": 102
+     },
+     {
+      "pct": 30,
+      "tokens": 77
+     },
+     {
+      "pct": 25,
+      "tokens": 64
+     }
+    ]
+   },
+   {
+    "id": "c0280",
+    "caption": "ImageNet: grey fox",
+    "budgets": [
+     {
+      "pct": 100,
+      "tokens": 256
+     },
+     {
+      "pct": 90,
+      "tokens": 230
+     },
+     {
+      "pct": 80,
+      "tokens": 205
+     },
+     {
+      "pct": 70,
+      "tokens": 179
+     },
+     {
+      "pct": 60,
+      "tokens": 154
+     },
+     {
+      "pct": 50,
+      "tokens": 128
+     },
+     {
+      "pct": 40,
+      "tokens": 102
+     },
+     {
+      "pct": 30,
+      "tokens": 77
+     },
+     {
+      "pct": 25,
+      "tokens": 64
+     }
+    ]
+   },
+   {
+    "id": "c0360",
+    "caption": "ImageNet: otter",
+    "budgets": [
+     {
+      "pct": 100,
+      "tokens": 256
+     },
+     {
+      "pct": 90,
+      "tokens": 230
+     },
+     {
+      "pct": 80,
+      "tokens": 205
+     },
+     {
+      "pct": 70,
+      "tokens": 179
+     },
+     {
+      "pct": 60,
+      "tokens": 154
+     },
+     {
+      "pct": 50,
+      "tokens": 128
+     },
+     {
+      "pct": 40,
+      "tokens": 102
+     },
+     {
+      "pct": 30,
+      "tokens": 77
+     },
+     {
+      "pct": 25,
+      "tokens": 64
+     }
+    ]
+   },
+   {
+    "id": "c0440",
+    "caption": "ImageNet: beer bottle",
+    "budgets": [
+     {
+      "pct": 100,
+      "tokens": 256
+     },
+     {
+      "pct": 90,
+      "tokens": 230
+     },
+     {
+      "pct": 80,
+      "tokens": 205
+     },
+     {
+      "pct": 70,
+      "tokens": 179
+     },
+     {
+      "pct": 60,
+      "tokens": 154
+     },
+     {
+      "pct": 50,
+      "tokens": 128
+     },
+     {
+      "pct": 40,
+      "tokens": 102
+     },
+     {
+      "pct": 30,
+      "tokens": 77
+     },
+     {
+      "pct": 25,
+      "tokens": 64
+     }
+    ]
+   },
+   {
+    "id": "c0520",
+    "caption": "ImageNet: crib",
+    "budgets": [
+     {
+      "pct": 100,
+      "tokens": 256
+     },
+     {
+      "pct": 90,
+      "tokens": 230
+     },
+     {
+      "pct": 80,
+      "tokens": 205
+     },
+     {
+      "pct": 70,
+      "tokens": 179
+     },
+     {
+      "pct": 60,
+      "tokens": 154
+     },
+     {
+      "pct": 50,
+      "tokens": 128
+     },
+     {
+      "pct": 40,
+      "tokens": 102
+     },
+     {
+      "pct": 30,
+      "tokens": 77
+     },
+     {
+      "pct": 25,
+      "tokens": 64
+     }
+    ]
+   },
+   {
+    "id": "c0600",
+    "caption": "ImageNet: hook",
+    "budgets": [
+     {
+      "pct": 100,
+      "tokens": 256
+     },
+     {
+      "pct": 90,
+      "tokens": 230
+     },
+     {
+      "pct": 80,
+      "tokens": 205
+     },
+     {
+      "pct": 70,
+      "tokens": 179
+     },
+     {
+      "pct": 60,
+      "tokens": 154
+     },
+     {
+      "pct": 50,
+      "tokens": 128
+     },
+     {
+      "pct": 40,
+      "tokens": 102
+     },
+     {
+      "pct": 30,
+      "tokens": 77
+     },
+     {
+      "pct": 25,
+      "tokens": 64
+     }
+    ]
+   },
+   {
+    "id": "c0680",
+    "caption": "ImageNet: nipple",
+    "budgets": [
+     {
+      "pct": 100,
+      "tokens": 256
+     },
+     {
+      "pct": 90,
+      "tokens": 230
+     },
+     {
+      "pct": 80,
+      "tokens": 205
+     },
+     {
+      "pct": 70,
+      "tokens": 179
+     },
+     {
+      "pct": 60,
+      "tokens": 154
+     },
+     {
+      "pct": 50,
+      "tokens": 128
+     },
+     {
+      "pct": 40,
+      "tokens": 102
+     },
+     {
+      "pct": 30,
+      "tokens": 77
+     },
+     {
+      "pct": 25,
+      "tokens": 64
+     }
+    ]
+   },
+   {
+    "id": "c0760",
+    "caption": "ImageNet: refrigerator",
+    "budgets": [
+     {
+      "pct": 100,
+      "tokens": 256
+     },
+     {
+      "pct": 90,
+      "tokens": 230
+     },
+     {
+      "pct": 80,
+      "tokens": 205
+     },
+     {
+      "pct": 70,
+      "tokens": 179
+     },
+     {
+      "pct": 60,
+      "tokens": 154
+     },
+     {
+      "pct": 50,
+      "tokens": 128
+     },
+     {
+      "pct": 40,
+      "tokens": 102
+     },
+     {
+      "pct": 30,
+      "tokens": 77
+     },
+     {
+      "pct": 25,
+      "tokens": 64
+     }
+    ]
+   },
+   {
+    "id": "c0840",
+    "caption": "ImageNet: swab",
+    "budgets": [
+     {
+      "pct": 100,
+      "tokens": 256
+     },
+     {
+      "pct": 90,
+      "tokens": 230
+     },
+     {
+      "pct": 80,
+      "tokens": 205
+     },
+     {
+      "pct": 70,
+      "tokens": 179
+     },
+     {
+      "pct": 60,
+      "tokens": 154
+     },
+     {
+      "pct": 50,
+      "tokens": 128
+     },
+     {
+      "pct": 40,
+      "tokens": 102
+     },
+     {
+      "pct": 30,
+      "tokens": 77
+     },
+     {
+      "pct": 25,
+      "tokens": 64
+     }
+    ]
+   },
+   {
+    "id": "c0920",
+    "caption": "ImageNet: traffic light",
+    "budgets": [
+     {
+      "pct": 100,
+      "tokens": 256
+     },
+     {
+      "pct": 90,
+      "tokens": 230
+     },
+     {
+      "pct": 80,
+      "tokens": 205
+     },
+     {
+      "pct": 70,
+      "tokens": 179
+     },
+     {
+      "pct": 60,
+      "tokens": 154
+     },
+     {
+      "pct": 50,
+      "tokens": 128
+     },
+     {
+      "pct": 40,
+      "tokens": 102
+     },
+     {
+      "pct": 30,
+      "tokens": 77
+     },
+     {
+      "pct": 25,
+      "tokens": 64
+     }
+    ]
+   },
+   {
+    "id": "c0080",
+    "caption": "ImageNet: black grouse",
+    "budgets": [
+     {
+      "pct": 100,
+      "tokens": 256
+     },
+     {
+      "pct": 90,
+      "tokens": 230
+     },
+     {
+      "pct": 80,
+      "tokens": 205
+     },
+     {
+      "pct": 70,
+      "tokens": 179
+     },
+     {
+      "pct": 60,
+      "tokens": 154
+     },
+     {
+      "pct": 50,
+      "tokens": 128
+     },
+     {
+      "pct": 40,
+      "tokens": 102
+     },
+     {
+      "pct": 30,
+      "tokens": 77
+     },
+     {
+      "pct": 25,
+      "tokens": 64
+     }
+    ]
+   },
+   {
+    "id": "c0160",
+    "caption": "ImageNet: Afghan hound",
+    "budgets": [
+     {
+      "pct": 100,
+      "tokens": 256
+     },
+     {
+      "pct": 90,
+      "tokens": 230
+     },
+     {
+      "pct": 80,
+      "tokens": 205
+     },
+     {
+      "pct": 70,
+      "tokens": 179
+     },
+     {
+      "pct": 60,
+      "tokens": 154
+     },
+     {
+      "pct": 50,
+      "tokens": 128
+     },
+     {
+      "pct": 40,
+      "tokens": 102
+     },
+     {
+      "pct": 30,
+      "tokens": 77
+     },
+     {
+      "pct": 25,
+      "tokens": 64
+     }
+    ]
+   },
+   {
+    "id": "c0320",
+    "caption": "ImageNet: damselfly",
+    "budgets": [
+     {
+      "pct": 100,
+      "tokens": 256
+     },
+     {
+      "pct": 90,
+      "tokens": 230
+     },
+     {
+      "pct": 80,
+      "tokens": 205
+     },
+     {
+      "pct": 70,
+      "tokens": 179
+     },
+     {
+      "pct": 60,
+      "tokens": 154
+     },
+     {
+      "pct": 50,
+      "tokens": 128
+     },
+     {
+      "pct": 40,
+      "tokens": 102
+     },
+     {
+      "pct": 30,
+      "tokens": 77
+     },
+     {
+      "pct": 25,
+      "tokens": 64
+     }
+    ]
+   },
+   {
+    "id": "c0400",
+    "caption": "ImageNet: academic gown",
+    "budgets": [
+     {
+      "pct": 100,
+      "tokens": 256
+     },
+     {
+      "pct": 90,
+      "tokens": 230
+     },
+     {
+      "pct": 80,
+      "tokens": 205
+     },
+     {
+      "pct": 70,
+      "tokens": 179
+     },
+     {
+      "pct": 60,
+      "tokens": 154
+     },
+     {
+      "pct": 50,
+      "tokens": 128
+     },
+     {
+      "pct": 40,
+      "tokens": 102
+     },
+     {
+      "pct": 30,
+      "tokens": 77
+     },
+     {
+      "pct": 25,
+      "tokens": 64
+     }
+    ]
+   },
+   {
+    "id": "c0480",
+    "caption": "ImageNet: cash machine",
+    "budgets": [
+     {
+      "pct": 100,
+      "tokens": 256
+     },
+     {
+      "pct": 90,
+      "tokens": 230
+     },
+     {
+      "pct": 80,
+      "tokens": 205
+     },
+     {
+      "pct": 70,
+      "tokens": 179
+     },
+     {
+      "pct": 60,
+      "tokens": 154
+     },
+     {
+      "pct": 50,
+      "tokens": 128
+     },
+     {
+      "pct": 40,
+      "tokens": 102
+     },
+     {
+      "pct": 30,
+      "tokens": 77
+     },
+     {
+      "pct": 25,
+      "tokens": 64
+     }
+    ]
+   },
+   {
+    "id": "c0560",
+    "caption": "ImageNet: football helmet",
+    "budgets": [
+     {
+      "pct": 100,
+      "tokens": 256
+     },
+     {
+      "pct": 90,
+      "tokens": 230
+     },
+     {
+      "pct": 80,
+      "tokens": 205
+     },
+     {
+      "pct": 70,
+      "tokens": 179
+     },
+     {
+      "pct": 60,
+      "tokens": 154
+     },
+     {
+      "pct": 50,
+      "tokens": 128
+     },
+     {
+      "pct": 40,
+      "tokens": 102
+     },
+     {
+      "pct": 30,
+      "tokens": 77
+     },
+     {
+      "pct": 25,
+      "tokens": 64
+     }
+    ]
+   },
+   {
+    "id": "c0720",
+    "caption": "ImageNet: pill bottle",
+    "budgets": [
+     {
+      "pct": 100,
+      "tokens": 256
+     },
+     {
+      "pct": 90,
+      "tokens": 230
+     },
+     {
+      "pct": 80,
+      "tokens": 205
+     },
+     {
+      "pct": 70,
+      "tokens": 179
+     },
+     {
+      "pct": 60,
+      "tokens": 154
+     },
+     {
+      "pct": 50,
+      "tokens": 128
+     },
+     {
+      "pct": 40,
+      "tokens": 102
+     },
+     {
+      "pct": 30,
+      "tokens": 77
+     },
+     {
+      "pct": 25,
+      "tokens": 64
+     }
+    ]
+   },
+   {
+    "id": "c0800",
+    "caption": "ImageNet: slot",
+    "budgets": [
+     {
+      "pct": 100,
+      "tokens": 256
+     },
+     {
+      "pct": 90,
+      "tokens": 230
+     },
+     {
+      "pct": 80,
+      "tokens": 205
+     },
+     {
+      "pct": 70,
+      "tokens": 179
+     },
+     {
+      "pct": 60,
+      "tokens": 154
+     },
+     {
+      "pct": 50,
+      "tokens": 128
+     },
+     {
+      "pct": 40,
+      "tokens": 102
+     },
+     {
+      "pct": 30,
+      "tokens": 77
+     },
+     {
+      "pct": 25,
+      "tokens": 64
+     }
+    ]
+   },
+   {
+    "id": "c0880",
+    "caption": "ImageNet: unicycle",
+    "budgets": [
+     {
+      "pct": 100,
+      "tokens": 256
+     },
+     {
+      "pct": 90,
+      "tokens": 230
+     },
+     {
+      "pct": 80,
+      "tokens": 205
+     },
+     {
+      "pct": 70,
+      "tokens": 179
+     },
+     {
+      "pct": 60,
+      "tokens": 154
+     },
+     {
+      "pct": 50,
+      "tokens": 128
+     },
+     {
+      "pct": 40,
+      "tokens": 102
+     },
+     {
+      "pct": 30,
+      "tokens": 77
+     },
+     {
+      "pct": 25,
+      "tokens": 64
+     }
+    ]
+   },
+   {
+    "id": "c0020",
+    "caption": "ImageNet: water ouzel",
+    "budgets": [
+     {
+      "pct": 100,
+      "tokens": 256
+     },
+     {
+      "pct": 90,
+      "tokens": 230
+     },
+     {
+      "pct": 80,
+      "tokens": 205
+     },
+     {
+      "pct": 70,
+      "tokens": 179
+     },
+     {
+      "pct": 60,
+      "tokens": 154
+     },
+     {
+      "pct": 50,
+      "tokens": 128
+     },
+     {
+      "pct": 40,
+      "tokens": 102
+     },
+     {
+      "pct": 30,
+      "tokens": 77
+     },
+     {
+      "pct": 25,
+      "tokens": 64
+     }
+    ]
+   },
+   {
+    "id": "c0100",
+    "caption": "ImageNet: black swan",
+    "budgets": [
+     {
+      "pct": 100,
+      "tokens": 256
+     },
+     {
+      "pct": 90,
+      "tokens": 230
+     },
+     {
+      "pct": 80,
+      "tokens": 205
+     },
+     {
+      "pct": 70,
+      "tokens": 179
+     },
+     {
+      "pct": 60,
+      "tokens": 154
+     },
+     {
+      "pct": 50,
+      "tokens": 128
+     },
+     {
+      "pct": 40,
+      "tokens": 102
+     },
+     {
+      "pct": 30,
+      "tokens": 77
+     },
+     {
+      "pct": 25,
+      "tokens": 64
+     }
+    ]
+   },
+   {
+    "id": "c0180",
+    "caption": "ImageNet: American Staffordshire terrier",
+    "budgets": [
+     {
+      "pct": 100,
+      "tokens": 256
+     },
+     {
+      "pct": 90,
+      "tokens": 230
+     },
+     {
+      "pct": 80,
+      "tokens": 205
+     },
+     {
+      "pct": 70,
+      "tokens": 179
+     },
+     {
+      "pct": 60,
+      "tokens": 154
+     },
+     {
+      "pct": 50,
+      "tokens": 128
+     },
+     {
+      "pct": 40,
+      "tokens": 102
+     },
+     {
+      "pct": 30,
+      "tokens": 77
+     },
+     {
+      "pct": 25,
+      "tokens": 64
+     }
+    ]
+   },
+   {
+    "id": "c0260",
+    "caption": "ImageNet: chow",
+    "budgets": [
+     {
+      "pct": 100,
+      "tokens": 256
+     },
+     {
+      "pct": 90,
+      "tokens": 230
+     },
+     {
+      "pct": 80,
+      "tokens": 205
+     },
+     {
+      "pct": 70,
+      "tokens": 179
+     },
+     {
+      "pct": 60,
+      "tokens": 154
+     },
+     {
+      "pct": 50,
+      "tokens": 128
+     },
+     {
+      "pct": 40,
+      "tokens": 102
+     },
+     {
+      "pct": 30,
+      "tokens": 77
+     },
+     {
+      "pct": 25,
+      "tokens": 64
+     }
+    ]
+   },
+   {
+    "id": "c0340",
+    "caption": "ImageNet: zebra",
+    "budgets": [
+     {
+      "pct": 100,
+      "tokens": 256
+     },
+     {
+      "pct": 90,
+      "tokens": 230
+     },
+     {
+      "pct": 80,
+      "tokens": 205
+     },
+     {
+      "pct": 70,
+      "tokens": 179
+     },
+     {
+      "pct": 60,
+      "tokens": 154
+     },
+     {
+      "pct": 50,
+      "tokens": 128
+     },
+     {
+      "pct": 40,
+      "tokens": 102
+     },
+     {
+      "pct": 30,
+      "tokens": 77
+     },
+     {
+      "pct": 25,
+      "tokens": 64
+     }
+    ]
+   },
+   {
+    "id": "c0420",
+    "caption": "ImageNet: banjo",
+    "budgets": [
+     {
+      "pct": 100,
+      "tokens": 256
+     },
+     {
+      "pct": 90,
+      "tokens": 230
+     },
+     {
+      "pct": 80,
+      "tokens": 205
+     },
+     {
+      "pct": 70,
+      "tokens": 179
+     },
+     {
+      "pct": 60,
+      "tokens": 154
+     },
+     {
+      "pct": 50,
+      "tokens": 128
+     },
+     {
+      "pct": 40,
+      "tokens": 102
+     },
+     {
+      "pct": 30,
+      "tokens": 77
+     },
+     {
+      "pct": 25,
+      "tokens": 64
+     }
+    ]
+   },
+   {
+    "id": "c0580",
+    "caption": "ImageNet: greenhouse",
+    "budgets": [
+     {
+      "pct": 100,
+      "tokens": 256
+     },
+     {
+      "pct": 90,
+      "tokens": 230
+     },
+     {
+      "pct": 80,
+      "tokens": 205
+     },
+     {
+      "pct": 70,
+      "tokens": 179
+     },
+     {
+      "pct": 60,
+      "tokens": 154
+     },
+     {
+      "pct": 50,
+      "tokens": 128
+     },
+     {
+      "pct": 40,
+      "tokens": 102
+     },
+     {
+      "pct": 30,
+      "tokens": 77
+     },
+     {
+      "pct": 25,
+      "tokens": 64
+     }
+    ]
+   },
+   {
+    "id": "c0660",
+    "caption": "ImageNet: mobile home",
+    "budgets": [
+     {
+      "pct": 100,
+      "tokens": 256
+     },
+     {
+      "pct": 90,
+      "tokens": 230
+     },
+     {
+      "pct": 80,
+      "tokens": 205
+     },
+     {
+      "pct": 70,
+      "tokens": 179
+     },
+     {
+      "pct": 60,
+      "tokens": 154
+     },
+     {
+      "pct": 50,
+      "tokens": 128
+     },
+     {
+      "pct": 40,
+      "tokens": 102
+     },
+     {
+      "pct": 30,
+      "tokens": 77
+     },
+     {
+      "pct": 25,
+      "tokens": 64
+     }
+    ]
+   },
+   {
+    "id": "c0740",
+    "caption": "ImageNet: power drill",
+    "budgets": [
+     {
+      "pct": 100,
+      "tokens": 256
+     },
+     {
+      "pct": 90,
+      "tokens": 230
+     },
+     {
+      "pct": 80,
+      "tokens": 205
+     },
+     {
+      "pct": 70,
+      "tokens": 179
+     },
+     {
+      "pct": 60,
+      "tokens": 154
+     },
+     {
+      "pct": 50,
+      "tokens": 128
+     },
+     {
+      "pct": 40,
+      "tokens": 102
+     },
+     {
+      "pct": 30,
+      "tokens": 77
+     },
+     {
+      "pct": 25,
+      "tokens": 64
+     }
+    ]
+   },
+   {
+    "id": "c0820",
+    "caption": "ImageNet: steam locomotive",
+    "budgets": [
+     {
+      "pct": 100,
+      "tokens": 256
+     },
+     {
+      "pct": 90,
+      "tokens": 230
+     },
+     {
+      "pct": 80,
+      "tokens": 205
+     },
+     {
+      "pct": 70,
+      "tokens": 179
+     },
+     {
+      "pct": 60,
+      "tokens": 154
+     },
+     {
+      "pct": 50,
+      "tokens": 128
+     },
+     {
+      "pct": 40,
+      "tokens": 102
+     },
+     {
+      "pct": 30,
+      "tokens": 77
+     },
+     {
+      "pct": 25,
+      "tokens": 64
+     }
+    ]
+   },
+   {
+    "id": "c0900",
+    "caption": "ImageNet: water tower",
+    "budgets": [
+     {
+      "pct": 100,
+      "tokens": 256
+     },
+     {
+      "pct": 90,
+      "tokens": 230
+     },
+     {
+      "pct": 80,
+      "tokens": 205
+     },
+     {
+      "pct": 70,
+      "tokens": 179
+     },
+     {
+      "pct": 60,
+      "tokens": 154
+     },
+     {
+      "pct": 50,
+      "tokens": 128
+     },
+     {
+      "pct": 40,
+      "tokens": 102
+     },
+     {
+      "pct": 30,
+      "tokens": 77
+     },
+     {
+      "pct": 25,
+      "tokens": 64
+     }
+    ]
+   }
+  ]
+ },
+ "iris": {
+  "label": "IRIS-3B",
+  "dataset": "Text-to-image 1024\u00b2",
+  "subjects": [
+   {
+    "id": "p_00",
+    "caption": "\u201ca red fox sleeping in fresh snow, golden hour\u201d",
+    "budgets": [
+     {
+      "pct": 100,
+      "tokens": 4096
+     },
+     {
+      "pct": 90,
+      "tokens": 3685
+     },
+     {
+      "pct": 80,
+      "tokens": 3277
+     },
+     {
+      "pct": 70,
+      "tokens": 2866
+     },
+     {
+      "pct": 60,
+      "tokens": 2458
+     },
+     {
+      "pct": 50,
+      "tokens": 2047
+     },
+     {
+      "pct": 40,
+      "tokens": 1636
+     },
+     {
+      "pct": 30,
+      "tokens": 1228
+     },
+     {
+      "pct": 20,
+      "tokens": 817
+     },
+     {
+      "pct": 10,
+      "tokens": 409
+     }
+    ]
+   },
+   {
+    "id": "p_01",
+    "caption": "\u201cStudio portrait of a Maasai elder wearing vibrant beaded jewelry, deep red cloth, dark backdrop, Rembrandt lighting, ultra detailed skin texture\u201d",
+    "budgets": [
+     {
+      "pct": 100,
+      "tokens": 4096
+     },
+     {
+      "pct": 90,
+      "tokens": 3685
+     },
+     {
+      "pct": 80,
+      "tokens": 3277
+     },
+     {
+      "pct": 70,
+      "tokens": 2866
+     },
+     {
+      "pct": 60,
+      "tokens": 2458
+     },
+     {
+      "pct": 50,
+      "tokens": 2047
+     },
+     {
+      "pct": 40,
+      "tokens": 1636
+     },
+     {
+      "pct": 30,
+      "tokens": 1228
+     },
+     {
+      "pct": 20,
+      "tokens": 817
+     },
+     {
+      "pct": 10,
+      "tokens": 409
+     }
+    ]
+   },
+   {
+    "id": "p_02",
+    "caption": "\u201cA glass sculpture of a heart filled with flowers, caustics and reflections, 3D render\u201d",
+    "budgets": [
+     {
+      "pct": 100,
+      "tokens": 4096
+     },
+     {
+      "pct": 90,
+      "tokens": 3685
+     },
+     {
+      "pct": 80,
+      "tokens": 3277
+     },
+     {
+      "pct": 70,
+      "tokens": 2866
+     },
+     {
+      "pct": 60,
+      "tokens": 2458
+     },
+     {
+      "pct": 50,
+      "tokens": 2047
+     },
+     {
+      "pct": 40,
+      "tokens": 1636
+     },
+     {
+      "pct": 30,
+      "tokens": 1228
+     },
+     {
+      "pct": 20,
+      "tokens": 817
+     },
+     {
+      "pct": 10,
+      "tokens": 409
+     }
+    ]
+   },
+   {
+    "id": "p_03",
+    "caption": "\u201cThe ancient city of Petra with the Treasury carved into pink sandstone, morning light\u201d",
+    "budgets": [
+     {
+      "pct": 100,
+      "tokens": 4096
+     },
+     {
+      "pct": 90,
+      "tokens": 3685
+     },
+     {
+      "pct": 80,
+      "tokens": 3277
+     },
+     {
+      "pct": 70,
+      "tokens": 2866
+     },
+     {
+      "pct": 60,
+      "tokens": 2458
+     },
+     {
+      "pct": 50,
+      "tokens": 2047
+     },
+     {
+      "pct": 40,
+      "tokens": 1636
+     },
+     {
+      "pct": 30,
+      "tokens": 1228
+     },
+     {
+      "pct": 20,
+      "tokens": 817
+     },
+     {
+      "pct": 10,
+      "tokens": 409
+     }
+    ]
+   },
+   {
+    "id": "p_04",
+    "caption": "\u201cMacro photograph of an iridescent blue morpho butterfly perched on a mossy fern frond with morning dewdrops, creamy bokeh background\u201d",
+    "budgets": [
+     {
+      "pct": 100,
+      "tokens": 4096
+     },
+     {
+      "pct": 90,
+      "tokens": 3685
+     },
+     {
+      "pct": 80,
+      "tokens": 3277
+     },
+     {
+      "pct": 70,
+      "tokens": 2866
+     },
+     {
+      "pct": 60,
+      "tokens": 2458
+     },
+     {
+      "pct": 50,
+      "tokens": 2047
+     },
+     {
+      "pct": 40,
+      "tokens": 1636
+     },
+     {
+      "pct": 30,
+      "tokens": 1228
+     },
+     {
+      "pct": 20,
+      "tokens": 817
+     },
+     {
+      "pct": 10,
+      "tokens": 409
+     }
+    ]
+   },
+   {
+    "id": "p_05",
+    "caption": "\u201cCyberpunk ramen stall in a narrow rainy Tokyo alley at night, glowing neon kanji signs reflecting in puddles, steam rising, cinematic 35mm\u201d",
+    "budgets": [
+     {
+      "pct": 100,
+      "tokens": 4096
+     },
+     {
+      "pct": 90,
+      "tokens": 3685
+     },
+     {
+      "pct": 80,
+      "tokens": 3277
+     },
+     {
+      "pct": 70,
+      "tokens": 2866
+     },
+     {
+      "pct": 60,
+      "tokens": 2458
+     },
+     {
+      "pct": 50,
+      "tokens": 2047
+     },
+     {
+      "pct": 40,
+      "tokens": 1636
+     },
+     {
+      "pct": 30,
+      "tokens": 1228
+     },
+     {
+      "pct": 20,
+      "tokens": 817
+     },
+     {
+      "pct": 10,
+      "tokens": 409
+     }
+    ]
+   },
+   {
+    "id": "p_06",
+    "caption": "\u201cAn ornate Victorian clockwork owl perched on leather-bound books in a sunlit study, brass gears and filigree feathers, warm volumetric light\u201d",
+    "budgets": [
+     {
+      "pct": 100,
+      "tokens": 4096
+     },
+     {
+      "pct": 90,
+      "tokens": 3685
+     },
+     {
+      "pct": 80,
+      "tokens": 3277
+     },
+     {
+      "pct": 70,
+      "tokens": 2866
+     },
+     {
+      "pct": 60,
+      "tokens": 2458
+     },
+     {
+      "pct": 50,
+      "tokens": 2047
+     },
+     {
+      "pct": 40,
+      "tokens": 1636
+     },
+     {
+      "pct": 30,
+      "tokens": 1228
+     },
+     {
+      "pct": 20,
+      "tokens": 817
+     },
+     {
+      "pct": 10,
+      "tokens": 409
+     }
+    ]
+   },
+   {
+    "id": "p_21",
+    "caption": "\u201cClose-up of an emerald green tree python coiled around a mossy rainforest vine, iridescent scales catching dappled sunlight, shallow depth of field\u201d",
+    "budgets": [
+     {
+      "pct": 100,
+      "tokens": 4096
+     },
+     {
+      "pct": 90,
+      "tokens": 3685
+     },
+     {
+      "pct": 80,
+      "tokens": 3277
+     },
+     {
+      "pct": 70,
+      "tokens": 2866
+     },
+     {
+      "pct": 60,
+      "tokens": 2458
+     },
+     {
+      "pct": 50,
+      "tokens": 2047
+     },
+     {
+      "pct": 40,
+      "tokens": 1636
+     },
+     {
+      "pct": 30,
+      "tokens": 1228
+     },
+     {
+      "pct": 20,
+      "tokens": 817
+     },
+     {
+      "pct": 10,
+      "tokens": 409
+     }
+    ]
+   },
+   {
+    "id": "p_22",
+    "caption": "\u201cArtisanal nigiri sushi platter on a handcrafted black slate board, glistening salmon roe and toro, wisps of dry ice mist, Michelin-star food photography\u201d",
+    "budgets": [
+     {
+      "pct": 100,
+      "tokens": 4096
+     },
+     {
+      "pct": 90,
+      "tokens": 3685
+     },
+     {
+      "pct": 80,
+      "tokens": 3277
+     },
+     {
+      "pct": 70,
+      "tokens": 2866
+     },
+     {
+      "pct": 60,
+      "tokens": 2458
+     },
+     {
+      "pct": 50,
+      "tokens": 2047
+     },
+     {
+      "pct": 40,
+      "tokens": 1636
+     },
+     {
+      "pct": 30,
+      "tokens": 1228
+     },
+     {
+      "pct": 20,
+      "tokens": 817
+     },
+     {
+      "pct": 10,
+      "tokens": 409
+     }
+    ]
+   },
+   {
+    "id": "p_23",
+    "caption": "\u201cA surreal floating library inside a giant hollowed-out ancient sequoia tree, spiral wooden staircases, thousands of glowing books, warm lantern light\u201d",
+    "budgets": [
+     {
+      "pct": 100,
+      "tokens": 4096
+     },
+     {
+      "pct": 90,
+      "tokens": 3685
+     },
+     {
+      "pct": 80,
+      "tokens": 3277
+     },
+     {
+      "pct": 70,
+      "tokens": 2866
+     },
+     {
+      "pct": 60,
+      "tokens": 2458
+     },
+     {
+      "pct": 50,
+      "tokens": 2047
+     },
+     {
+      "pct": 40,
+      "tokens": 1636
+     },
+     {
+      "pct": 30,
+      "tokens": 1228
+     },
+     {
+      "pct": 20,
+      "tokens": 817
+     },
+     {
+      "pct": 10,
+      "tokens": 409
+     }
+    ]
+   },
+   {
+    "id": "p_24",
+    "caption": "\u201cPortrait of a Venetian noblewoman wearing an ornate gold-and-porcelain filigree masquerade mask with peacock feathers, candlelight, Baroque painting style\u201d",
+    "budgets": [
+     {
+      "pct": 100,
+      "tokens": 4096
+     },
+     {
+      "pct": 90,
+      "tokens": 3685
+     },
+     {
+      "pct": 80,
+      "tokens": 3277
+     },
+     {
+      "pct": 70,
+      "tokens": 2866
+     },
+     {
+      "pct": 60,
+      "tokens": 2458
+     },
+     {
+      "pct": 50,
+      "tokens": 2047
+     },
+     {
+      "pct": 40,
+      "tokens": 1636
+     },
+     {
+      "pct": 30,
+      "tokens": 1228
+     },
+     {
+      "pct": 20,
+      "tokens": 817
+     },
+     {
+      "pct": 10,
+      "tokens": 409
+     }
+    ]
+   },
+   {
+    "id": "p_25",
+    "caption": "\u201cA steampunk dirigible airship with copper propellers moored to a towering brass observatory above a sea of sunset clouds, intricate Victorian engineering\u201d",
+    "budgets": [
+     {
+      "pct": 100,
+      "tokens": 4096
+     },
+     {
+      "pct": 90,
+      "tokens": 3685
+     },
+     {
+      "pct": 80,
+      "tokens": 3277
+     },
+     {
+      "pct": 70,
+      "tokens": 2866
+     },
+     {
+      "pct": 60,
+      "tokens": 2458
+     },
+     {
+      "pct": 50,
+      "tokens": 2047
+     },
+     {
+      "pct": 40,
+      "tokens": 1636
+     },
+     {
+      "pct": 30,
+      "tokens": 1228
+     },
+     {
+      "pct": 20,
+      "tokens": 817
+     },
+     {
+      "pct": 10,
+      "tokens": 409
+     }
+    ]
+   },
+   {
+    "id": "p_26",
+    "caption": "\u201cIsometric 3D diorama of a cozy two-story Tokyo bookstore and rooftop garden at twilight, warm interior lighting, tiny bicycles and vending machines outside\u201d",
+    "budgets": [
+     {
+      "pct": 100,
+      "tokens": 4096
+     },
+     {
+      "pct": 90,
+      "tokens": 3685
+     },
+     {
+      "pct": 80,
+      "tokens": 3277
+     },
+     {
+      "pct": 70,
+      "tokens": 2866
+     },
+     {
+      "pct": 60,
+      "tokens": 2458
+     },
+     {
+      "pct": 50,
+      "tokens": 2047
+     },
+     {
+      "pct": 40,
+      "tokens": 1636
+     },
+     {
+      "pct": 30,
+      "tokens": 1228
+     },
+     {
+      "pct": 20,
+      "tokens": 817
+     },
+     {
+      "pct": 10,
+      "tokens": 409
+     }
+    ]
+   },
+   {
+    "id": "p_27",
+    "caption": "\u201cA majestic Bengal tiger walking silently through shallow misty water in a sunlit mangrove swamp, ripples and golden reflections, wildlife telephoto lens\u201d",
+    "budgets": [
+     {
+      "pct": 100,
+      "tokens": 4096
+     },
+     {
+      "pct": 90,
+      "tokens": 3685
+     },
+     {
+      "pct": 80,
+      "tokens": 3277
+     },
+     {
+      "pct": 70,
+      "tokens": 2866
+     },
+     {
+      "pct": 60,
+      "tokens": 2458
+     },
+     {
+      "pct": 50,
+      "tokens": 2047
+     },
+     {
+      "pct": 40,
+      "tokens": 1636
+     },
+     {
+      "pct": 30,
+      "tokens": 1228
+     },
+     {
+      "pct": 20,
+      "tokens": 817
+     },
+     {
+      "pct": 10,
+      "tokens": 409
+     }
+    ]
+   }
+  ]
+ },
+ "iris_extreme": {
+  "label": "IRIS-3B",
+  "dataset": "Text-to-image 1024\u00b2",
+  "subjects": [
+   {
+    "id": "p01",
+    "caption": "\u201cA red fox sleeping in fresh snow, golden hour\u201d",
+    "budgets": [
+     {
+      "pct": 100,
+      "tokens": 4096
+     },
+     {
+      "pct": 75,
+      "tokens": 3072
+     },
+     {
+      "pct": 50,
+      "tokens": 2048
+     },
+     {
+      "pct": 25,
+      "tokens": 1024
+     },
+     {
+      "pct": 10,
+      "tokens": 410
+     },
+     {
+      "pct": 9,
+      "tokens": 369
+     },
+     {
+      "pct": 8,
+      "tokens": 328
+     },
+     {
+      "pct": 7,
+      "tokens": 287
+     },
+     {
+      "pct": 6,
+      "tokens": 246
+     },
+     {
+      "pct": 5,
+      "tokens": 205
+     },
+     {
+      "pct": 4,
+      "tokens": 164
+     },
+     {
+      "pct": 3,
+      "tokens": 123
+     },
+     {
+      "pct": 2,
+      "tokens": 82
+     },
+     {
+      "pct": 1,
+      "tokens": 64
+     }
+    ]
+   },
+   {
+    "id": "p02",
+    "caption": "\u201cStudio portrait of a Maasai elder wearing vibrant beaded jewelry, deep red cloth, dark backdrop, Rembrandt lighting, ultra detailed skin texture\u201d",
+    "budgets": [
+     {
+      "pct": 100,
+      "tokens": 4096
+     },
+     {
+      "pct": 75,
+      "tokens": 3072
+     },
+     {
+      "pct": 50,
+      "tokens": 2048
+     },
+     {
+      "pct": 25,
+      "tokens": 1024
+     },
+     {
+      "pct": 10,
+      "tokens": 410
+     },
+     {
+      "pct": 9,
+      "tokens": 369
+     },
+     {
+      "pct": 8,
+      "tokens": 328
+     },
+     {
+      "pct": 7,
+      "tokens": 287
+     },
+     {
+      "pct": 6,
+      "tokens": 246
+     },
+     {
+      "pct": 5,
+      "tokens": 205
+     },
+     {
+      "pct": 4,
+      "tokens": 164
+     },
+     {
+      "pct": 3,
+      "tokens": 123
+     },
+     {
+      "pct": 2,
+      "tokens": 82
+     },
+     {
+      "pct": 1,
+      "tokens": 64
+     }
+    ]
+   },
+   {
+    "id": "p03",
+    "caption": "\u201cA glass sculpture of a heart filled with flowers, caustics and reflections, 3D render\u201d",
+    "budgets": [
+     {
+      "pct": 100,
+      "tokens": 4096
+     },
+     {
+      "pct": 75,
+      "tokens": 3072
+     },
+     {
+      "pct": 50,
+      "tokens": 2048
+     },
+     {
+      "pct": 25,
+      "tokens": 1024
+     },
+     {
+      "pct": 10,
+      "tokens": 410
+     },
+     {
+      "pct": 9,
+      "tokens": 369
+     },
+     {
+      "pct": 8,
+      "tokens": 328
+     },
+     {
+      "pct": 7,
+      "tokens": 287
+     },
+     {
+      "pct": 6,
+      "tokens": 246
+     },
+     {
+      "pct": 5,
+      "tokens": 205
+     },
+     {
+      "pct": 4,
+      "tokens": 164
+     },
+     {
+      "pct": 3,
+      "tokens": 123
+     },
+     {
+      "pct": 2,
+      "tokens": 82
+     },
+     {
+      "pct": 1,
+      "tokens": 64
+     }
+    ]
+   },
+   {
+    "id": "p04",
+    "caption": "\u201cThe ancient city of Petra with the Treasury carved into pink sandstone, morning light\u201d",
+    "budgets": [
+     {
+      "pct": 100,
+      "tokens": 4096
+     },
+     {
+      "pct": 75,
+      "tokens": 3072
+     },
+     {
+      "pct": 50,
+      "tokens": 2048
+     },
+     {
+      "pct": 25,
+      "tokens": 1024
+     },
+     {
+      "pct": 10,
+      "tokens": 410
+     },
+     {
+      "pct": 9,
+      "tokens": 369
+     },
+     {
+      "pct": 8,
+      "tokens": 328
+     },
+     {
+      "pct": 7,
+      "tokens": 287
+     },
+     {
+      "pct": 6,
+      "tokens": 246
+     },
+     {
+      "pct": 5,
+      "tokens": 205
+     },
+     {
+      "pct": 4,
+      "tokens": 164
+     },
+     {
+      "pct": 3,
+      "tokens": 123
+     },
+     {
+      "pct": 2,
+      "tokens": 82
+     },
+     {
+      "pct": 1,
+      "tokens": 64
+     }
+    ]
+   },
+   {
+    "id": "p05",
+    "caption": "\u201cA close-up macro photograph of a honeybee covered in pollen landing on a purple thistle\u201d",
+    "budgets": [
+     {
+      "pct": 100,
+      "tokens": 4096
+     },
+     {
+      "pct": 75,
+      "tokens": 3072
+     },
+     {
+      "pct": 50,
+      "tokens": 2048
+     },
+     {
+      "pct": 25,
+      "tokens": 1024
+     },
+     {
+      "pct": 10,
+      "tokens": 409
+     },
+     {
+      "pct": 9,
+      "tokens": 369
+     },
+     {
+      "pct": 8,
+      "tokens": 328
+     },
+     {
+      "pct": 7,
+      "tokens": 287
+     },
+     {
+      "pct": 6,
+      "tokens": 246
+     },
+     {
+      "pct": 5,
+      "tokens": 205
+     },
+     {
+      "pct": 4,
+      "tokens": 164
+     },
+     {
+      "pct": 3,
+      "tokens": 123
+     },
+     {
+      "pct": 2,
+      "tokens": 82
+     },
+     {
+      "pct": 1,
+      "tokens": 64
+     }
+    ]
+   },
+   {
+    "id": "p06",
+    "caption": "\u201cA cozy wooden cabin at night in a snowy pine forest, warm light in the windows, aurora borealis overhead\u201d",
+    "budgets": [
+     {
+      "pct": 100,
+      "tokens": 4096
+     },
+     {
+      "pct": 75,
+      "tokens": 3072
+     },
+     {
+      "pct": 50,
+      "tokens": 2048
+     },
+     {
+      "pct": 25,
+      "tokens": 1024
+     },
+     {
+      "pct": 10,
+      "tokens": 410
+     },
+     {
+      "pct": 9,
+      "tokens": 369
+     },
+     {
+      "pct": 8,
+      "tokens": 328
+     },
+     {
+      "pct": 7,
+      "tokens": 287
+     },
+     {
+      "pct": 6,
+      "tokens": 246
+     },
+     {
+      "pct": 5,
+      "tokens": 205
+     },
+     {
+      "pct": 4,
+      "tokens": 164
+     },
+     {
+      "pct": 3,
+      "tokens": 123
+     },
+     {
+      "pct": 2,
+      "tokens": 82
+     },
+     {
+      "pct": 1,
+      "tokens": 64
+     }
+    ]
+   },
+   {
+    "id": "p07",
+    "caption": "\u201cAn astronaut riding a horse across a desert at sunset, cinematic photograph\u201d",
+    "budgets": [
+     {
+      "pct": 100,
+      "tokens": 4096
+     },
+     {
+      "pct": 75,
+      "tokens": 3072
+     },
+     {
+      "pct": 50,
+      "tokens": 2048
+     },
+     {
+      "pct": 25,
+      "tokens": 1024
+     },
+     {
+      "pct": 10,
+      "tokens": 410
+     },
+     {
+      "pct": 9,
+      "tokens": 369
+     },
+     {
+      "pct": 8,
+      "tokens": 328
+     },
+     {
+      "pct": 7,
+      "tokens": 287
+     },
+     {
+      "pct": 6,
+      "tokens": 246
+     },
+     {
+      "pct": 5,
+      "tokens": 205
+     },
+     {
+      "pct": 4,
+      "tokens": 164
+     },
+     {
+      "pct": 3,
+      "tokens": 123
+     },
+     {
+      "pct": 2,
+      "tokens": 82
+     },
+     {
+      "pct": 1,
+      "tokens": 64
+     }
+    ]
+   },
+   {
+    "id": "p08",
+    "caption": "\u201cA bowl of ramen with soft-boiled egg, nori, and steam rising, overhead food photography\u201d",
+    "budgets": [
+     {
+      "pct": 100,
+      "tokens": 4096
+     },
+     {
+      "pct": 75,
+      "tokens": 3072
+     },
+     {
+      "pct": 50,
+      "tokens": 2048
+     },
+     {
+      "pct": 25,
+      "tokens": 1024
+     },
+     {
+      "pct": 10,
+      "tokens": 410
+     },
+     {
+      "pct": 9,
+      "tokens": 369
+     },
+     {
+      "pct": 8,
+      "tokens": 328
+     },
+     {
+      "pct": 7,
+      "tokens": 287
+     },
+     {
+      "pct": 6,
+      "tokens": 246
+     },
+     {
+      "pct": 5,
+      "tokens": 205
+     },
+     {
+      "pct": 4,
+      "tokens": 164
+     },
+     {
+      "pct": 3,
+      "tokens": 123
+     },
+     {
+      "pct": 2,
+      "tokens": 82
+     },
+     {
+      "pct": 1,
+      "tokens": 64
+     }
+    ]
+   },
+   {
+    "id": "p09",
+    "caption": "\u201cA majestic Bengal tiger walking through tall golden grass, telephoto lens, shallow depth of field\u201d",
+    "budgets": [
+     {
+      "pct": 100,
+      "tokens": 4096
+     },
+     {
+      "pct": 75,
+      "tokens": 3072
+     },
+     {
+      "pct": 50,
+      "tokens": 2048
+     },
+     {
+      "pct": 25,
+      "tokens": 1024
+     },
+     {
+      "pct": 10,
+      "tokens": 410
+     },
+     {
+      "pct": 9,
+      "tokens": 369
+     },
+     {
+      "pct": 8,
+      "tokens": 328
+     },
+     {
+      "pct": 7,
+      "tokens": 287
+     },
+     {
+      "pct": 6,
+      "tokens": 246
+     },
+     {
+      "pct": 5,
+      "tokens": 205
+     },
+     {
+      "pct": 4,
+      "tokens": 164
+     },
+     {
+      "pct": 3,
+      "tokens": 123
+     },
+     {
+      "pct": 2,
+      "tokens": 82
+     },
+     {
+      "pct": 1,
+      "tokens": 64
+     }
+    ]
+   },
+   {
+    "id": "p10",
+    "caption": "\u201cA vintage red convertible parked on a cliffside road overlooking the Mediterranean sea\u201d",
+    "budgets": [
+     {
+      "pct": 100,
+      "tokens": 4096
+     },
+     {
+      "pct": 75,
+      "tokens": 3072
+     },
+     {
+      "pct": 50,
+      "tokens": 2048
+     },
+     {
+      "pct": 25,
+      "tokens": 1024
+     },
+     {
+      "pct": 10,
+      "tokens": 410
+     },
+     {
+      "pct": 9,
+      "tokens": 369
+     },
+     {
+      "pct": 8,
+      "tokens": 328
+     },
+     {
+      "pct": 7,
+      "tokens": 287
+     },
+     {
+      "pct": 6,
+      "tokens": 246
+     },
+     {
+      "pct": 5,
+      "tokens": 205
+     },
+     {
+      "pct": 4,
+      "tokens": 164
+     },
+     {
+      "pct": 3,
+      "tokens": 123
+     },
+     {
+      "pct": 2,
+      "tokens": 82
+     },
+     {
+      "pct": 1,
+      "tokens": 64
+     }
+    ]
+   },
+   {
+    "id": "p11",
+    "caption": "\u201cA child's watercolor painting of a rainbow over a farmhouse with chickens\u201d",
+    "budgets": [
+     {
+      "pct": 100,
+      "tokens": 4096
+     },
+     {
+      "pct": 75,
+      "tokens": 3072
+     },
+     {
+      "pct": 50,
+      "tokens": 2048
+     },
+     {
+      "pct": 25,
+      "tokens": 1024
+     },
+     {
+      "pct": 10,
+      "tokens": 410
+     },
+     {
+      "pct": 9,
+      "tokens": 369
+     },
+     {
+      "pct": 8,
+      "tokens": 328
+     },
+     {
+      "pct": 7,
+      "tokens": 287
+     },
+     {
+      "pct": 6,
+      "tokens": 246
+     },
+     {
+      "pct": 5,
+      "tokens": 205
+     },
+     {
+      "pct": 4,
+      "tokens": 164
+     },
+     {
+      "pct": 3,
+      "tokens": 123
+     },
+     {
+      "pct": 2,
+      "tokens": 82
+     },
+     {
+      "pct": 1,
+      "tokens": 64
+     }
+    ]
+   },
+   {
+    "id": "p12",
+    "caption": "\u201cA dense tropical rainforest waterfall with mist, lush ferns, and sunbeams through the canopy\u201d",
+    "budgets": [
+     {
+      "pct": 100,
+      "tokens": 4096
+     },
+     {
+      "pct": 75,
+      "tokens": 3072
+     },
+     {
+      "pct": 50,
+      "tokens": 2048
+     },
+     {
+      "pct": 25,
+      "tokens": 1024
+     },
+     {
+      "pct": 10,
+      "tokens": 410
+     },
+     {
+      "pct": 9,
+      "tokens": 369
+     },
+     {
+      "pct": 8,
+      "tokens": 328
+     },
+     {
+      "pct": 7,
+      "tokens": 287
+     },
+     {
+      "pct": 6,
+      "tokens": 246
+     },
+     {
+      "pct": 5,
+      "tokens": 205
+     },
+     {
+      "pct": 4,
+      "tokens": 164
+     },
+     {
+      "pct": 3,
+      "tokens": 123
+     },
+     {
+      "pct": 2,
+      "tokens": 82
+     },
+     {
+      "pct": 1,
+      "tokens": 64
+     }
+    ]
+   }
+  ]
+ }
+}
