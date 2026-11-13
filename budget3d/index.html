@@ -43,6 +43,8 @@
   </p>
 
   <h2>Budget3D Across Budgets</h2>
+  <div class="demo demo-wide" id="viewer3d" hidden></div>
+
   <figure>
     <video src="assets/overview_720p.mp4" poster="assets/overview_poster.jpg" controls muted playsinline preload="metadata"></video>
     <figcaption>Twelve Idol and twelve Idol-Turbo objects as the budget goes from 100% to
@@ -120,5 +122,132 @@
   <a href="https://github.com/BudgetAny">GitHub</a> &middot;
   <a href="https://huggingface.co/BudgetAny">Hugging Face</a>
 </footer>
+<script>
+(function () {
+  "use strict";
+  // Interactive viewer. Every budget of an object was rendered on the same camera orbit, so one frame index is one
+  // view at every budget: the slider changes only the number of tokens. Each budget is a 6 x 6 WebP sprite of 36
+  // views, 10 degrees apart, starting at the input view (built by site_tools/build_viewer3d.py).
+  var root = document.getElementById("viewer3d");
+  if (!root || !window.fetch || !window.Promise) return;
+  var BASE = "viewer/", DIR = 1, TURN_MS = 160;
+  function el(tag, cls, text) { var e = document.createElement(tag); if (cls) e.className = cls; if (text != null) e.textContent = text; return e; }
+  fetch(BASE + "viewer.json").then(function (r) { return r.json(); }).then(build).catch(function () {});
+
+  function build(d) {
+    var models = Object.keys(d.models);
+    var st = {model: models[0], obj: 0, b: 0, f: 0, gen: 0, on: false, timer: null, drag: null};
+    var ready = {}, fetched = {};
+    function url(model, obj, b) { return BASE + model + "/" + obj + "/b" + ("00" + b).slice(-3) + ".webp"; }
+    function decoded(u) {          // resolves once the sprite is downloaded and decoded, so a swap never flashes
+      if (!ready[u]) ready[u] = new Promise(function (ok) {
+        var im = new Image();
+        im.onload = function () { (im.decode ? im.decode() : Promise.resolve()).then(ok, ok); };
+        im.onerror = ok;
+        im.src = u;
+      });
+      return ready[u];
+    }
+    function prefetch(u) { if (!ready[u] && !fetched[u]) { fetched[u] = 1; fetch(u).catch(function () {}); } }
+
+    var tabs = el("div", "demo-row demo-tabs");
+    models.forEach(function (m) {
+      var t = el("button", "", d.models[m].label); t.type = "button"; t.dataset.model = m;
+      t.onclick = function () { if (st.model !== m) { st.model = m; draw(); } };
+      tabs.appendChild(t);
+    });
+    var objs = el("div", "v3d-objs");
+    d.objects.forEach(function (o, i) {
+      var t = el("button"); t.type = "button"; t.title = o.name; t.setAttribute("aria-label", o.name);
+      var im = el("img"); im.src = BASE + "inputs/" + o.id + "_thumb.webp"; im.alt = ""; im.width = im.height = 48;
+      t.appendChild(im);
+      t.onclick = function () { if (st.obj !== i) { st.obj = i; st.f = 0; draw(); } };
+      objs.appendChild(t);
+    });
+    var view = el("div", "v3d-view");
+    var fin = el("figure", "v3d-input"), input = el("img");
+    fin.appendChild(input); fin.appendChild(el("figcaption", "", "Input image")); view.appendChild(fin);
+    function panel(caption) {
+      var f = el("figure"), v = el("div", "v3d-frame"), c = el("figcaption", "", caption);
+      v.tabIndex = 0; v.setAttribute("role", "img");
+      v.style.backgroundSize = d.cols * 100 + "% " + d.rows * 100 + "%";
+      f.appendChild(v); f.appendChild(c); view.appendChild(f);
+      return {v: v, c: c};
+    }
+    var ref = panel("100% of the tokens"), cur = panel("");
+    var row = el("div", "demo-row");
+    var slider = el("input"); slider.type = "range"; slider.min = 0; slider.max = d.budgets.length - 1; slider.step = 1;
+    slider.setAttribute("aria-label", "token budget");
+    var read = el("span", "demo-read v3d-read");
+    var turn = el("button", "", "Turn"); turn.type = "button"; turn.setAttribute("aria-pressed", "false");
+    [slider, read, turn].forEach(function (x) { row.appendChild(x); });
+    var cap = el("p", "demo-caption");
+    [tabs, objs, view, row, cap].forEach(function (x) { root.appendChild(x); });
+    root.hidden = false;
+
+    function setFrame(f) {
+      st.f = ((f % d.frames) + d.frames) % d.frames;
+      var c = st.f % d.cols, r = Math.floor(st.f / d.cols);
+      ref.v.style.backgroundPosition = cur.v.style.backgroundPosition = c * 100 / (d.cols - 1) + "% " + r * 100 / (d.rows - 1) + "%";
+      var o = d.objects[st.obj].name, at = ", view " + (st.f + 1) + " of " + d.frames;
+      ref.v.setAttribute("aria-label", o + ", 100% of the tokens" + at);
+      cur.v.setAttribute("aria-label", o + ", " + d.budgets[st.b] + "% of the tokens" + at);
+    }
+    function show(p, u) { var g = st.gen; decoded(u).then(function () { if (g === st.gen) p.v.style.backgroundImage = 'url("' + u + '")'; }); }
+    function draw() {
+      st.gen++;
+      var m = d.models[st.model], o = d.objects[st.obj], i = st.b, b = d.budgets[i];
+      Array.prototype.forEach.call(tabs.children, function (t) { t.setAttribute("aria-pressed", String(t.dataset.model === st.model)); });
+      Array.prototype.forEach.call(objs.children, function (t, k) { t.setAttribute("aria-pressed", String(k === st.obj)); });
+      input.src = BASE + "inputs/" + o.id + ".webp"; input.alt = "input image: " + o.name;
+      slider.value = i;
+      cur.c.textContent = b + "% of the tokens";
+      read.textContent = b + "% · " + d.tokens[i].toLocaleString("en-US") + " tokens · " + m.seconds[i].toFixed(2) + " s · " + m.gb[i].toFixed(1) + " GB";
+      cap.textContent = "Drag a view, or use ← → on it, to turn the object. Every budget is rendered from the same camera, " +
+        "starting at the input view, so the slider changes only the number of tokens. Time and peak memory are for sampling " +
+        "one object with " + m.label.replace(/ \(.*\)$/, "") + " on " + m.gpu + ", as in the tables below.";
+      setFrame(st.f);
+      if (!st.on) return;
+      show(ref, url(st.model, o.id, d.budgets[0]));
+      show(cur, url(st.model, o.id, b));
+      d.budgets.forEach(function (bb) { prefetch(url(st.model, o.id, bb)); });
+    }
+    function stop() {
+      if (!st.timer) return;
+      clearInterval(st.timer); st.timer = null; turn.textContent = "Turn"; turn.setAttribute("aria-pressed", "false");
+    }
+    turn.onclick = function () {
+      if (st.timer) { stop(); return; }
+      turn.textContent = "Stop"; turn.setAttribute("aria-pressed", "true");
+      st.timer = setInterval(function () { setFrame(st.f + DIR); }, TURN_MS);
+    };
+    slider.oninput = function () { st.b = +slider.value; draw(); };
+    [ref.v, cur.v].forEach(function (v) {
+      v.addEventListener("pointerdown", function (e) {
+        if (e.button > 0) return;
+        stop(); st.drag = {x: e.clientX, f: st.f, w: v.clientWidth || 300, id: e.pointerId};
+        if (v.setPointerCapture) v.setPointerCapture(e.pointerId);
+      });
+      v.addEventListener("pointermove", function (e) {
+        if (!st.drag || e.pointerId !== st.drag.id) return;
+        setFrame(st.drag.f + DIR * Math.round((e.clientX - st.drag.x) / st.drag.w * d.frames));
+      });
+      ["pointerup", "pointercancel", "lostpointercapture"].forEach(function (n) { v.addEventListener(n, function () { st.drag = null; }); });
+      v.addEventListener("keydown", function (e) {
+        if (e.key !== "ArrowLeft" && e.key !== "ArrowRight") return;
+        e.preventDefault(); stop(); setFrame(st.f + DIR * (e.key === "ArrowRight" ? 1 : -1));
+      });
+    });
+    draw();
+    function go() { st.on = true; draw(); }
+    if ("IntersectionObserver" in window) {
+      var io = new IntersectionObserver(function (es) {
+        if (es.some(function (e) { return e.isIntersecting; })) { io.disconnect(); go(); }
+      }, {rootMargin: "400px"});
+      io.observe(root);
+    } else go();
+  }
+})();
+</script>
 </body>
 </html>

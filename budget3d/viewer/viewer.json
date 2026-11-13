@@ -1,0 +1,103 @@
+{
+ "frames": 36,
+ "cols": 6,
+ "rows": 6,
+ "budgets": [
+  100,
+  90,
+  80,
+  70,
+  60,
+  50,
+  40
+ ],
+ "tokens": [
+  8192,
+  7373,
+  6554,
+  5734,
+  4915,
+  4096,
+  3277
+ ],
+ "objects": [
+  {
+   "id": "iris-scooter",
+   "name": "Scooter"
+  },
+  {
+   "id": "nb-castle-iso",
+   "name": "Castle"
+  },
+  {
+   "id": "fig-cowboy",
+   "name": "Cowboy"
+  },
+  {
+   "id": "fig-viking",
+   "name": "Viking"
+  },
+  {
+   "id": "toy-train",
+   "name": "Toy train"
+  },
+  {
+   "id": "toy-submarine",
+   "name": "Submarine"
+  },
+  {
+   "id": "nb-boombox",
+   "name": "Boombox"
+  },
+  {
+   "id": "fur-egg-chair",
+   "name": "Egg chair"
+  }
+ ],
+ "models": {
+  "idol": {
+   "label": "Budget3D-Idol (50 steps)",
+   "gpu": "one H100",
+   "seconds": [
+    5.67,
+    5.15,
+    4.59,
+    4.1,
+    3.6,
+    3.18,
+    2.66
+   ],
+   "gb": [
+    9.9,
+    9.6,
+    9.2,
+    8.9,
+    8.5,
+    8.2,
+    7.8
+   ]
+  },
+  "turbo": {
+   "label": "Budget3D-Idol-Turbo (5 steps)",
+   "gpu": "one RTX PRO 6000",
+   "seconds": [
+    0.48,
+    0.44,
+    0.39,
+    0.35,
+    0.31,
+    0.27,
+    0.25
+   ],
+   "gb": [
+    8.0,
+    7.8,
+    7.5,
+    7.3,
+    7.1,
+    6.9,
+    6.6
+   ]
+  }
+ }
+}

@@ -143,3 +143,18 @@ footer a { color: var(--muted); text-decoration: underline; }
 .demo-read { font-size: 14px; min-width: 9.5em; font-variant-numeric: tabular-nums; }
 .demo-caption { font-size: 13px; color: var(--muted); margin: 8px 0 0; }
 .swatch { display: inline-block; width: 10px; height: 10px; border-radius: 2px; margin: 0 4px 0 8px; vertical-align: -1px; }
+
+/* Budget3D: the interactive viewer (same frame and controls as the BudgetPix sliders) */
+.v3d-objs { display: flex; flex-wrap: wrap; justify-content: center; gap: 6px; margin: 0 0 10px; }
+.v3d-objs button { padding: 0; line-height: 0; border: 1px solid var(--line); border-radius: 6px; background: #000; cursor: pointer; overflow: hidden; }
+.v3d-objs button[aria-pressed="true"] { border-color: var(--fg); box-shadow: 0 0 0 1px var(--fg); }
+.v3d-objs img { display: block; width: 48px; height: 48px; }
+.v3d-view { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+.v3d-view img, .v3d-frame { display: block; width: 100%; aspect-ratio: 1; border-radius: 4px; }
+.v3d-frame { background-color: #fff; background-repeat: no-repeat; cursor: grab; touch-action: pan-y; user-select: none; -webkit-user-select: none; }
+.v3d-frame:active { cursor: grabbing; }
+.v3d-frame:focus-visible { outline: 2px solid var(--fg); outline-offset: 2px; }
+@supports not (aspect-ratio: 1) { .v3d-frame { height: 0; padding-top: 100%; } }
+.v3d-read { min-width: 18em; }
+@media (max-width: 640px) { .v3d-view { grid-template-columns: 1fr 1fr; } .v3d-input { display: none; } .v3d-read { min-width: 0; }
+  .v3d-objs { gap: 5px; } .v3d-objs img { width: 34px; height: 34px; } }
