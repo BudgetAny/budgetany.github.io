@@ -10,6 +10,14 @@
   <meta property="og:image" content="https://budgetany.github.io/budget3d/assets/teaser_poster.jpg">
   <link rel="icon" href="../assets/brand/budget3d_mark.svg" type="image/svg+xml">
   <link rel="stylesheet" href="../assets/site.css">
+  <!-- loaded only when the viewer's 3D button is pressed -->
+  <script type="importmap">
+  {"imports": {
+    "three": "https://cdn.jsdelivr.net/npm/three@0.180.0/build/three.module.js",
+    "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.180.0/examples/jsm/",
+    "@sparkjsdev/spark": "https://cdn.jsdelivr.net/npm/@sparkjsdev/spark@2.4.0/dist/spark.module.js"
+  }}
+  </script>
 </head>
 <body>
 <main>
@@ -127,7 +135,8 @@
   "use strict";
   // Interactive viewer. Every budget of an object was rendered on the same camera orbit, so one frame index is one
   // view at every budget: the slider changes only the number of tokens. Each budget is a 6 x 6 WebP sprite of 36
-  // views, 10 degrees apart, starting at the input view (built by site_tools/build_viewer3d.py).
+  // views, 10 degrees apart, starting at the input view (built by site_tools/build_viewer3d.py). The 3D button shows
+  // the Gaussian splats themselves (Spark, loaded only then), with the same camera for both views.
   var root = document.getElementById("viewer3d");
   if (!root || !window.fetch || !window.Promise) return;
   var BASE = "viewer/", DIR = 1, TURN_MS = 160;
@@ -136,8 +145,8 @@
 
   function build(d) {
     var models = Object.keys(d.models);
-    var st = {model: models[0], obj: 0, b: 0, f: 0, gen: 0, on: false, timer: null, drag: null};
-    var ready = {}, fetched = {};
+    var st = {model: models[0], obj: 0, b: 0, f: 0, gen: 0, on: false, timer: null, drag: null, key: ""};
+    var ready = {}, fetched = {}, g3 = null;
     function url(model, obj, b) { return BASE + model + "/" + obj + "/b" + ("00" + b).slice(-3) + ".webp"; }
     function decoded(u) {          // resolves once the sprite is downloaded and decoded, so a swap never flashes
       if (!ready[u]) ready[u] = new Promise(function (ok) {
@@ -149,6 +158,7 @@
       return ready[u];
     }
     function prefetch(u) { if (!ready[u] && !fetched[u]) { fetched[u] = 1; fetch(u).catch(function () {}); } }
+    function is3d() { return root.classList.contains("is-3d"); }
 
     var tabs = el("div", "demo-row demo-tabs");
     models.forEach(function (m) {
@@ -167,20 +177,23 @@
     var view = el("div", "v3d-view");
     var fin = el("figure", "v3d-input"), input = el("img");
     fin.appendChild(input); fin.appendChild(el("figcaption", "", "Input image")); view.appendChild(fin);
-    function panel(caption) {
-      var f = el("figure"), v = el("div", "v3d-frame"), c = el("figcaption", "", caption);
+    function panel(caption, cls) {
+      var f = el("figure", cls), v = el("div", "v3d-frame"), c = el("figcaption", "", caption);
       v.tabIndex = 0; v.setAttribute("role", "img");
       v.style.backgroundSize = d.cols * 100 + "% " + d.rows * 100 + "%";
       f.appendChild(v); f.appendChild(c); view.appendChild(f);
       return {v: v, c: c};
     }
-    var ref = panel("100% of the tokens"), cur = panel("");
+    var ref = panel("100% of the tokens", "v3d-ref"), cur = panel("", "v3d-cur");
     var row = el("div", "demo-row");
     var slider = el("input"); slider.type = "range"; slider.min = 0; slider.max = d.budgets.length - 1; slider.step = 1;
     slider.setAttribute("aria-label", "token budget");
     var read = el("span", "demo-read v3d-read");
     var turn = el("button", "", "Turn"); turn.type = "button"; turn.setAttribute("aria-pressed", "false");
+    var b3d = el("button", "", "3D"); b3d.type = "button"; b3d.setAttribute("aria-pressed", "false");
+    b3d.title = "Show the Gaussian splats themselves: drag to orbit, scroll or pinch to zoom";
     [slider, read, turn].forEach(function (x) { row.appendChild(x); });
+    if (d.splats && window.HTMLScriptElement && HTMLScriptElement.supports && HTMLScriptElement.supports("importmap")) row.appendChild(b3d);
     var cap = el("p", "demo-caption");
     [tabs, objs, view, row, cap].forEach(function (x) { root.appendChild(x); });
     root.hidden = false;
@@ -194,6 +207,21 @@
       cur.v.setAttribute("aria-label", o + ", " + d.budgets[st.b] + "% of the tokens" + at);
     }
     function show(p, u) { var g = st.gen; decoded(u).then(function () { if (g === st.gen) p.v.style.backgroundImage = 'url("' + u + '")'; }); }
+    function caption() {
+      var m = d.models[st.model], gpu = " Time and peak memory are for sampling one object with " +
+        m.label.replace(/ \(.*\)$/, "") + " on " + m.gpu + ", as in the tables below.";
+      cap.textContent = "";
+      if (!is3d()) {
+        cap.textContent = "Drag a view, or use ← → on it, to turn the object. Every budget is rendered from the same camera, " +
+          "starting at the input view, so the slider changes only the number of tokens." + gpu;
+        return;
+      }
+      var b = d.budgets[st.b], a = el("a", "", b + "%, .ply, " + d.splats.ply_mb + " MB");
+      a.href = d.splats.ply + st.model + "/" + d.objects[st.obj].id + "/b" + ("00" + b).slice(-3) + ".ply"; a.download = "";
+      cap.appendChild(document.createTextNode("The Gaussian splats themselves: drag to orbit, scroll or pinch to zoom. Both views " +
+        "share one camera, so the slider changes only the splat on the right. Download it: "));
+      cap.appendChild(a); cap.appendChild(document.createTextNode("." + gpu));
+    }
     function draw() {
       st.gen++;
       var m = d.models[st.model], o = d.objects[st.obj], i = st.b, b = d.budgets[i];
@@ -203,28 +231,113 @@
       slider.value = i;
       cur.c.textContent = b + "% of the tokens";
       read.textContent = b + "% · " + d.tokens[i].toLocaleString("en-US") + " tokens · " + m.seconds[i].toFixed(2) + " s · " + m.gb[i].toFixed(1) + " GB";
-      cap.textContent = "Drag a view, or use ← → on it, to turn the object. Every budget is rendered from the same camera, " +
-        "starting at the input view, so the slider changes only the number of tokens. Time and peak memory are for sampling " +
-        "one object with " + m.label.replace(/ \(.*\)$/, "") + " on " + m.gpu + ", as in the tables below.";
+      caption();
       setFrame(st.f);
-      if (!st.on) return;
+      var key = st.model + "/" + o.id, moved = key !== st.key; st.key = key;
+      if (g3) { if (moved) aim(); sync3d(); }
+      if (!st.on || is3d()) return;
       show(ref, url(st.model, o.id, d.budgets[0]));
       show(cur, url(st.model, o.id, b));
       d.budgets.forEach(function (bb) { prefetch(url(st.model, o.id, bb)); });
     }
+
+    // ---- 3D: Spark renders the SPZ splats; one camera, one OrbitControls per view --------------------------------
+    function libs() {
+      if (!libs.p) libs.p = Promise.all([import("three"), import("three/addons/controls/OrbitControls.js"), import("@sparkjsdev/spark")])
+        .then(function (x) { return {THREE: x[0], OrbitControls: x[1].OrbitControls, Spark: x[2]}; });
+      return libs.p;
+    }
+    function aim() {               // the gallery orbit (z-up) at the current view, in the splats' y-up frame
+      var o = d.orbits[st.model][d.objects[st.obj].id], y = o.yaw + 2 * Math.PI * st.f / d.frames, r = o.radius, cam = g3.camera;
+      cam.fov = o.fov; cam.updateProjectionMatrix();
+      cam.position.set(r * Math.cos(o.pitch) * Math.sin(y), r * Math.sin(o.pitch), -r * Math.cos(o.pitch) * Math.cos(y));
+      cam.up.set(0, 1, 0); cam.lookAt(0, 0, 0);
+      g3.views.forEach(function (v) { v.controls.target.set(0, 0, 0); v.controls.update(); });
+      g3.dirty = 60;
+    }
+    function splat(b) { return d.splats.spz + st.model + "/" + d.objects[st.obj].id + "/b" + ("00" + b).slice(-3) + ".spz"; }
+    function setMesh(v, u) {
+      if (v.url === u) return;
+      v.url = u; var g = ++v.gen; v.msg.textContent = "loading…"; v.msg.hidden = false;
+      var m = new g3.L.Spark.SplatMesh({url: u});
+      m.initialized.then(function () {
+        if (!g3 || g !== v.gen) { m.dispose(); return; }
+        if (v.mesh) { v.scene.remove(v.mesh); v.mesh.dispose(); }
+        v.mesh = m; v.scene.add(m); v.msg.hidden = true; g3.dirty = 60;
+      }, function () { if (g === v.gen) v.msg.textContent = "could not load the splat"; });
+    }
+    function sync3d() {
+      setMesh(g3.views[0], splat(d.budgets[0]));
+      setMesh(g3.views[1], splat(d.budgets[st.b]));
+      [st.b - 1, st.b + 1].forEach(function (k) { if (k >= 0 && k < d.budgets.length) prefetch(splat(d.budgets[k])); });
+    }
+    var visible = true;
+    if ("IntersectionObserver" in window) new IntersectionObserver(function (es) { visible = es[0].isIntersecting; }).observe(root);
+    function loop() {
+      if (!g3) return;
+      g3.raf = requestAnimationFrame(loop);
+      if (!visible) return;
+      g3.views.forEach(function (v) { v.controls.update(); });      // drives Turn (autoRotate); fires "change"
+      if (g3.dirty <= 0) return;         // nothing moved: no redraw
+      g3.dirty--;
+      g3.views.forEach(function (v) {
+        var w = v.canvas.clientWidth, h = v.canvas.clientHeight;
+        if (!w || !h) return;            // the 100% view is hidden on phones
+        var pr = v.renderer.getPixelRatio();
+        if (v.canvas.width !== Math.round(w * pr) || v.canvas.height !== Math.round(h * pr)) v.renderer.setSize(w, h, false);
+        v.renderer.render(v.scene, g3.camera);
+      });
+    }
+    function start3d() {
+      stop(); root.classList.add("is-3d"); b3d.setAttribute("aria-pressed", "true"); caption();
+      libs().then(function (L) {
+        if (!is3d() || g3) return;
+        var T = L.THREE;
+        g3 = {L: L, camera: new T.PerspectiveCamera(40, 1, 0.01, 100), views: [], dirty: 60};
+        window.addEventListener("resize", function () { if (g3) g3.dirty = 60; });
+        [ref, cur].forEach(function (p) {
+          var canvas = el("canvas", "v3d-canvas"), msg = el("span", "v3d-msg");
+          p.v.appendChild(canvas); p.v.appendChild(msg);
+          var renderer = new T.WebGLRenderer({canvas: canvas, antialias: false});
+          renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
+          var scene = new T.Scene(); scene.background = new T.Color(0xffffff);
+          scene.add(new L.Spark.SparkRenderer({renderer: renderer}));
+          var controls = new L.OrbitControls(g3.camera, canvas);
+          controls.enablePan = false; controls.minDistance = 0.3; controls.maxDistance = 8;
+          controls.addEventListener("start", stop);
+          controls.addEventListener("change", function () { if (g3) g3.dirty = 60; });
+          g3.views.push({canvas: canvas, msg: msg, renderer: renderer, scene: scene, controls: controls, mesh: null, url: null, gen: 0});
+        });
+        aim(); sync3d(); loop();
+      }).catch(function () { stop3d(); b3d.hidden = true; });
+    }
+    function stop3d() {
+      stop(); root.classList.remove("is-3d"); b3d.setAttribute("aria-pressed", "false");
+      if (g3) {
+        cancelAnimationFrame(g3.raf);
+        g3.views.forEach(function (v) { if (v.mesh) v.mesh.dispose(); v.controls.dispose(); v.renderer.dispose(); v.canvas.remove(); v.msg.remove(); });
+        g3 = null;
+      }
+      draw();
+    }
+    b3d.onclick = function () { if (is3d()) stop3d(); else start3d(); };
+
     function stop() {
-      if (!st.timer) return;
-      clearInterval(st.timer); st.timer = null; turn.textContent = "Turn"; turn.setAttribute("aria-pressed", "false");
+      if (st.timer) { clearInterval(st.timer); st.timer = null; }
+      if (g3) g3.views.forEach(function (v) { v.controls.autoRotate = false; });
+      turn.textContent = "Turn"; turn.setAttribute("aria-pressed", "false");
     }
     turn.onclick = function () {
-      if (st.timer) { stop(); return; }
+      if (turn.getAttribute("aria-pressed") === "true") { stop(); return; }
+      if (is3d() && !g3) return;
       turn.textContent = "Stop"; turn.setAttribute("aria-pressed", "true");
-      st.timer = setInterval(function () { setFrame(st.f + DIR); }, TURN_MS);
+      if (g3) { g3.views[0].controls.autoRotate = true; g3.views[0].controls.autoRotateSpeed = 6; }
+      else st.timer = setInterval(function () { setFrame(st.f + DIR); }, TURN_MS);
     };
     slider.oninput = function () { st.b = +slider.value; draw(); };
     [ref.v, cur.v].forEach(function (v) {
       v.addEventListener("pointerdown", function (e) {
-        if (e.button > 0) return;
+        if (is3d() || e.button > 0) return;
         stop(); st.drag = {x: e.clientX, f: st.f, w: v.clientWidth || 300, id: e.pointerId};
         if (v.setPointerCapture) v.setPointerCapture(e.pointerId);
       });
@@ -234,7 +347,7 @@
       });
       ["pointerup", "pointercancel", "lostpointercapture"].forEach(function (n) { v.addEventListener(n, function () { st.drag = null; }); });
       v.addEventListener("keydown", function (e) {
-        if (e.key !== "ArrowLeft" && e.key !== "ArrowRight") return;
+        if (is3d() || (e.key !== "ArrowLeft" && e.key !== "ArrowRight")) return;
         e.preventDefault(); stop(); setFrame(st.f + DIR * (e.key === "ArrowRight" ? 1 : -1));
       });
     });

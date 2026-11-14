@@ -156,5 +156,10 @@ footer a { color: var(--muted); text-decoration: underline; }
 .v3d-frame:focus-visible { outline: 2px solid var(--fg); outline-offset: 2px; }
 @supports not (aspect-ratio: 1) { .v3d-frame { height: 0; padding-top: 100%; } }
 .v3d-read { min-width: 18em; }
+.v3d-frame { position: relative; }
+.v3d-canvas { position: absolute; inset: 0; width: 100%; height: 100%; display: block; border-radius: 4px; cursor: grab; }
+.v3d-msg { position: absolute; left: 8px; bottom: 6px; font-size: 12px; color: #666; }
+.is-3d .v3d-frame { cursor: default; }
 @media (max-width: 640px) { .v3d-view { grid-template-columns: 1fr 1fr; } .v3d-input { display: none; } .v3d-read { min-width: 0; }
-  .v3d-objs { gap: 5px; } .v3d-objs img { width: 34px; height: 34px; } }
+  .v3d-objs { gap: 5px; } .v3d-objs img { width: 34px; height: 34px; }
+  .is-3d .v3d-view { grid-template-columns: 1fr; } .is-3d .v3d-ref { display: none; } }
