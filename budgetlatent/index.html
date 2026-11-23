@@ -4,11 +4,29 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>BudgetLatent</title>
-  <meta name="description" content="BudgetLatent: latent-space image generation at any token budget. Coming soon.">
+  <meta name="description" content="BudgetLatent: latent-space image generation at any token budget, on FLUX.2 [klein] 4B Base, FLUX.2 [klein] 4B, FLUX 3 Image Klein Base and FLUX 3 Image Klein.">
   <meta property="og:title" content="BudgetLatent: Latent-Space Image Generation at Any Token Budget">
-  <meta property="og:description" content="Coming soon.">
+  <meta property="og:description" content="One checkpoint per model, from 100% down to 10% of its tokens, for text to image, editing and multiple references: FLUX.2 [klein] 4B Base, FLUX.2 [klein] 4B, FLUX 3 Image Klein Base and FLUX 3 Image Klein.">
+  <meta property="og:image" content="https://budgetany.github.io/budgetlatent/assets/teaser_poster.jpg">
   <link rel="icon" href="../assets/brand/budgetlatent_mark.svg" type="image/svg+xml">
   <link rel="stylesheet" href="../assets/site.css">
+  <style>
+    h3 { overflow-wrap: anywhere; }
+    .blv-view { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+    .blv-tile { display: block; width: 100%; aspect-ratio: 1; border-radius: 4px; background-repeat: no-repeat; background-color: var(--soft); }
+    @supports not (aspect-ratio: 1) { .blv-tile { height: 0; padding-top: 100%; } }
+    .blv-view figure { margin: 0; }
+    .blv-read { min-width: 17em; }
+    .blr-case { margin: 18px 0; }
+    .blr-kind { margin: 0 0 6px; font-size: 15px; }
+    .blr-row { display: grid; grid-template-columns: repeat(6, 1fr); gap: 6px; }
+    .blr-row figure { margin: 0; }
+    .blr-row img { width: 100%; height: auto; aspect-ratio: 1; object-fit: cover; border-radius: 4px; background: var(--soft); }
+    .blr-row figcaption { font-size: 12px; margin-top: 3px; line-height: 1.35; }
+    .blr-in img { outline: 2px solid var(--muted); outline-offset: -2px; }
+    @media (max-width: 640px) { .blv-view { grid-template-columns: 1fr 1fr; } .blv-ref { display: none; } .blv-read { min-width: 0; }
+      .blr-row { grid-template-columns: repeat(3, 1fr); } }
+  </style>
 </head>
 <body>
 <main>
@@ -17,13 +35,184 @@
   <h1>BudgetLatent: Latent-Space Image Generation at Any Token Budget</h1>
 
   <div class="buttons">
-    <span>Code: coming soon</span>
-    <span>Models: coming soon</span>
+    <a href="https://github.com/BudgetAny/BudgetLatent">Code</a>
+    <a href="https://huggingface.co/BudgetAny">Models</a>
     <span>Tech report: coming soon</span>
+    <a href="https://arxiv.org/abs/2610.12307">BudgetPix paper</a>
+    <a href="#bibtex">BibTeX</a>
   </div>
-  <p class="note">Unofficial, open-source implementation.</p>
+  <p class="note">Unofficial, open-source implementation of BudgetPix's compute-adaptive tokenization, adapted to latent
+    text-to-image models (FLUX.2 [klein] 4B Base, FLUX.2 [klein] 4B, FLUX 3 Image Klein Base and FLUX 3 Image Klein). Thanks to the BudgetPix authors for the method.</p>
 
-  <p class="soon">Coming soon.</p>
+  <figure>
+    <video src="assets/teaser_720p.mp4" poster="assets/teaser_poster.jpg" autoplay muted loop playsinline controls></video>
+    <figcaption><b>Test-time compute adjustment.</b> One checkpoint per model generates at any token budget: fewer
+      tokens, faster images. The video sweeps the budget of the four models from 100% down to 10%, with each image's
+      token layout, its number of tokens and the time per image, compares their speed-ups, and shows an edit, two
+      references and layout boxes at every budget.</figcaption>
+  </figure>
+
+  <h2>Overview</h2>
+  <p>
+    BudgetLatent fine-tunes <a href="https://huggingface.co/black-forest-labs/FLUX.2-klein-base-4B">FLUX.2 [klein] 4B Base</a>, the step-distilled <a href="https://huggingface.co/black-forest-labs/FLUX.2-klein-4B">FLUX.2 [klein] 4B</a>, <a href="https://huggingface.co/black-forest-labs/flux-3-image-klein-base">FLUX 3 Image Klein Base</a> and the step-distilled <a href="https://huggingface.co/black-forest-labs/flux-3-image-klein">FLUX 3 Image Klein</a> so that the number of tokens is a setting you choose at inference. A quadtree
+    over the latent grid merges the flattest regions into coarser tokens (32, 64 or 128 px instead of 16 px), the
+    transformer runs on the shorter sequence, and small refiners restore the detail inside every merged token. The
+    layout is chosen per image from its content and refreshed during sampling, so the small tokens stay on the detail.
+    At 100% the model runs the dense grid. The step-distilled models keep their few-step samplers without guidance, and
+    every model keeps its editing and reference-image modes at any budget (the FLUX 3 models also their layout boxes).
+  </p>
+
+  <h2>BudgetLatent Across Budgets</h2>
+  <div class="demo demo-wide" id="blviewer" hidden></div>
+  <noscript><p>The interactive viewer needs JavaScript; the video above shows more images.</p></noscript>
+
+  <h2>Speed and Memory</h2>
+  <p>Sampling time per image with the optimised inference of the code (<code>--fast</code>: bf16, <code>torch.compile</code>),
+    at 1024 &times; 1024: the denoising loop with its layouts, after a warm-up of every budget. The layout is taken from
+    the noise at step 0 and refreshed from a preview decoded from the running estimate: the 50-step models refresh it
+    every 4 steps up to step 20, from a 512 px preview; FLUX.2 [klein] 4B refreshes it once, at step 1, and FLUX 3 Image
+    Klein once, at step 8, each from a 256 px preview, so that the refresh costs little next to their few steps.
+    Encoding the prompt and the final VAE decode do not depend on the budget and are not included. At batch 1 the peak
+    memory is mostly the weights, so it hardly moves with the budget; with larger batches it falls with the budget too.</p>
+<h3><a href="https://huggingface.co/BudgetAny/BudgetLatent-FLUX.2-klein-base-4B">BudgetLatent-FLUX.2-klein-base-4B</a>, one RTX PRO 6000, batch 1, 50 steps, guidance 4.0, layouts every 4 steps up to step 20</h3>
+<div class="table">
+  <table>
+    <tr><th class="num">Budget</th><th class="num">Tokens</th><th class="num">Sampling / image</th><th class="num">Speed-up</th><th class="num">Peak memory</th></tr>
+    <tr><td class="num">100%</td><td class="num">4,096</td><td class="num">10.75 s</td><td class="num">1.00&times;</td><td class="num">8.6 GiB</td></tr>
+    <tr><td class="num">90%</td><td class="num">3,685</td><td class="num">9.77 s</td><td class="num">1.10&times;</td><td class="num">8.5 GiB</td></tr>
+    <tr><td class="num">80%</td><td class="num">3,277</td><td class="num">8.60 s</td><td class="num">1.25&times;</td><td class="num">8.5 GiB</td></tr>
+    <tr><td class="num">70%</td><td class="num">2,866</td><td class="num">7.57 s</td><td class="num">1.42&times;</td><td class="num">8.4 GiB</td></tr>
+    <tr><td class="num">60%</td><td class="num">2,458</td><td class="num">6.57 s</td><td class="num">1.64&times;</td><td class="num">8.3 GiB</td></tr>
+    <tr><td class="num">50%</td><td class="num">2,047</td><td class="num">5.65 s</td><td class="num">1.90&times;</td><td class="num">8.2 GiB</td></tr>
+    <tr><td class="num">40%</td><td class="num">1,639</td><td class="num">4.80 s</td><td class="num">2.24&times;</td><td class="num">8.2 GiB</td></tr>
+    <tr><td class="num">30%</td><td class="num">1,228</td><td class="num">3.81 s</td><td class="num">2.82&times;</td><td class="num">8.1 GiB</td></tr>
+    <tr><td class="num">20%</td><td class="num">820</td><td class="num">2.91 s</td><td class="num">3.70&times;</td><td class="num">8.1 GiB</td></tr>
+    <tr><td class="num">10%</td><td class="num">409</td><td class="num">2.31 s</td><td class="num">4.64&times;</td><td class="num">8.1 GiB</td></tr>
+  </table>
+</div>
+<h3><a href="https://huggingface.co/BudgetAny/BudgetLatent-FLUX.2-klein-4B">BudgetLatent-FLUX.2-klein-4B</a>, one RTX PRO 6000, batch 1, 4 steps, no guidance, layouts at steps 0 and 1</h3>
+<div class="table">
+  <table>
+    <tr><th class="num">Budget</th><th class="num">Tokens</th><th class="num">Sampling / image</th><th class="num">Speed-up</th><th class="num">Peak memory</th></tr>
+    <tr><td class="num">100%</td><td class="num">4,096</td><td class="num">0.42 s</td><td class="num">1.00&times;</td><td class="num">8.2 GiB</td></tr>
+    <tr><td class="num">90%</td><td class="num">3,685</td><td class="num">0.39 s</td><td class="num">1.08&times;</td><td class="num">8.1 GiB</td></tr>
+    <tr><td class="num">80%</td><td class="num">3,277</td><td class="num">0.34 s</td><td class="num">1.24&times;</td><td class="num">8.1 GiB</td></tr>
+    <tr><td class="num">70%</td><td class="num">2,866</td><td class="num">0.31 s</td><td class="num">1.36&times;</td><td class="num">8.1 GiB</td></tr>
+    <tr><td class="num">60%</td><td class="num">2,458</td><td class="num">0.28 s</td><td class="num">1.50&times;</td><td class="num">8.0 GiB</td></tr>
+    <tr><td class="num">50%</td><td class="num">2,047</td><td class="num">0.24 s</td><td class="num">1.79&times;</td><td class="num">8.0 GiB</td></tr>
+    <tr><td class="num">40%</td><td class="num">1,639</td><td class="num">0.20 s</td><td class="num">2.14&times;</td><td class="num">7.9 GiB</td></tr>
+    <tr><td class="num">30%</td><td class="num">1,228</td><td class="num">0.16 s</td><td class="num">2.60&times;</td><td class="num">7.9 GiB</td></tr>
+    <tr><td class="num">20%</td><td class="num">820</td><td class="num">0.14 s</td><td class="num">3.02&times;</td><td class="num">7.9 GiB</td></tr>
+    <tr><td class="num">10%</td><td class="num">409</td><td class="num">0.11 s</td><td class="num">3.86&times;</td><td class="num">7.9 GiB</td></tr>
+  </table>
+</div>
+<h3><a href="https://huggingface.co/BudgetAny/BudgetLatent-FLUX-3-Image-Klein-Base">BudgetLatent-FLUX-3-Image-Klein-Base</a>, one RTX PRO 6000, batch 1, 50 steps, guidance 3.5, layouts every 4 steps up to step 20</h3>
+<div class="table">
+  <table>
+    <tr><th class="num">Budget</th><th class="num">Tokens</th><th class="num">Sampling / image</th><th class="num">Speed-up</th><th class="num">Peak memory</th></tr>
+    <tr><td class="num">100%</td><td class="num">4,096</td><td class="num">12.77 s</td><td class="num">1.00&times;</td><td class="num">10.9 GiB</td></tr>
+    <tr><td class="num">90%</td><td class="num">3,685</td><td class="num">11.18 s</td><td class="num">1.14&times;</td><td class="num">10.7 GiB</td></tr>
+    <tr><td class="num">80%</td><td class="num">3,277</td><td class="num">10.00 s</td><td class="num">1.28&times;</td><td class="num">10.6 GiB</td></tr>
+    <tr><td class="num">70%</td><td class="num">2,866</td><td class="num">8.54 s</td><td class="num">1.50&times;</td><td class="num">10.5 GiB</td></tr>
+    <tr><td class="num">60%</td><td class="num">2,458</td><td class="num">7.36 s</td><td class="num">1.74&times;</td><td class="num">10.4 GiB</td></tr>
+    <tr><td class="num">50%</td><td class="num">2,047</td><td class="num">6.19 s</td><td class="num">2.06&times;</td><td class="num">10.2 GiB</td></tr>
+    <tr><td class="num">40%</td><td class="num">1,639</td><td class="num">4.82 s</td><td class="num">2.65&times;</td><td class="num">10.1 GiB</td></tr>
+    <tr><td class="num">30%</td><td class="num">1,228</td><td class="num">3.75 s</td><td class="num">3.41&times;</td><td class="num">10.0 GiB</td></tr>
+    <tr><td class="num">20%</td><td class="num">820</td><td class="num">2.86 s</td><td class="num">4.47&times;</td><td class="num">9.9 GiB</td></tr>
+    <tr><td class="num">10%</td><td class="num">409</td><td class="num">1.68 s</td><td class="num">7.59&times;</td><td class="num">9.9 GiB</td></tr>
+  </table>
+</div>
+<h3><a href="https://huggingface.co/BudgetAny/BudgetLatent-FLUX-3-Image-Klein">BudgetLatent-FLUX-3-Image-Klein</a>, one RTX PRO 6000, batch 1, 16 steps, no guidance, layouts at steps 0 and 8</h3>
+<div class="table">
+  <table>
+    <tr><th class="num">Budget</th><th class="num">Tokens</th><th class="num">Sampling / image</th><th class="num">Speed-up</th><th class="num">Peak memory</th></tr>
+    <tr><td class="num">100%</td><td class="num">4,096</td><td class="num">2.06 s</td><td class="num">1.00&times;</td><td class="num">10.2 GiB</td></tr>
+    <tr><td class="num">90%</td><td class="num">3,685</td><td class="num">1.79 s</td><td class="num">1.15&times;</td><td class="num">10.2 GiB</td></tr>
+    <tr><td class="num">80%</td><td class="num">3,277</td><td class="num">1.62 s</td><td class="num">1.27&times;</td><td class="num">10.1 GiB</td></tr>
+    <tr><td class="num">70%</td><td class="num">2,866</td><td class="num">1.46 s</td><td class="num">1.42&times;</td><td class="num">10.1 GiB</td></tr>
+    <tr><td class="num">60%</td><td class="num">2,458</td><td class="num">1.20 s</td><td class="num">1.72&times;</td><td class="num">10.0 GiB</td></tr>
+    <tr><td class="num">50%</td><td class="num">2,047</td><td class="num">1.03 s</td><td class="num">2.01&times;</td><td class="num">9.9 GiB</td></tr>
+    <tr><td class="num">40%</td><td class="num">1,639</td><td class="num">0.83 s</td><td class="num">2.49&times;</td><td class="num">9.9 GiB</td></tr>
+    <tr><td class="num">30%</td><td class="num">1,228</td><td class="num">0.68 s</td><td class="num">3.02&times;</td><td class="num">9.8 GiB</td></tr>
+    <tr><td class="num">20%</td><td class="num">820</td><td class="num">0.52 s</td><td class="num">3.95&times;</td><td class="num">9.7 GiB</td></tr>
+    <tr><td class="num">10%</td><td class="num">409</td><td class="num">0.35 s</td><td class="num">5.95&times;</td><td class="num">9.7 GiB</td></tr>
+  </table>
+</div>
+
+  <h2 id="editing">Editing, References and Layout Boxes at Any Budget</h2>
+  <p>The fine-tuned models keep what their base models do with reference images: editing an image from an
+    instruction, combining several reference images into a new one, and, with FLUX 3 Image Klein Base and
+    FLUX 3 Image Klein, placing objects in layout boxes given in the prompt. The budget applies to the generated
+    image only: the reference images stay at full size (4,096 tokens for each 1024 &times; 1024 reference), and the
+    layout is chosen for the new image as in text-to-image generation. Below, FLUX 3 Image Klein Base with the same noise at
+    every budget; under each result, its budget and its speed-up against 100%.</p>
+  <div class="blr-case">
+    <p class="blr-kind"><b>Edit</b>: &ldquo;put a red bandana around the dog&#x27;s neck&rdquo;</p>
+    <div class="blr-row">
+      <figure class="blr-in"><img src="refs/edit_bandana_ref0.jpg" width="384" height="384" alt="reference image" loading="lazy"><figcaption>reference</figcaption></figure>
+      <figure><img src="refs/edit_bandana_b100.jpg" width="384" height="384" alt="result at 100% of the tokens" loading="lazy"><figcaption>100%</figcaption></figure>
+      <figure><img src="refs/edit_bandana_b050.jpg" width="384" height="384" alt="result at 50% of the tokens" loading="lazy"><figcaption>50%, 1.53&times;</figcaption></figure>
+      <figure><img src="refs/edit_bandana_b025.jpg" width="384" height="384" alt="result at 25% of the tokens" loading="lazy"><figcaption>25%, 2.00&times;</figcaption></figure>
+      <figure><img src="refs/edit_bandana_b010.jpg" width="384" height="384" alt="result at 10% of the tokens" loading="lazy"><figcaption>10%, 2.40&times;</figcaption></figure>
+      <figure><img src="refs/edit_bandana_b010_layout.jpg" width="384" height="384" alt="token layout at 10%" loading="lazy"><figcaption>10%, its token layout</figcaption></figure>
+    </div>
+  </div>
+  <div class="blr-case">
+    <p class="blr-kind"><b>Two references</b>: &ldquo;print the dog from the second image onto the mug&rdquo;</p>
+    <div class="blr-row">
+      <figure class="blr-in"><img src="refs/two_refs_mugprint_ref0.jpg" width="384" height="384" alt="reference image 1" loading="lazy"><figcaption>reference 1</figcaption></figure>
+      <figure class="blr-in"><img src="refs/two_refs_mugprint_ref1.jpg" width="384" height="384" alt="reference image 2" loading="lazy"><figcaption>reference 2</figcaption></figure>
+      <figure><img src="refs/two_refs_mugprint_b100.jpg" width="384" height="384" alt="result at 100% of the tokens" loading="lazy"><figcaption>100%</figcaption></figure>
+      <figure><img src="refs/two_refs_mugprint_b050.jpg" width="384" height="384" alt="result at 50% of the tokens" loading="lazy"><figcaption>50%, 1.34&times;</figcaption></figure>
+      <figure><img src="refs/two_refs_mugprint_b025.jpg" width="384" height="384" alt="result at 25% of the tokens" loading="lazy"><figcaption>25%, 1.59&times;</figcaption></figure>
+      <figure><img src="refs/two_refs_mugprint_b010.jpg" width="384" height="384" alt="result at 10% of the tokens" loading="lazy"><figcaption>10%, 1.82&times;</figcaption></figure>
+    </div>
+  </div>
+  <div class="blr-case">
+    <p class="blr-kind"><b>Layout boxes</b>: &ldquo;hot-air balloons over a green valley at sunrise&rdquo;</p>
+    <div class="blr-row">
+      <figure class="blr-in"><img src="refs/boxes_balloons_boxes.jpg" width="384" height="384" alt="the layout boxes of the prompt" loading="lazy"><figcaption>layout boxes</figcaption></figure>
+      <figure><img src="refs/boxes_balloons_b100.jpg" width="384" height="384" alt="result at 100% of the tokens" loading="lazy"><figcaption>100%</figcaption></figure>
+      <figure><img src="refs/boxes_balloons_b050.jpg" width="384" height="384" alt="result at 50% of the tokens" loading="lazy"><figcaption>50%, 2.12&times;</figcaption></figure>
+      <figure><img src="refs/boxes_balloons_b025.jpg" width="384" height="384" alt="result at 25% of the tokens" loading="lazy"><figcaption>25%, 3.76&times;</figcaption></figure>
+      <figure><img src="refs/boxes_balloons_b010.jpg" width="384" height="384" alt="result at 10% of the tokens" loading="lazy"><figcaption>10%, 5.82&times;</figcaption></figure>
+      <figure><img src="refs/boxes_balloons_b010_layout.jpg" width="384" height="384" alt="token layout at 10%" loading="lazy"><figcaption>10%, its token layout</figcaption></figure>
+    </div>
+  </div>
+  <p class="demo-caption">Reference images, instructions and boxes from Black Forest Labs'
+    <a href="https://github.com/black-forest-labs/flux-3-image-klein/tree/main/examples">FLUX 3 Image Klein examples</a>; the model is given each example's full prompt, of which
+    the line above each row is the short instruction.</p>
+
+  <h3>Speed-up at 10% of the tokens against 100%, one RTX PRO 6000, batch 1, 1024 &times; 1024</h3>
+<div class="table">
+  <table>
+    <tr><th>Model</th><th class="num">Text to image</th><th class="num">Edit, 1 reference</th><th class="num">2 references</th><th class="num">Layout boxes</th></tr>
+    <tr><td>FLUX.2 [klein] 4B Base</td><td class="num">4.43&times;</td><td class="num">1.90&times;</td><td class="num">1.54&times;</td><td class="num">&ndash;</td></tr>
+    <tr><td>FLUX.2 [klein] 4B</td><td class="num">2.59&times;</td><td class="num">1.74&times;</td><td class="num">1.48&times;</td><td class="num">&ndash;</td></tr>
+    <tr><td>FLUX 3 Image Klein Base</td><td class="num">7.29&times;</td><td class="num">2.40&times;</td><td class="num">1.82&times;</td><td class="num">5.82&times;</td></tr>
+    <tr><td>FLUX 3 Image Klein</td><td class="num">4.52&times;</td><td class="num">1.95&times;</td><td class="num">1.53&times;</td><td class="num">3.97&times;</td></tr>
+  </table>
+</div>
+  <p>Sampling time per image with <code>--fast</code> after a warm-up (the faster of cuBLAS and cuBLASLt; the
+    step-distilled models: best of 3 runs), each model with its own sampler, on Black Forest Labs' examples: a man walking with his dog (text to image), the bandana (an edit, one reference), the dog printed
+    onto the mug (two references) and the hot-air balloons (layout boxes); FLUX 3 Image Klein Base and FLUX 3 Image Klein
+    are given the examples' detailed captions, FLUX.2 [klein] the short instructions. The text-to-image column comes from
+    the same runs, so it differs from the tables above. FLUX.2 [klein] has no box mode; an edit with
+    layout boxes runs as fast as a plain edit (2.41&times; and 1.94&times; at 10% for
+    FLUX 3 Image Klein Base and FLUX 3 Image Klein).</p>
+
+  <h3>One model pass at 10% of the tokens against 100%, by the number of references</h3>
+<div class="table">
+  <table>
+    <tr><th>Model</th><th class="num">0 references</th><th class="num">1 reference</th><th class="num">2 references</th><th class="num">4 references</th><th class="num">10 references</th></tr>
+    <tr><td>FLUX.2 [klein] 4B Base</td><td class="num">4.92&times;</td><td class="num">1.91&times;</td><td class="num">1.53&times;</td><td class="num">1.32&times;</td><td class="num">1.15&times;</td></tr>
+    <tr><td>FLUX.2 [klein] 4B</td><td class="num">4.43&times;</td><td class="num">1.89&times;</td><td class="num">1.53&times;</td><td class="num">1.30&times;</td><td class="num">1.15&times;</td></tr>
+    <tr><td>FLUX 3 Image Klein Base</td><td class="num">7.89&times;</td><td class="num">2.13&times;</td><td class="num">1.63&times;</td><td class="num">1.36&times;</td><td class="num">1.17&times;</td></tr>
+    <tr><td>FLUX 3 Image Klein</td><td class="num">6.05&times;</td><td class="num">1.95&times;</td><td class="num">1.51&times;</td><td class="num">1.32&times;</td><td class="num">1.14&times;</td></tr>
+  </table>
+</div>
+  <p>Timing only, with 1024 &times; 1024 references at full size: the more references, the larger the share of each
+    pass that does not depend on the budget, and the smaller the speed-up.</p>
 
   <h2 id="bibtex">BibTeX</h2>
   <pre>@article{kara2026budgetpix,
@@ -40,7 +229,13 @@
   howpublished={\url{https://budgetany.github.io}}
 }</pre>
 
+  <h2>License</h2>
+  <p>The code is released under the MIT License. The weights follow the license of their base model: Apache-2.0 for
+    BudgetLatent-FLUX.2-klein-base-4B and BudgetLatent-FLUX.2-klein-4B, and Black Forest Labs' FLUX Kommunity License (non-commercial use of the model) for BudgetLatent-FLUX-3-Image-Klein-Base (<a href="https://huggingface.co/black-forest-labs/flux-3-image-klein-base/blob/main/LICENSE.md">its terms</a>) and BudgetLatent-FLUX-3-Image-Klein (<a href="https://huggingface.co/black-forest-labs/flux-3-image-klein/blob/main/LICENSE.md">its terms</a>).</p>
+
   <h2>Acknowledgements</h2>
+  <p>Thanks to the BudgetPix authors for the method, and to Black Forest Labs for releasing <a href="https://huggingface.co/black-forest-labs/FLUX.2-klein-base-4B">FLUX.2 [klein] 4B Base</a>, <a href="https://huggingface.co/black-forest-labs/FLUX.2-klein-4B">FLUX.2 [klein] 4B</a>, <a href="https://huggingface.co/black-forest-labs/flux-3-image-klein-base">FLUX 3 Image Klein Base</a> and <a href="https://huggingface.co/black-forest-labs/flux-3-image-klein">FLUX 3 Image Klein</a>, which
+    BudgetLatent builds on. BudgetLatent is not affiliated with or endorsed by Black Forest Labs.</p>
   <p>We acknowledge the compute support of the Health Care Engineering Systems Center within the Coordinated Science Lab at UIUC.</p>
 </main>
 <footer>
@@ -51,5 +246,93 @@
   <a href="https://github.com/BudgetAny">GitHub</a> &middot;
   <a href="https://huggingface.co/BudgetAny">Hugging Face</a>
 </footer>
+<script>
+(function () {
+  "use strict";
+  // Interactive viewer: one model, one of its prompts, every budget from the same noise. Each (model, prompt) has two
+  // rows of tiles, one tile per budget: the images and the same images with their token layouts (built by
+  // site_tools/build_budgetlatent_page.py from the renders of the release video; the times are the speed tables').
+  var root = document.getElementById("blviewer");
+  if (!root || !window.fetch) return;
+  var BASE = "viewer/";
+  function el(tag, cls, text) { var e = document.createElement(tag); if (cls) e.className = cls; if (text != null) e.textContent = text; return e; }
+  fetch(BASE + "viewer.json").then(function (r) { return r.json(); }).then(build).catch(function () {});
+
+  function build(d) {
+    var models = Object.keys(d.models);
+    var st = {model: models[0], p: 0, b: 0};
+    function M() { return d.models[st.model]; }                             // the selected model
+    function bs() { return M().budgets || d.budgets; }                      // its budgets
+    st.b = Math.max(0, bs().indexOf(0.5));
+    var tabs = el("div", "demo-row demo-tabs");
+    models.forEach(function (m) {
+      var t = el("button", "", d.models[m].label); t.type = "button"; t.dataset.model = m;
+      t.onclick = function () { if (st.model !== m) { st.model = m; st.p = 0; thumbs(); } draw(); };
+      tabs.appendChild(t);
+    });
+    var prompts = el("div", "v3d-objs");
+    function thumbs() {                                                     // the selected model's prompts
+      while (prompts.firstChild) prompts.removeChild(prompts.firstChild);
+      M().prompts.forEach(function (p, i) {
+        var t = el("button"); t.type = "button"; t.title = p.name; t.setAttribute("aria-label", p.name);
+        var im = el("img"); im.src = BASE + "thumbs/" + st.model + "/" + p.id + ".webp"; im.alt = ""; im.width = im.height = 48;
+        t.appendChild(im);
+        t.onclick = function () { st.p = i; draw(); };
+        prompts.appendChild(t);
+      });
+    }
+    thumbs();
+    var view = el("div", "blv-view");
+    function panel(caption, cls) {
+      var f = el("figure", cls), v = el("div", "blv-tile"), c = el("figcaption", "", caption);
+      v.setAttribute("role", "img");
+      f.appendChild(v); f.appendChild(c); view.appendChild(f);
+      return {v: v, c: c};
+    }
+    var ref = panel("100% of the tokens", "blv-ref"), cur = panel("", ""), lay = panel("its token layout", "");
+    var row = el("div", "demo-row");
+    var slider = el("input"); slider.type = "range"; slider.min = 0; slider.step = 1;
+    slider.setAttribute("aria-label", "token budget");
+    var read = el("span", "demo-read blv-read");
+    row.appendChild(slider); row.appendChild(read);
+    var said = el("p", "demo-caption");
+    var cap = el("p", "demo-caption");
+    var capLow = el("span");
+    cap.innerHTML = 'Token sizes: <span class="swatch" style="background:#10b981"></span>16 px<span class="swatch" style="background:#facc15"></span>32 px<span class="swatch" style="background:#2563eb"></span>64 px<span class="swatch" style="background:#6b21a8"></span>128 px. Same prompt and noise at every budget; the slider goes from 100% down to ';
+    cap.appendChild(capLow);
+    cap.appendChild(document.createTextNode(' of the tokens. Times and speed-ups as in the tables below.'));
+    [tabs, prompts, view, row, said, cap].forEach(function (x) { root.appendChild(x); });
+    root.hidden = false;
+    slider.oninput = function () { st.b = +slider.value; draw(); };
+
+    function sprite(view) { return "url(" + BASE + st.model + "/" + M().prompts[st.p].id + "_" + view + ".webp)"; }
+    function pos(j, n) { return (n > 1 ? j / (n - 1) * 100 : 0) + "% 0"; }
+    function draw() {
+      var list = bs(), n = list.length;
+      st.b = Math.min(st.b, n - 1);
+      var m = M(), p = m.prompts[st.p], b = list[st.b], key = String(b);
+      slider.max = n - 1;
+      capLow.textContent = Math.round(list[n - 1] * 100) + "%";
+      [ref.v, cur.v, lay.v].forEach(function (v) { v.style.backgroundSize = n * 100 + "% 100%"; });
+      Array.prototype.forEach.call(tabs.children, function (t) { t.setAttribute("aria-pressed", t.dataset.model === st.model); });
+      Array.prototype.forEach.call(prompts.children, function (t, i) { t.setAttribute("aria-pressed", i === st.p); });
+      ref.v.style.backgroundImage = cur.v.style.backgroundImage = sprite("img");
+      lay.v.style.backgroundImage = sprite("lay");
+      ref.v.style.backgroundPosition = pos(0, n);
+      cur.v.style.backgroundPosition = lay.v.style.backgroundPosition = pos(st.b, n);
+      slider.value = st.b;
+      var tok = m.tokens[p.id][key], s = m.seconds[key], s100 = m.seconds["1"];
+      cur.c.textContent = Math.round(b * 100) + "% of the tokens";
+      ref.v.setAttribute("aria-label", p.name + " at 100%");
+      cur.v.setAttribute("aria-label", p.name + " at " + Math.round(b * 100) + "%");
+      lay.v.setAttribute("aria-label", "token layout at " + Math.round(b * 100) + "%");
+      read.textContent = Math.round(b * 100) + "%: " + tok.toLocaleString("en-US") + " tokens, " + s.toFixed(2) + " s/image, " +
+        (s100 / s).toFixed(2) + "\u00d7";
+      said.textContent = m.label + ": \u201c" + p.prompt + "\u201d";
+    }
+    draw();
+  }
+})();
+</script>
 </body>
 </html>
