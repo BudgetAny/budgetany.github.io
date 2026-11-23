@@ -48,7 +48,7 @@
     <video src="assets/teaser_720p.mp4" poster="assets/teaser_poster.jpg" autoplay muted loop playsinline controls></video>
     <figcaption><b>Test-time compute adjustment.</b> One checkpoint per model generates at any token budget: fewer
       tokens, faster images. The video sweeps the budget of the four models from 100% down to 10%, with each image's
-      token layout, its number of tokens and the time per image, compares their speed-ups, and shows an edit, two
+      token layout, its number of tokens and the end-to-end time per image, compares their speed-ups, and shows an edit, two
       references and layout boxes at every budget.</figcaption>
   </figure>
 
@@ -67,75 +67,78 @@
   <noscript><p>The interactive viewer needs JavaScript; the video above shows more images.</p></noscript>
 
   <h2>Speed and Memory</h2>
-  <p>Sampling time per image with the optimised inference of the code (<code>--fast</code>: bf16, <code>torch.compile</code>),
-    at 1024 &times; 1024: the denoising loop with its layouts, after a warm-up of every budget. The layout is taken from
+  <p>End-to-end time per image with the optimised inference of the code (<code>--fast</code>: bf16, <code>torch.compile</code>),
+    at 1024 &times; 1024, after a warm-up of every budget: from the prompt to the decoded image, that is
+    encoding the prompt (and the empty prompt of the guided Base models), the denoising loop with its layouts and
+    the final VAE decode (median of 5 runs). The layout is taken from
     the noise at step 0 and refreshed from a preview decoded from the running estimate: the 50-step models refresh it
     every 4 steps up to step 20, from a 512 px preview; FLUX.2 [klein] 4B refreshes it once, at step 1, and FLUX 3 Image
     Klein once, at step 8, each from a 256 px preview, so that the refresh costs little next to their few steps.
-    Encoding the prompt and the final VAE decode do not depend on the budget and are not included. At batch 1 the peak
+    Encoding the prompt and the final VAE decode take the same time at every budget (about 0.1 s together), so
+    they weigh most on the few-step models. At batch 1 the peak
     memory is mostly the weights, so it hardly moves with the budget; with larger batches it falls with the budget too.</p>
 <h3><a href="https://huggingface.co/BudgetAny/BudgetLatent-FLUX.2-klein-base-4B">BudgetLatent-FLUX.2-klein-base-4B</a>, one RTX PRO 6000, batch 1, 50 steps, guidance 4.0, layouts every 4 steps up to step 20</h3>
 <div class="table">
   <table>
-    <tr><th class="num">Budget</th><th class="num">Tokens</th><th class="num">Sampling / image</th><th class="num">Speed-up</th><th class="num">Peak memory</th></tr>
-    <tr><td class="num">100%</td><td class="num">4,096</td><td class="num">10.75 s</td><td class="num">1.00&times;</td><td class="num">8.6 GiB</td></tr>
-    <tr><td class="num">90%</td><td class="num">3,685</td><td class="num">9.77 s</td><td class="num">1.10&times;</td><td class="num">8.5 GiB</td></tr>
-    <tr><td class="num">80%</td><td class="num">3,277</td><td class="num">8.60 s</td><td class="num">1.25&times;</td><td class="num">8.5 GiB</td></tr>
-    <tr><td class="num">70%</td><td class="num">2,866</td><td class="num">7.57 s</td><td class="num">1.42&times;</td><td class="num">8.4 GiB</td></tr>
-    <tr><td class="num">60%</td><td class="num">2,458</td><td class="num">6.57 s</td><td class="num">1.64&times;</td><td class="num">8.3 GiB</td></tr>
-    <tr><td class="num">50%</td><td class="num">2,047</td><td class="num">5.65 s</td><td class="num">1.90&times;</td><td class="num">8.2 GiB</td></tr>
-    <tr><td class="num">40%</td><td class="num">1,639</td><td class="num">4.80 s</td><td class="num">2.24&times;</td><td class="num">8.2 GiB</td></tr>
-    <tr><td class="num">30%</td><td class="num">1,228</td><td class="num">3.81 s</td><td class="num">2.82&times;</td><td class="num">8.1 GiB</td></tr>
-    <tr><td class="num">20%</td><td class="num">820</td><td class="num">2.91 s</td><td class="num">3.70&times;</td><td class="num">8.1 GiB</td></tr>
-    <tr><td class="num">10%</td><td class="num">409</td><td class="num">2.31 s</td><td class="num">4.64&times;</td><td class="num">8.1 GiB</td></tr>
+    <tr><th class="num">Budget</th><th class="num">Tokens</th><th class="num">End-to-end / image</th><th class="num">Speed-up</th><th class="num">Peak memory</th></tr>
+    <tr><td class="num">100%</td><td class="num">4,096</td><td class="num">10.69 s</td><td class="num">1.00&times;</td><td class="num">8.6 GiB</td></tr>
+    <tr><td class="num">90%</td><td class="num">3,685</td><td class="num">9.76 s</td><td class="num">1.10&times;</td><td class="num">8.5 GiB</td></tr>
+    <tr><td class="num">80%</td><td class="num">3,277</td><td class="num">8.62 s</td><td class="num">1.24&times;</td><td class="num">8.5 GiB</td></tr>
+    <tr><td class="num">70%</td><td class="num">2,866</td><td class="num">7.61 s</td><td class="num">1.41&times;</td><td class="num">8.4 GiB</td></tr>
+    <tr><td class="num">60%</td><td class="num">2,458</td><td class="num">6.61 s</td><td class="num">1.62&times;</td><td class="num">8.3 GiB</td></tr>
+    <tr><td class="num">50%</td><td class="num">2,047</td><td class="num">5.72 s</td><td class="num">1.87&times;</td><td class="num">8.2 GiB</td></tr>
+    <tr><td class="num">40%</td><td class="num">1,639</td><td class="num">4.87 s</td><td class="num">2.20&times;</td><td class="num">8.2 GiB</td></tr>
+    <tr><td class="num">30%</td><td class="num">1,228</td><td class="num">3.89 s</td><td class="num">2.75&times;</td><td class="num">8.1 GiB</td></tr>
+    <tr><td class="num">20%</td><td class="num">820</td><td class="num">2.99 s</td><td class="num">3.57&times;</td><td class="num">8.1 GiB</td></tr>
+    <tr><td class="num">10%</td><td class="num">409</td><td class="num">2.41 s</td><td class="num">4.43&times;</td><td class="num">8.1 GiB</td></tr>
   </table>
 </div>
 <h3><a href="https://huggingface.co/BudgetAny/BudgetLatent-FLUX.2-klein-4B">BudgetLatent-FLUX.2-klein-4B</a>, one RTX PRO 6000, batch 1, 4 steps, no guidance, layouts at steps 0 and 1</h3>
 <div class="table">
   <table>
-    <tr><th class="num">Budget</th><th class="num">Tokens</th><th class="num">Sampling / image</th><th class="num">Speed-up</th><th class="num">Peak memory</th></tr>
-    <tr><td class="num">100%</td><td class="num">4,096</td><td class="num">0.42 s</td><td class="num">1.00&times;</td><td class="num">8.2 GiB</td></tr>
-    <tr><td class="num">90%</td><td class="num">3,685</td><td class="num">0.39 s</td><td class="num">1.08&times;</td><td class="num">8.1 GiB</td></tr>
-    <tr><td class="num">80%</td><td class="num">3,277</td><td class="num">0.34 s</td><td class="num">1.24&times;</td><td class="num">8.1 GiB</td></tr>
-    <tr><td class="num">70%</td><td class="num">2,866</td><td class="num">0.31 s</td><td class="num">1.36&times;</td><td class="num">8.1 GiB</td></tr>
-    <tr><td class="num">60%</td><td class="num">2,458</td><td class="num">0.28 s</td><td class="num">1.50&times;</td><td class="num">8.0 GiB</td></tr>
-    <tr><td class="num">50%</td><td class="num">2,047</td><td class="num">0.24 s</td><td class="num">1.79&times;</td><td class="num">8.0 GiB</td></tr>
-    <tr><td class="num">40%</td><td class="num">1,639</td><td class="num">0.20 s</td><td class="num">2.14&times;</td><td class="num">7.9 GiB</td></tr>
-    <tr><td class="num">30%</td><td class="num">1,228</td><td class="num">0.16 s</td><td class="num">2.60&times;</td><td class="num">7.9 GiB</td></tr>
-    <tr><td class="num">20%</td><td class="num">820</td><td class="num">0.14 s</td><td class="num">3.02&times;</td><td class="num">7.9 GiB</td></tr>
-    <tr><td class="num">10%</td><td class="num">409</td><td class="num">0.11 s</td><td class="num">3.86&times;</td><td class="num">7.9 GiB</td></tr>
+    <tr><th class="num">Budget</th><th class="num">Tokens</th><th class="num">End-to-end / image</th><th class="num">Speed-up</th><th class="num">Peak memory</th></tr>
+    <tr><td class="num">100%</td><td class="num">4,096</td><td class="num">0.50 s</td><td class="num">1.00&times;</td><td class="num">8.2 GiB</td></tr>
+    <tr><td class="num">90%</td><td class="num">3,685</td><td class="num">0.47 s</td><td class="num">1.06&times;</td><td class="num">8.1 GiB</td></tr>
+    <tr><td class="num">80%</td><td class="num">3,277</td><td class="num">0.42 s</td><td class="num">1.19&times;</td><td class="num">8.1 GiB</td></tr>
+    <tr><td class="num">70%</td><td class="num">2,866</td><td class="num">0.39 s</td><td class="num">1.28&times;</td><td class="num">8.1 GiB</td></tr>
+    <tr><td class="num">60%</td><td class="num">2,458</td><td class="num">0.36 s</td><td class="num">1.38&times;</td><td class="num">8.0 GiB</td></tr>
+    <tr><td class="num">50%</td><td class="num">2,047</td><td class="num">0.32 s</td><td class="num">1.57&times;</td><td class="num">8.0 GiB</td></tr>
+    <tr><td class="num">40%</td><td class="num">1,639</td><td class="num">0.28 s</td><td class="num">1.80&times;</td><td class="num">7.9 GiB</td></tr>
+    <tr><td class="num">30%</td><td class="num">1,228</td><td class="num">0.24 s</td><td class="num">2.05&times;</td><td class="num">7.9 GiB</td></tr>
+    <tr><td class="num">20%</td><td class="num">820</td><td class="num">0.22 s</td><td class="num">2.26&times;</td><td class="num">7.9 GiB</td></tr>
+    <tr><td class="num">10%</td><td class="num">409</td><td class="num">0.19 s</td><td class="num">2.61&times;</td><td class="num">7.9 GiB</td></tr>
   </table>
 </div>
 <h3><a href="https://huggingface.co/BudgetAny/BudgetLatent-FLUX-3-Image-Klein-Base">BudgetLatent-FLUX-3-Image-Klein-Base</a>, one RTX PRO 6000, batch 1, 50 steps, guidance 3.5, layouts every 4 steps up to step 20</h3>
 <div class="table">
   <table>
-    <tr><th class="num">Budget</th><th class="num">Tokens</th><th class="num">Sampling / image</th><th class="num">Speed-up</th><th class="num">Peak memory</th></tr>
-    <tr><td class="num">100%</td><td class="num">4,096</td><td class="num">12.77 s</td><td class="num">1.00&times;</td><td class="num">10.9 GiB</td></tr>
-    <tr><td class="num">90%</td><td class="num">3,685</td><td class="num">11.18 s</td><td class="num">1.14&times;</td><td class="num">10.7 GiB</td></tr>
-    <tr><td class="num">80%</td><td class="num">3,277</td><td class="num">10.00 s</td><td class="num">1.28&times;</td><td class="num">10.6 GiB</td></tr>
-    <tr><td class="num">70%</td><td class="num">2,866</td><td class="num">8.54 s</td><td class="num">1.50&times;</td><td class="num">10.5 GiB</td></tr>
-    <tr><td class="num">60%</td><td class="num">2,458</td><td class="num">7.36 s</td><td class="num">1.74&times;</td><td class="num">10.4 GiB</td></tr>
-    <tr><td class="num">50%</td><td class="num">2,047</td><td class="num">6.19 s</td><td class="num">2.06&times;</td><td class="num">10.2 GiB</td></tr>
-    <tr><td class="num">40%</td><td class="num">1,639</td><td class="num">4.82 s</td><td class="num">2.65&times;</td><td class="num">10.1 GiB</td></tr>
-    <tr><td class="num">30%</td><td class="num">1,228</td><td class="num">3.75 s</td><td class="num">3.41&times;</td><td class="num">10.0 GiB</td></tr>
-    <tr><td class="num">20%</td><td class="num">820</td><td class="num">2.86 s</td><td class="num">4.47&times;</td><td class="num">9.9 GiB</td></tr>
-    <tr><td class="num">10%</td><td class="num">409</td><td class="num">1.68 s</td><td class="num">7.59&times;</td><td class="num">9.9 GiB</td></tr>
+    <tr><th class="num">Budget</th><th class="num">Tokens</th><th class="num">End-to-end / image</th><th class="num">Speed-up</th><th class="num">Peak memory</th></tr>
+    <tr><td class="num">100%</td><td class="num">4,096</td><td class="num">12.81 s</td><td class="num">1.00&times;</td><td class="num">10.9 GiB</td></tr>
+    <tr><td class="num">90%</td><td class="num">3,685</td><td class="num">11.20 s</td><td class="num">1.14&times;</td><td class="num">10.7 GiB</td></tr>
+    <tr><td class="num">80%</td><td class="num">3,277</td><td class="num">10.02 s</td><td class="num">1.28&times;</td><td class="num">10.6 GiB</td></tr>
+    <tr><td class="num">70%</td><td class="num">2,866</td><td class="num">8.56 s</td><td class="num">1.50&times;</td><td class="num">10.5 GiB</td></tr>
+    <tr><td class="num">60%</td><td class="num">2,458</td><td class="num">7.40 s</td><td class="num">1.73&times;</td><td class="num">10.4 GiB</td></tr>
+    <tr><td class="num">50%</td><td class="num">2,047</td><td class="num">6.24 s</td><td class="num">2.05&times;</td><td class="num">10.2 GiB</td></tr>
+    <tr><td class="num">40%</td><td class="num">1,639</td><td class="num">4.88 s</td><td class="num">2.63&times;</td><td class="num">10.1 GiB</td></tr>
+    <tr><td class="num">30%</td><td class="num">1,228</td><td class="num">3.82 s</td><td class="num">3.36&times;</td><td class="num">10.0 GiB</td></tr>
+    <tr><td class="num">20%</td><td class="num">820</td><td class="num">2.93 s</td><td class="num">4.37&times;</td><td class="num">9.9 GiB</td></tr>
+    <tr><td class="num">10%</td><td class="num">409</td><td class="num">1.77 s</td><td class="num">7.26&times;</td><td class="num">9.9 GiB</td></tr>
   </table>
 </div>
 <h3><a href="https://huggingface.co/BudgetAny/BudgetLatent-FLUX-3-Image-Klein">BudgetLatent-FLUX-3-Image-Klein</a>, one RTX PRO 6000, batch 1, 16 steps, no guidance, layouts at steps 0 and 8</h3>
 <div class="table">
   <table>
-    <tr><th class="num">Budget</th><th class="num">Tokens</th><th class="num">Sampling / image</th><th class="num">Speed-up</th><th class="num">Peak memory</th></tr>
-    <tr><td class="num">100%</td><td class="num">4,096</td><td class="num">2.06 s</td><td class="num">1.00&times;</td><td class="num">10.2 GiB</td></tr>
-    <tr><td class="num">90%</td><td class="num">3,685</td><td class="num">1.79 s</td><td class="num">1.15&times;</td><td class="num">10.2 GiB</td></tr>
-    <tr><td class="num">80%</td><td class="num">3,277</td><td class="num">1.62 s</td><td class="num">1.27&times;</td><td class="num">10.1 GiB</td></tr>
-    <tr><td class="num">70%</td><td class="num">2,866</td><td class="num">1.46 s</td><td class="num">1.42&times;</td><td class="num">10.1 GiB</td></tr>
-    <tr><td class="num">60%</td><td class="num">2,458</td><td class="num">1.20 s</td><td class="num">1.72&times;</td><td class="num">10.0 GiB</td></tr>
-    <tr><td class="num">50%</td><td class="num">2,047</td><td class="num">1.03 s</td><td class="num">2.01&times;</td><td class="num">9.9 GiB</td></tr>
-    <tr><td class="num">40%</td><td class="num">1,639</td><td class="num">0.83 s</td><td class="num">2.49&times;</td><td class="num">9.9 GiB</td></tr>
-    <tr><td class="num">30%</td><td class="num">1,228</td><td class="num">0.68 s</td><td class="num">3.02&times;</td><td class="num">9.8 GiB</td></tr>
-    <tr><td class="num">20%</td><td class="num">820</td><td class="num">0.52 s</td><td class="num">3.95&times;</td><td class="num">9.7 GiB</td></tr>
-    <tr><td class="num">10%</td><td class="num">409</td><td class="num">0.35 s</td><td class="num">5.95&times;</td><td class="num">9.7 GiB</td></tr>
+    <tr><th class="num">Budget</th><th class="num">Tokens</th><th class="num">End-to-end / image</th><th class="num">Speed-up</th><th class="num">Peak memory</th></tr>
+    <tr><td class="num">100%</td><td class="num">4,096</td><td class="num">2.13 s</td><td class="num">1.00&times;</td><td class="num">10.2 GiB</td></tr>
+    <tr><td class="num">90%</td><td class="num">3,685</td><td class="num">1.86 s</td><td class="num">1.15&times;</td><td class="num">10.2 GiB</td></tr>
+    <tr><td class="num">80%</td><td class="num">3,277</td><td class="num">1.69 s</td><td class="num">1.26&times;</td><td class="num">10.1 GiB</td></tr>
+    <tr><td class="num">70%</td><td class="num">2,866</td><td class="num">1.53 s</td><td class="num">1.39&times;</td><td class="num">10.1 GiB</td></tr>
+    <tr><td class="num">60%</td><td class="num">2,458</td><td class="num">1.28 s</td><td class="num">1.67&times;</td><td class="num">10.0 GiB</td></tr>
+    <tr><td class="num">50%</td><td class="num">2,047</td><td class="num">1.10 s</td><td class="num">1.93&times;</td><td class="num">9.9 GiB</td></tr>
+    <tr><td class="num">40%</td><td class="num">1,639</td><td class="num">0.90 s</td><td class="num">2.36&times;</td><td class="num">9.9 GiB</td></tr>
+    <tr><td class="num">30%</td><td class="num">1,228</td><td class="num">0.76 s</td><td class="num">2.80&times;</td><td class="num">9.8 GiB</td></tr>
+    <tr><td class="num">20%</td><td class="num">820</td><td class="num">0.60 s</td><td class="num">3.56&times;</td><td class="num">9.7 GiB</td></tr>
+    <tr><td class="num">10%</td><td class="num">409</td><td class="num">0.43 s</td><td class="num">5.02&times;</td><td class="num">9.7 GiB</td></tr>
   </table>
 </div>
 
@@ -145,15 +148,15 @@
     FLUX 3 Image Klein, placing objects in layout boxes given in the prompt. The budget applies to the generated
     image only: the reference images stay at full size (4,096 tokens for each 1024 &times; 1024 reference), and the
     layout is chosen for the new image as in text-to-image generation. Below, FLUX 3 Image Klein Base with the same noise at
-    every budget; under each result, its budget and its speed-up against 100%.</p>
+    every budget; under each result, its budget and its end-to-end speed-up against 100%.</p>
   <div class="blr-case">
     <p class="blr-kind"><b>Edit</b>: &ldquo;put a red bandana around the dog&#x27;s neck&rdquo;</p>
     <div class="blr-row">
       <figure class="blr-in"><img src="refs/edit_bandana_ref0.jpg" width="384" height="384" alt="reference image" loading="lazy"><figcaption>reference</figcaption></figure>
       <figure><img src="refs/edit_bandana_b100.jpg" width="384" height="384" alt="result at 100% of the tokens" loading="lazy"><figcaption>100%</figcaption></figure>
-      <figure><img src="refs/edit_bandana_b050.jpg" width="384" height="384" alt="result at 50% of the tokens" loading="lazy"><figcaption>50%, 1.53&times;</figcaption></figure>
+      <figure><img src="refs/edit_bandana_b050.jpg" width="384" height="384" alt="result at 50% of the tokens" loading="lazy"><figcaption>50%, 1.52&times;</figcaption></figure>
       <figure><img src="refs/edit_bandana_b025.jpg" width="384" height="384" alt="result at 25% of the tokens" loading="lazy"><figcaption>25%, 2.00&times;</figcaption></figure>
-      <figure><img src="refs/edit_bandana_b010.jpg" width="384" height="384" alt="result at 10% of the tokens" loading="lazy"><figcaption>10%, 2.40&times;</figcaption></figure>
+      <figure><img src="refs/edit_bandana_b010.jpg" width="384" height="384" alt="result at 10% of the tokens" loading="lazy"><figcaption>10%, 2.39&times;</figcaption></figure>
       <figure><img src="refs/edit_bandana_b010_layout.jpg" width="384" height="384" alt="token layout at 10%" loading="lazy"><figcaption>10%, its token layout</figcaption></figure>
     </div>
   </div>
@@ -173,9 +176,9 @@
     <div class="blr-row">
       <figure class="blr-in"><img src="refs/boxes_balloons_boxes.jpg" width="384" height="384" alt="the layout boxes of the prompt" loading="lazy"><figcaption>layout boxes</figcaption></figure>
       <figure><img src="refs/boxes_balloons_b100.jpg" width="384" height="384" alt="result at 100% of the tokens" loading="lazy"><figcaption>100%</figcaption></figure>
-      <figure><img src="refs/boxes_balloons_b050.jpg" width="384" height="384" alt="result at 50% of the tokens" loading="lazy"><figcaption>50%, 2.12&times;</figcaption></figure>
-      <figure><img src="refs/boxes_balloons_b025.jpg" width="384" height="384" alt="result at 25% of the tokens" loading="lazy"><figcaption>25%, 3.76&times;</figcaption></figure>
-      <figure><img src="refs/boxes_balloons_b010.jpg" width="384" height="384" alt="result at 10% of the tokens" loading="lazy"><figcaption>10%, 5.82&times;</figcaption></figure>
+      <figure><img src="refs/boxes_balloons_b050.jpg" width="384" height="384" alt="result at 50% of the tokens" loading="lazy"><figcaption>50%, 2.10&times;</figcaption></figure>
+      <figure><img src="refs/boxes_balloons_b025.jpg" width="384" height="384" alt="result at 25% of the tokens" loading="lazy"><figcaption>25%, 3.73&times;</figcaption></figure>
+      <figure><img src="refs/boxes_balloons_b010.jpg" width="384" height="384" alt="result at 10% of the tokens" loading="lazy"><figcaption>10%, 5.71&times;</figcaption></figure>
       <figure><img src="refs/boxes_balloons_b010_layout.jpg" width="384" height="384" alt="token layout at 10%" loading="lazy"><figcaption>10%, its token layout</figcaption></figure>
     </div>
   </div>
@@ -183,22 +186,24 @@
     <a href="https://github.com/black-forest-labs/flux-3-image-klein/tree/main/examples">FLUX 3 Image Klein examples</a>; the model is given each example's full prompt, of which
     the line above each row is the short instruction.</p>
 
-  <h3>Speed-up at 10% of the tokens against 100%, one RTX PRO 6000, batch 1, 1024 &times; 1024</h3>
+  <h3>End-to-end speed-up at 10% of the tokens against 100%, one RTX PRO 6000, batch 1, 1024 &times; 1024</h3>
 <div class="table">
   <table>
     <tr><th>Model</th><th class="num">Text to image</th><th class="num">Edit, 1 reference</th><th class="num">2 references</th><th class="num">Layout boxes</th></tr>
-    <tr><td>FLUX.2 [klein] 4B Base</td><td class="num">4.43&times;</td><td class="num">1.90&times;</td><td class="num">1.54&times;</td><td class="num">&ndash;</td></tr>
-    <tr><td>FLUX.2 [klein] 4B</td><td class="num">2.59&times;</td><td class="num">1.74&times;</td><td class="num">1.48&times;</td><td class="num">&ndash;</td></tr>
-    <tr><td>FLUX 3 Image Klein Base</td><td class="num">7.29&times;</td><td class="num">2.40&times;</td><td class="num">1.82&times;</td><td class="num">5.82&times;</td></tr>
-    <tr><td>FLUX 3 Image Klein</td><td class="num">4.52&times;</td><td class="num">1.95&times;</td><td class="num">1.53&times;</td><td class="num">3.97&times;</td></tr>
+    <tr><td>FLUX.2 [klein] 4B Base</td><td class="num">4.37&times;</td><td class="num">1.12&times;</td><td class="num">1.58&times;</td><td class="num">&ndash;</td></tr>
+    <tr><td>FLUX.2 [klein] 4B</td><td class="num">2.57&times;</td><td class="num">1.63&times;</td><td class="num">1.41&times;</td><td class="num">&ndash;</td></tr>
+    <tr><td>FLUX 3 Image Klein Base</td><td class="num">7.18&times;</td><td class="num">2.39&times;</td><td class="num">1.82&times;</td><td class="num">5.71&times;</td></tr>
+    <tr><td>FLUX 3 Image Klein</td><td class="num">4.38&times;</td><td class="num">1.89&times;</td><td class="num">1.50&times;</td><td class="num">3.88&times;</td></tr>
   </table>
 </div>
-  <p>Sampling time per image with <code>--fast</code> after a warm-up (the faster of cuBLAS and cuBLASLt; the
-    step-distilled models: best of 3 runs), each model with its own sampler, on Black Forest Labs' examples: a man walking with his dog (text to image), the bandana (an edit, one reference), the dog printed
+  <p>End-to-end time per image, from the prompt and the reference images to the decoded image (encoding the
+    prompt and the references, sampling and the final VAE decode), with <code>--fast</code> after a warm-up of
+    every budget (median of 3 runs; the matmul library as the code picks it: by timing without references,
+    cuBLAS with them), each model with its own sampler, on Black Forest Labs' examples: a man walking with his dog (text to image), the bandana (an edit, one reference), the dog printed
     onto the mug (two references) and the hot-air balloons (layout boxes); FLUX 3 Image Klein Base and FLUX 3 Image Klein
     are given the examples' detailed captions, FLUX.2 [klein] the short instructions. The text-to-image column comes from
     the same runs, so it differs from the tables above. FLUX.2 [klein] has no box mode; an edit with
-    layout boxes runs as fast as a plain edit (2.41&times; and 1.94&times; at 10% for
+    layout boxes runs as fast as a plain edit (2.39&times; and 1.87&times; at 10% for
     FLUX 3 Image Klein Base and FLUX 3 Image Klein).</p>
 
   <h3>One model pass at 10% of the tokens against 100%, by the number of references</h3>
@@ -211,8 +216,9 @@
     <tr><td>FLUX 3 Image Klein</td><td class="num">6.05&times;</td><td class="num">1.95&times;</td><td class="num">1.51&times;</td><td class="num">1.32&times;</td><td class="num">1.14&times;</td></tr>
   </table>
 </div>
-  <p>Timing only, with 1024 &times; 1024 references at full size: the more references, the larger the share of each
-    pass that does not depend on the budget, and the smaller the speed-up.</p>
+  <p>Timing only, of one pass of the model (not end-to-end), with 1024 &times; 1024 references at full
+    size: the more references, the larger the share of each pass that does not depend on the budget, and the smaller the
+    speed-up.</p>
 
   <h2 id="bibtex">BibTeX</h2>
   <pre>@article{kara2026budgetpix,
